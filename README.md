@@ -6,6 +6,7 @@
 
 `EIXO 3`
 
+![Plantei](docs/img/plantei-banner.png)
 Nosso aplicativo oferece um gerenciamento intuitivo de plantas domésticas, permitindo aos usuários adicionar e remover plantas, além de fornecer descrições detalhadas sobre cada espécie. Com lembretes personalizados, garantimos que as plantas sejam regadas de acordo com suas necessidades individuais, promovendo um ambiente saudável e vibrante em casa.
 
 ## Integrantes
