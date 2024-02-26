@@ -12,8 +12,10 @@ Nosso aplicativo oferece um gerenciamento intuitivo de plantas domésticas, perm
 ## Integrantes
 
 * Bruno da Silva Lobo
+* Caio César Santos Rezende
 * Lucas Lousada Batalha dos Santos
 * Maria Beatriz da Silva
+* Paulo Isidoro de Oliveira
 
 ## Orientador
 
