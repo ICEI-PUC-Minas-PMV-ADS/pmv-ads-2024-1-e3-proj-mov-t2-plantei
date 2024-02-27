@@ -73,7 +73,7 @@ Obs.: todas as informações para gerar os indicadores devem estar no diagrama d
 
 ## Requisitos
 
-As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto. Para determinar a prioridade de requisitos, aplicar uma técnica de priorização de requisitos e detalhar como a técnica foi aplicada.
+As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto.
 
 ### Requisitos Funcionais
 
@@ -86,10 +86,15 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+|RNF-001| O sistema deve ser suportado em dispositivos iOS e Android | ALTA |
+|RNF-002| O sistema deve ser responsivo para rodar em diferentes dispositivos móveis | MÉDIA |
+|RNF-003| O sistema deve cumprir com a Lei Geral de Proteção de Dados (LGPD) | ALTA |
+|RNF-004| O sistema deve atender aos critérios de acessibilidade | ALTA |
+|RNF-005| O sistema deverá usar a tecnologia React Native em seu desenvolvimento | ALTA |
+|RNF-006| O sistema deverá conter uma ampla base de dados sobre plantas | ALTA |
+|RNF-007| O sistema deve possuir uma interface intuitiva e amigável para usuários de todas as idades e níveis de habilidade. | MÉDIA |
 
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
+<!-- Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
 - [Requisitos Funcionais
  (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
@@ -102,7 +107,7 @@ Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Cla
   dispositivos iOS e Android).
 Lembre-se que cada requisito deve corresponder à uma e somente uma
 característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
+todos os aspectos capturados nas Histórias de Usuário foram cobertos. -->
 
 ## Restrições
 
