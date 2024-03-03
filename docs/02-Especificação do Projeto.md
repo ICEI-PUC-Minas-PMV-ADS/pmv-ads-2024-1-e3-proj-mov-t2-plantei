@@ -141,7 +141,7 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |UC-004| Gerenciar plantas | Ao fazer login, o usuário poderá: adicionar, editar, visualizar detalhes e excluir plantas. | RF-002 RF-003 |
 |UC-005| Listar todas as plantas cadastradas | Quando o usuário possuir uma ou mais plantas cadastradas, poderá ser exibida uma lista delas. | RF-005 |
 |UC-006| Listar tarefas relacionadas as plantas cadastradas | O usuário poderá visualizar uma lista com as futuras tarefas relacionadas às suas plantas cadastradas, sendo elas: regar, fertilizar e trocar o vaso. | RF-006 |
-|UC-007| Receber lembretes de futuras tarefas | O usuário poderá ativar os lembretes, para que seja lembrado periodicamente sobre as tarefas relacionadas às suas plantas. | RF-005 |
+|UC-007| Receber lembretes de futuras tarefas | O usuário poderá ativar os lembretes, para que seja lembrado periodicamente sobre as tarefas relacionadas às suas plantas. | RF-004 |
 |UC-008| Acessar artigos informativos sobre plantas | Ao fazer login, o usuário poderá acessar artigos informativos sobre plantas. | RF-007 |
 
 # Matriz de Rastreabilidade
