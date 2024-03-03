@@ -28,8 +28,14 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
+|usuário iniciante  | criar um perfil para minha planta    | receber orientações personalizadas sobre seus cuidados       |
+|usuário avançado    | adicionar múltiplas plantas ao meu perfil      | gerenciar eficientemente o cuidado de todas as minhas plantas em um só lugar |
+|usuário   | receber notificações personalizadas sobre o momento ideal para regar minha planta       | garantir que ela receba a quantidade adequada de água para prosperar      |
+|usuário ocupado     | ajustar as configurações de lembretes    |adaptar o cuidado das plantas à minha rotina movimentada      |
+|usuário curioso   |acessar dicas e tutoriais sobre o cuidado de plantas      |aprimorar minhas habilidades de jardinagem e entender as necessidades específicas de cada planta      |
+|usuário preocupado com a privacidade    |controlar quem pode acessar minhas informações de planta     |garantir a confidencialidade dos dados relacionados às minhas plantas      |
+|usuário experiente    |fornecer feedback sobre o estado da minha planta     |receber sugestões adicionais de cuidados e melhorias      |
+|usuário consciente da água |informações sobre práticas de economia de água no cuidado das plantas |contribuir para a conservação de recursos hídricos |
 
 Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
 
