@@ -150,19 +150,32 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |UC-007| Receber lembretes de futuras tarefas | O usuário poderá ativar os lembretes, para que seja lembrado periodicamente sobre as tarefas relacionadas às suas plantas. | RF-004 |
 |UC-008| Acessar artigos informativos sobre plantas | Ao fazer login, o usuário poderá acessar artigos informativos sobre plantas. | RF-007 |
 
-# Matriz de Rastreabilidade
+## Matriz de Rastreabilidade
 
-A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualização dos relacionamento entre requisitos e outros artefatos ou objetos, permitindo a rastreabilidade entre os requisitos e os objetivos de negócio. 
-
-A matriz deve contemplar todos os elementos relevantes que fazem parte do sistema, conforme a figura meramente ilustrativa apresentada a seguir.
-
-![Exemplo de matriz de rastreabilidade](img/02-matriz-rastreabilidade.png)
-
-> **Links Úteis**:
-> - [Artigo Engenharia de Software 13 - Rastreabilidade](https://www.devmedia.com.br/artigo-engenharia-de-software-13-rastreabilidade/12822/)
-> - [Verificação da rastreabilidade de requisitos usando a integração do IBM Rational RequisitePro e do IBM ClearQuest Test Manager](https://developer.ibm.com/br/tutorials/requirementstraceabilityverificationusingrrpandcctm/)
-> - [IBM Engineering Lifecycle Optimization – Publishing](https://www.ibm.com/br-pt/products/engineering-lifecycle-optimization/publishing/)
-
+|  ID   | RF-001 | RF-002 | RF-003 | RF-004 | RF-005 | RF-006 | RF-007 | RNF-001 | RNF-002 | RNF-003 | RNF-004 | RNF-005 | RNF-006 | RNF-007 | UC-001 | UC-002 | UC-003 | UC-004 | UC-005 | UC-006 | UC-007 | UC-008 |
+|-------|--------|--------|--------|--------|--------|--------|--------|---------|---------|---------|---------|---------|---------|---------|--------|--------|--------|--------|--------|--------|--------|--------|
+|RF-001 |   -    |        |        |        |        |        |        |    X    |    X    |    X    |         |         |         |    X    |   X    |   X    |   X    |        |        |        |        |        |
+|RF-002 |        |   -    |   X    |   X    |   X    |   X    |        |    X    |    X    |         |         |         |    X    |    X    |        |        |        |   X    |        |        |        |        |
+|RF-003 |        |   X    |   -    |        |   X    |        |        |         |         |         |         |         |    X    |         |        |        |        |   X    |        |        |        |        |
+|RF-004 |        |   X    |        |   -    |   X    |   X    |        |    X    |    X    |         |         |         |    X    |    X    |        |        |        |        |        |   X    |   X    |        |
+|RF-005 |        |   X    |   X    |   X    |   -    |   X    |        |    X    |    X    |         |         |         |    X    |    X    |        |        |        |   X    |   X    |        |        |        |
+|RF-006 |        |   X    |        |   X    |   X    |   -    |        |    X    |    X    |         |         |         |    X    |    X    |        |        |        |        |        |   X    |   X    |   X    |
+|RF-007 |        |        |        |        |        |        |   -    |         |         |         |         |         |         |         |        |        |        |        |        |        |        |   X    |
+|RNF-001|   X    |   X    |        |   X    |   X    |   X    |        |    -    |    X    |    X    |    X    |    X    |    X    |    X    |   X    |   X    |   X    |   X    |   X    |   X    |   X    |   X    |
+|RNF-002|   X    |   X    |        |   X    |   X    |   X    |        |    X    |    -    |         |    X    |    X    |    X    |    X    |   X    |   X    |   X    |   X    |   X    |   X    |   X    |   X    |
+|RNF-003|   X    |        |        |        |        |        |        |    X    |         |    -    |         |         |         |         |   X    |   X    |   X    |        |        |        |        |        |
+|RNF-004|        |        |        |        |        |        |        |    X    |    X    |         |    -    |         |         |    X    |   X    |   X    |   X    |   X    |   X    |   X    |   X    |   X    |
+|RNF-005|        |        |        |        |        |        |        |    X    |    X    |         |         |    -    |         |         |   X    |   X    |   X    |   X    |   X    |   X    |   X    |   X    |
+|RNF-006|        |   X    |   X    |        |   X    |        |        |    X    |    X    |         |         |         |    -    |         |        |        |        |   X    |   X    |        |        |   X    |
+|RNF-007|   X    |   X    |        |   X    |   X    |   X    |        |    X    |    X    |         |    X    |         |         |    -    |   X    |   X    |   X    |   X    |   X    |   X    |   X    |   X    |
+|UC-001 |   X    |        |        |        |        |        |        |    X    |    X    |    X    |    X    |    X    |         |    X    |   -    |   X    |   X    |        |        |        |        |        |
+|UC-002 |   X    |        |        |        |        |        |        |    X    |    X    |    X    |    X    |    X    |         |    X    |   X    |   -    |   X    |        |        |        |        |        |
+|UC-003 |   X    |        |        |        |        |        |        |    X    |    X    |    X    |    X    |    X    |         |    X    |   X    |   X    |   -    |        |        |        |        |        |
+|UC-004 |        |   X    |   X    |   X    |   X    |   X    |        |    X    |    X    |         |    X    |    X    |    X    |    X    |        |        |        |   -    |   X    |   X    |   X    |   X    |
+|UC-005 |        |   X    |   X    |   X    |   X    |   X    |        |    X    |    X    |         |    X    |    X    |    X    |    X    |        |        |        |   X    |   -    |   X    |   X    |   X    |
+|UC-006 |        |   X    |        |   X    |   X    |   X    |        |    X    |    X    |         |    X    |    X    |    X    |    X    |        |        |        |   X    |   X    |   -    |   X    |        |
+|UC-007 |        |   X    |        |   X    |   X    |   X    |        |    X    |    X    |         |    X    |    X    |    X    |    X    |        |        |        |   X    |   X    |   X    |   -    |        |
+|UC-008 |        |        |        |        |        |   X    |   X    |    X    |    X    |         |    X    |    X    |    X    |    X    |        |        |        |   X    |   X    |        |        |   -    |
 
 # Gerenciamento de Projeto
 
