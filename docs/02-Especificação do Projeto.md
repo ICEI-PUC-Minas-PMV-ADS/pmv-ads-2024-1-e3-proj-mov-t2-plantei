@@ -167,23 +167,29 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 # Gerenciamento de Projeto
 
-De acordo com o PMBoK v6 as dez áreas que constituem os pilares para gerenciar projetos, e que caracterizam a multidisciplinaridade envolvida, são: Integração, Escopo, Cronograma (Tempo), Custos, Qualidade, Recursos, Comunicações, Riscos, Aquisições, Partes Interessadas. Para desenvolver projetos um profissional deve se preocupar em gerenciar todas essas dez áreas. Elas se complementam e se relacionam, de tal forma que não se deve apenas examinar uma área de forma estanque. É preciso considerar, por exemplo, que as áreas de Escopo, Cronograma e Custos estão muito relacionadas. Assim, se eu amplio o escopo de um projeto eu posso afetar seu cronograma e seus custos.
+O gerenciamento do projeto será realizado utilizando as ferramentas do GitHub.
 
 ## Gerenciamento de Tempo
 
-Com diagramas bem organizados que permitem gerenciar o tempo nos projetos, o gerente de projetos agenda e coordena tarefas dentro de um projeto para estimar o tempo necessário de conclusão.
+A equipe fará o gerenciamento do tempo a partir de "Issues" e "Milestones". Para esse projeto, cada "Issue" representa uma tarefa específica e bem definida, facilitando a compreensão e o acompanhamento individual do progresso. As "Milestones", que servem como marcos do projeto, irão representar as "Etapas", acompanhando as datas e especifícações disponibilizadas no Canvas. Para acompanhar as Issues e Milestones, [clique aqui](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-plantei/milestones?direction=asc&sort=title&state=open).
 
-![Diagrama de rede simplificado notação francesa (método francês)](img/02-diagrama-rede-simplificado.png)
+![Milestones](img/02-gereciamento-etapas.png)
 
-O gráfico de Gantt ou diagrama de Gantt também é uma ferramenta visual utilizada para controlar e gerenciar o cronograma de atividades de um projeto. Com ele, é possível listar tudo que precisa ser feito para colocar o projeto em prática, dividir em atividades e estimar o tempo necessário para executá-las.
+Utilizando o recurso "Projects" foi feita a organização das tarefas em Backlogs específicos para cada Sprint, proporcionando clareza e visibilidade do progresso do projeto. Os Backlogs de cada etapa foram iniciados e terão incrementos ao longo do projeto. Para acessar o painel [clique aqui](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/783/views/1).
 
-![Gráfico de Gantt](img/02-grafico-gantt.png)
+![Milestones](img/02-gerenciamento-projeto.png).
+
+Para melhor visualização do período em que cada etapa e tarefa deve ser entregue, foi feito um roadmap baseado no diagrama de Gantt. Para ter acesso ao roadmap completo [clique aqui](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/783/views/7).
+![Gerenciamento por período](img/02-gerenciamento-por-periodo.png).
+![Gerenciamento por período](img/02-gerenciamento-por-periodo-2.PNG)
+
 
 ## Gerenciamento de Equipe
 
 O gerenciamento adequado de tarefas contribuirá para que o projeto alcance altos níveis de produtividade. Por isso, é fundamental que ocorra a gestão de tarefas e de pessoas, de modo que os times envolvidos no projeto possam ser facilmente gerenciados. 
 
-![Simple Project Timeline](img/02-project-timeline.png)
+O painel criado para esse projeto oferece uma visão completa de todos os membros da equipe e suas tarefas, facilitando o acompanhamento do progresso individual e do projeto como um todo. Para acessar o painel completo [clique aqui](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/783/views/8).
+![Gerenciamento de equipe](img/02-gerenciamento-pessoas.png).
 
 ## Gestão de Orçamento
 
