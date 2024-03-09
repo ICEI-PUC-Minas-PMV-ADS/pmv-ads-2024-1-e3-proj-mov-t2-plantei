@@ -167,7 +167,7 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 # Gerenciamento de Projeto
 
-O gerenciamento do projeto será realizado utilizando as ferramentas do GitHub.
+O sucesso de um projeto depende, em grande parte, da qualidade do seu gerenciamento. Um bom gerenciamento de projetos pode levar à redução de custos, aumento da qualidade, melhoria na comunicação e maior satisfação do cliente. Para garantir que este projeto alcance os resultados desejados com alto nível de qualidade, utilizaremos as ferramentas do GitHub para centralizar o gerenciamento.
 
 ## Gerenciamento de Tempo
 
@@ -177,19 +177,37 @@ A equipe fará o gerenciamento do tempo a partir de "Issues" e "Milestones". Par
 
 Utilizando o recurso "Projects" foi feita a organização das tarefas em Backlogs específicos para cada Sprint, proporcionando clareza e visibilidade do progresso do projeto. Os Backlogs de cada etapa foram iniciados e terão incrementos ao longo do projeto. Para acessar o painel [clique aqui](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/783/views/1).
 
-![Milestones](img/02-gerenciamento-projeto.png).
+![Milestones](img/02-gerenciamento-projeto.png)
 
-Para melhor visualização do período em que cada etapa e tarefa deve ser entregue, foi feito um roadmap baseado no diagrama de Gantt. Para ter acesso ao roadmap completo [clique aqui](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/783/views/7).
-![Gerenciamento por período](img/02-gerenciamento-por-periodo.png).
+Para melhor visualização do período em que cada etapa e tarefa deve ser entregue, foi feito um painel com base no diagrama de Gantt. Para ter acesso completo [clique aqui](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/783/views/7).
+![Gerenciamento por período](img/02-gerenciamento-por-periodo.png)
 ![Gerenciamento por período](img/02-gerenciamento-por-periodo-2.PNG)
 
 
 ## Gerenciamento de Equipe
 
-O gerenciamento adequado de tarefas contribuirá para que o projeto alcance altos níveis de produtividade. Por isso, é fundamental que ocorra a gestão de tarefas e de pessoas, de modo que os times envolvidos no projeto possam ser facilmente gerenciados. 
+Para atingir as metas estabelecidas para o projeto, é fundamental um gerenciamento e pessoas que motive e capacite a equipe a trabalhar de forma coesa e eficiente. Com base nisso, foi criado um painel que oferece uma visão completa de todos os membros da equipe e suas tarefas, facilitando o acompanhamento do progresso individual e do projeto como um todo. Para acessar o painel completo [clique aqui](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/783/views/8).
+![Gerenciamento de equipe](img/02-gerenciamento-pessoas.png)
 
-O painel criado para esse projeto oferece uma visão completa de todos os membros da equipe e suas tarefas, facilitando o acompanhamento do progresso individual e do projeto como um todo. Para acessar o painel completo [clique aqui](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/783/views/8).
-![Gerenciamento de equipe](img/02-gerenciamento-pessoas.png).
+A organização da equipe está apresentada conforme abaixo:
+
+> Scrum Master
+> - Bruno da Silva Lobo
+
+> Product Owner
+> - Maria Beatriz da Silva
+    
+> Equipe de Desenvolvimento
+> - Bruno da Silva Lobo
+> - Caio César Santos Rezende
+> - Lucas Lousada Batalha dos Santos
+> - Maria Beatriz da Silva
+> - Paulo Isidoro de Oliveira
+> - Vanderson Barbosa de Oliveira
+
+> Equipe de Design
+> - Lucas Lousada Batalha dos Santos
+> - Maria Beatriz da Silva
 
 ## Gestão de Orçamento
 
