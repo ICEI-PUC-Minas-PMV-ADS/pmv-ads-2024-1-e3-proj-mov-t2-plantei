@@ -193,6 +193,16 @@ O painel criado para esse projeto oferece uma visão completa de todos os membro
 
 ## Gestão de Orçamento
 
-O processo de determinar o orçamento do projeto é uma tarefa que depende, além dos produtos (saídas) dos processos anteriores do gerenciamento de custos, também de produtos oferecidos por outros processos de gerenciamento, como o escopo e o tempo.
+Na elaboração do orçamento, foram considerados os custos para um período de 5 meses, com a contratação de 6 stakeholders, 6 estações de trabalho e 6 planos de internet.
 
-![Orçamento](img/02-orcamento.png)
+| Recursos | Valor |
+|------------------------------------|------------------------------------|
+|Recursos Humanos |  R$ 126.000,00 |
+|Hardware | R$ 24.000,00 |
+|Rede | R$ 3.000,00 |
+|Total | R$ 153.000,00 |
+
+> Observações:
+> - Os valores acima são estimativas e podem sofrer alterações.
+> - O período de 5 meses foi considerado com base no planejamento atual.
+> - A quantidade de stakeholders, estações de trabalho e planos de internet pode ser ajustada de acordo com as necessidades do projeto.
