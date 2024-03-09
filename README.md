@@ -16,6 +16,7 @@ Nosso aplicativo oferece um gerenciamento intuitivo de plantas domésticas, perm
 * Lucas Lousada Batalha dos Santos
 * Maria Beatriz da Silva
 * Paulo Isidoro de Oliveira
+* Vanderson Barbosa de Oliveira
 
 ## Orientador
 
