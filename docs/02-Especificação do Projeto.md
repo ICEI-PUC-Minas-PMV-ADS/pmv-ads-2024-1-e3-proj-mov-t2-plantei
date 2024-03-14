@@ -48,14 +48,16 @@ Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em segu
 
 ![Processo 2](img/02-bpmn-proc2.png)
 
-## Indicadores de Desempenho
+### Indicadores de desempenho para o Aplicativo de Gerenciamento de Plantas Domésticas
 
-Apresente aqui os principais indicadores de desempenho e algumas metas para o processo. Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Colocar no mínimo 5 indicadores. 
-
-Usar o seguinte modelo: 
-
-![Indicadores de Desempenho](img/02-indic-desemp.png)
-Obs.: todas as informações para gerar os indicadores devem estar no diagrama de classe a ser apresentado a posteriori. 
+| Número | Indicador de Desempenho              | Descrição                                                                                             | Métrica        | Cálculo                       | Meta        | Perspectiva | Fonte de Dados | Periodicidade |
+|--------|-------------------------------------|-------------------------------------------------------------------------------------------------------|----------------|-------------------------------|-------------|-------------|----------------|---------------|
+| 1      | Taxa de Sobrevivência das Plantas   | Porcentagem de plantas registradas no aplicativo que sobrevivem por um período especificado.          | Porcentagem    | (Plantas sobreviventes / Total de plantas registradas) * 100 | >= 90%      | Manutenção e Saúde das Plantas | Banco de dados do aplicativo | Mensal        |
+| 2      | Engajamento do Usuário              | Número médio de vezes que os usuários interagem com o aplicativo por semana.                           | Frequência     | (Total de interações / Total de usuários) / Semana | >= 3 vezes  | Satisfação do Usuário | Registro de interações do aplicativo | Semanal       |
+| 3      | Feedback do Usuário                | Quantidade média de feedbacks recebidos dos usuários sobre a usabilidade e funcionalidades do aplicativo.| Quantidade     | Total de feedbacks recebidos / Número de meses | >= 5 por mês| Aperfeiçoamento do Aplicativo | Sistema de coleta de feedback | Mensal        |
+| 4      | Crescimento do Banco de Dados      | Taxa mensal de crescimento do número de espécies de plantas e informações sobre elas no banco de dados. | Porcentagem    | ((Número atual de espécies - Número anterior de espécies) / Número anterior de espécies) * 100 | >= 5%       | Expansão de Conteúdo | Banco de dados do aplicativo | Mensal        |
+| 5      | Tempo Médio de Resposta do Suporte | Tempo médio que a equipe de suporte leva para responder às consultas e solicitações dos usuários.       | Horas          | Total de horas de resposta / Total de consultas e solicitações | <= 24 horas| Eficiência Operacional | Registro de solicitações de suporte | Diária        |
+| 6      | Taxa de Retenção de Usuários       | Porcentagem de usuários que retornam ao aplicativo após o primeiro uso dentro de um período específico. | Porcentagem    | (Usuários que retornam / Total de usuários que usaram pela primeira vez) * 100 | >= 60%      | Fidelização de Usuários | Registro de usuários | Mensal        |
 
 ## Requisitos
 
