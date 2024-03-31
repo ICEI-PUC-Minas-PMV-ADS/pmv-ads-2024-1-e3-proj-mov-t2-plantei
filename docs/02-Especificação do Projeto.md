@@ -67,10 +67,10 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| A aplicação deve permitir que o usuário se cadastre, faça login, edite seu email e senha, e apague sua conta. | ALTA | 
-|RF-002| A aplicação deve permitir que o usuário adicione, edite e remova plantas. | ALTA |
-|RF-003| A aplicação deve exibir informações gerais sobre a planta pesquisada, incluindo: nome, exposição ao sol recomendada, frequência de rega ideal, tempo recomendado para nova fertilização e outras informações pertinentes. | MÉDIA |
-|RF-004| A aplicação deve disponibilizar para o usuário o recebimento de notificações sobre as seguintes tarefas relacionadas às suas plantas: regar, fertilizar e trocar o vaso. | ALTA |
+|RF-001| A aplicação deve permitir que o usuário se cadastre, faça login, edite seu e-mail, senha e foto, apague sua conta e recupere sua senha. | ALTA | 
+|RF-002| A aplicação deve permitir que o usuário adicione plantas de forma personalizada ou utilizando uma planta pré-cadastrada pelo sistema, além de poder editar e remover plantas. | ALTA |
+|RF-003| A aplicação deve exibir informações gerais sobre as plantas pré-cadastradas no sistema, incluindo: nome, descrição, foto, frequência ideal de rega, fertilização e troca de vaso. | MÉDIA |
+|RF-004| A aplicação deve disponibilizar para o usuário a opção de ativar ou desativar o recebimento de notificações de rega, fertilização e troca de vaso em um horário definido por ele. | ALTA |
 |RF-005| A aplicação deve exibir todas as plantas adicionadas pelo usuário. | ALTA |
 |RF-006| A aplicação deve exibir todas as futuras tarefas de cada planta adicionada pelo usuário. | ALTA |
 |RF-007| A aplicação deve disponibilizar artigos variados sobre plantas. | BAIXA |
