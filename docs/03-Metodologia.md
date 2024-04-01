@@ -91,7 +91,6 @@ O quadro Kanban do grupo desenvolvido na ferramenta de gerenciamento de projetos
 
 | ![Git Projects](./img/git-projects.png "Git Projects") |
 | :-------------------------------------------------------------------------------------: |
-|                      *Fluxo de controle do código fonte no repositório git*                      |
 
 ### Ferramentas
 
