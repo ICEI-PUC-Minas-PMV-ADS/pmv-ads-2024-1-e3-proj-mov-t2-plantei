@@ -34,20 +34,13 @@ A ferramenta de controle de versão adotada no projeto foi o
 [Git](https://git-scm.com/), sendo que o [Github](https://github.com)
 foi utilizado para hospedagem do repositório.
 
-O fluxo de trabalho para gerenciamento de branches escolhido pela equipe é o Git Flow.
-Desta forma, todas as manutenções no código são realizadas em branches separados,
-identificados como Hotfix, Release, Develop e Feature.
+O fluxo de trabalho para gerenciamento de branches escolhido pela equipe é o Feature Branch Workflow.
+Desta forma, todas as manutenções no código são realizadas em branches separadas,
+identificadas pelo nome da funcionalidade.
 
-| ![Git Flow](./img/git-flow.png "Git Flow") |
+| ![Feature Branch Workflow](./img/feature-branch.png "Feature Branch Workflow") |
 | :-------------------------------------------------------------------------------------: |
 |                      *Fluxo de controle do código fonte no repositório git*                      |
-
-Quanto à gerência de issues, as principais etiquetas usadas no projeto são:
-
-- `documentation`: melhorias ou acréscimos à documentação
-- `bug`: uma funcionalidade encontra-se com problemas
-- `enhancement`: uma funcionalidade precisa ser melhorada
-- `feature`: uma nova funcionalidade precisa ser introduzida
 
 ## Gerenciamento de Projeto
 
@@ -58,8 +51,8 @@ A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para def
 A equipe está organizada da seguinte maneira:
 
 <ul>
- <li>Scrum Master: Bruno Lobo</li>
- <li>Product Owner: Lucas Marques</li>
+ <li>Scrum Master: ?</li>
+ <li>Product Owner: ?</li>
  <li>Equipe de Desenvolvimento:</li>
   <ul>
    <li>?</li>
@@ -79,10 +72,9 @@ Para organização e distribuição das tarefas do projeto, a equipe está utili
 
 <ul>
  <li><strong>Product backlog: </strong>todos os artefatos que serão necessários para o desenvolvimento completo do projeto.</li>
- <li><strong>To do: </strong>todos os artefatos referentes à etapa atual do desenvolvimento do projeto..</li>
- <li><strong>In progress: </strong>artefatos que estão sendo desenvolvidos no momento.</li>
- <li><strong>Test: </strong>artefatos aguardando aprovação para implementação.</li>
- <li><strong>Done: </strong>todos os artefatos que foram testados, aprovados e implementados no projeto.</li>
+ <li><strong>Em progresso: </strong>artefatos que estão sendo desenvolvidos no momento.</li>
+ <li><strong>Teste: </strong>artefatos aguardando aprovação para implementação.</li>
+ <li><strong>Finalizado: </strong>todos os artefatos que foram testados, aprovados e implementados no projeto.</li>
 </ul>
 
 O quadro Kanban do grupo desenvolvido na ferramenta de gerenciamento de projetos está disponível <a href="https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/783" target="_blank">clicando aqui</a>.
@@ -94,7 +86,7 @@ O quadro Kanban do grupo desenvolvido na ferramenta de gerenciamento de projetos
 
 As ferramentas empregadas no projeto são:
 
-- Editor de código: Visual Studio Community 2022.
+- Editor de código: Visual Studio Code.
 - Ferramentas de comunicação: Microsoft Teams.
 - Ferramentas de desenho de tela (_wireframing_): Figma
 
