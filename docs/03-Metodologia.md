@@ -46,28 +46,6 @@ identificadas pelo nome da funcionalidade.
 
 A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento.
 
-### Divisão de Papéis
-
-A equipe está organizada da seguinte maneira:
-
-<ul>
- <li>Scrum Master: ?</li>
- <li>Product Owner: ?</li>
- <li>Equipe de Desenvolvimento:</li>
-  <ul>
-   <li>?</li>
-   <li>?</li>
-   <li>?</li>
-   <li>?</li>
-   <li>?</li>
-   <li>?</li>
-  </ul>
- <li>Equipe de Design:</li>
-  <ul>
-   <li>Maria Beatriz</li>
-  </ul>
-</ul>
-
 Para organização e distribuição das tarefas do projeto, a equipe está utilizando o GitHub Project estruturado com as seguintes listas: 
 
 <ul>
