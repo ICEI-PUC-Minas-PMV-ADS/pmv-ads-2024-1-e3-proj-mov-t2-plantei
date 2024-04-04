@@ -64,17 +64,19 @@ Explique como a hospedagem e o lançamento da plataforma foi feita.
 > - [Getting Started with Heroku](https://devcenter.heroku.com/start)
 > - [Publicando Seu Site No Heroku](http://pythonclub.com.br/publicando-seu-hello-world-no-heroku.html)
 
-## Qualidade de Software
+# Qualidade de Software
 
-Conceituar qualidade de fato é uma tarefa complexa, mas ela pode ser vista como um método gerencial que através de procedimentos disseminados por toda a organização, busca garantir um produto final que satisfaça às expectativas dos stakeholders.
+A qualidade de software é um aspecto crucial no desenvolvimento de qualquer aplicativo. Ela garante que o produto final atenda às expectativas dos usuários e ofereça uma experiência de usuário satisfatória. A norma internacional ISO/IEC 25010 define várias características e subcaracterísticas que contribuem para a qualidade de um produto de software.
 
-No contexto de desenvolvimento de software, qualidade pode ser entendida como um conjunto de características a serem satisfeitas, de modo que o produto de software atenda às necessidades de seus usuários. Entretanto, tal nível de satisfação nem sempre é alcançado de forma espontânea, devendo ser continuamente construído. Assim, a qualidade do produto depende fortemente do seu respectivo processo de desenvolvimento.
+Abaixo, apresentamos uma tabela com algumas das características e subcaracterísticas de qualidade de software que consideramos importantes para o nosso projeto, juntamente com a justificativa para a escolha e as métricas detalhadas que usaremos para avaliá-las.
 
-A norma internacional ISO/IEC 25010, que é uma atualização da ISO/IEC 9126, define oito características e 30 subcaracterísticas de qualidade para produtos de software.
-Com base nessas características e nas respectivas sub-características, identifique as sub-características que sua equipe utilizará como base para nortear o desenvolvimento do projeto de software considerando-se alguns aspectos simples de qualidade. Justifique as subcaracterísticas escolhidas pelo time e elenque as métricas que permitirão a equipe avaliar os objetos de interesse.
-
-> **Links Úteis**:
->
-> - [ISO/IEC 25010:2011 - Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — System and software quality models](https://www.iso.org/standard/35733.html/)
-> - [Análise sobre a ISO 9126 – NBR 13596](https://www.tiespecialistas.com.br/analise-sobre-iso-9126-nbr-13596/)
-> - [Qualidade de Software - Engenharia de Software 29](https://www.devmedia.com.br/qualidade-de-software-engenharia-de-software-29/18209/)
+| Característica | Subcaracterística | Justificativa | Métrica |
+|----------------|-------------------|---------------|---------|
+| Funcionalidade | Adequação         | Para avaliar se o sistema atende bem os requisitos levantados pela equipe. | O software atende os requisitos levantados? |
+| Confiabilidade | Maturidade | O software deve ser capaz de evitar falhas resultantes de defeitos no software. | Taxa de falhas por tempo. |
+| Confiabilidade | Recuperabilidade  | A equipe considera essa subcaracterística importante, pois muitos dados podem ser perdidos após uma falha do sistema. | Os dados anteriores foram recuperados? |
+| Usabilidade    | Apreensibilidade  | A equipe optou por essa subcaracterística para poder entender melhor o quão difícil está para o usuário aprender a usar todas as funcionalidades oferecidas pelo sistema. | O sistema é de fácil entendimento? |
+| Eficiência     | Comportamento em relação ao tempo | Por ser um sistema que disponibiliza ferramentas para criação de rotinas com finalidade específica, é extremamente importante a avaliação do tempo quando é requisitado um dado na tela até a visualização. | Tempo médio de resposta do software. |
+| Manutenibilidade | Modificabilidade  | A equipe considerou uma subcaracterística importante, pois é uma forma de verificar o quanto o código está sendo escrito com fácil compreensão e o quão fácil será para corrigir um erro ou adicionar uma nova funcionalidade | Quanto tempo levou para analisar e corrigir um erro ou implementar uma mudança? |
+| Segurança      | Confidencialidade | Para garantir a proteção de dados sensíveis, essa subcaracterística foi escolhida para avaliação. | O sistema possui alguma violação de dados? Os dados estão criptografados? |
+| Portabilidade  | Adaptabilidade    | Para analisar a capacidade do aplicativo se adaptar a diferentes tamanhos de tela, sistemas operacionais e dispositivos. | O aplicativo se adapta bem a diferentes ambientes? |
