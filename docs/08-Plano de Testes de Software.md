@@ -37,7 +37,7 @@
 
 |        Caso de Teste        |                    CT-05 – Edição de Plantas                   |
 |-----------------------------|-----------------------------------------------------------------|
-|   Requisito Associado       | RF-002 A aplicação deve permitir que o usuário adicione plantas de forma personalizada ou utilizando uma planta pré-cadastrada pelo sistema. RF-005 A aplicação deve exibir todas as plantas adicionadas pelo usuário. |
+|   Requisito Associado       | RF-002 A aplicação deve permitir que o usuário adicione plantas de forma personalizada ou utilizando uma planta pré-cadastrada pelo sistema. RF-005 A aplicação deve exibir todas as plantas adicionadas pelo usuário. RF-003 A aplicação deve exibir informações gerais sobre as plantas pré-cadastradas no sistema, incluindo: nome, descrição, foto, frequência ideal de rega, fertilização e troca de vaso. |
 |     Pré-requisitos          | - O usuário deve estar logado no sistema. <br> - Deve haver pelo menos uma planta cadastrada. |
 |     Objetivo do Teste       | Verificar funcionalidades de edição de plantas. |
 |             Passos          | 1. Acessar 'Minhas Plantas' no aplicativo <br> 2. Selecionar a planta pré-cadastrada <br> 3. Clicar no ícone de edição <br> 4. Preencher o nome da planta <br> 5. Clicar em 'Próximo' <br> 6. Preencher 'Definir uma boa descrição para a planta' <br> 7. Clicar em 'Próximo' <br> 8. Selecionar a frequência das tarefas de rega, adubo e vaso em dias para a planta <br> 9. Clicar em 'Próximo' <br> 10. Visualizar o modal com mensagem de sucesso na edição da planta |
@@ -74,6 +74,15 @@
 |     Objetivo do Teste       | Verificar a funcionalidade de edição de perfil. |
 |             Passos          | 1. Clicar em 'Configurações' na tela inicial <br> 2. Clicar em 'Editar Perfil' <br> 3. Alterar a foto, se desejado <br> 4. Preencher os campos 'Nome' e 'E-mail' <br> 5. Clicar em 'Atualizar' |
 |       Critérios de Êxito    | - As alterações feitas no perfil do usuário devem ser refletidas em 'Configurações'. |
+
+|        Caso de Teste        |                    CT-10 – Configuração de Lembretes                   |
+|-----------------------------|-----------------------------------------------------------------|
+|   Requisito Associado       | RF-004 A aplicação deve disponibilizar para o usuário a opção de ativar ou desativar o recebimento de notificações de rega, fertilização e troca de vaso em um horário definido por ele. |
+|     Pré-requisitos          | - O usuário deve estar logado no sistema. <br> - O usuário deve estar na tela inicial. |
+|     Objetivo do Teste       | Verificar a funcionalidade de configuração de lembretes. |
+|             Passos          | 1. Clicar em 'Configurações' na tela inicial <br> 2. Clicar em 'Lembretes' <br> 3. Ativar os lembretes usando o switch 'Ative ou desative os lembretes' <br> 4. Selecionar um horário para ser lembrado das tarefas nos campos de seleção de tempo hora e minuto <br> 5. Clicar em 'Atualizar' |
+|       Critérios de Êxito    | - As configurações de lembretes devem ser atualizadas com sucesso. |
+
 
 
 
