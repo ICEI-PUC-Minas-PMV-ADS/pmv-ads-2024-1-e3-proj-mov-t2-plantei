@@ -1,10 +1,10 @@
 # Especificações do Projeto
 
-<span style="color:red">Pré-requisitos: <a href="1-Documentação de Contexto.md"> Documentação de Contexto</a></span>
+<!-- <span style="color:red">Pré-requisitos: <a href="1-Documentação de Contexto.md"> Documentação de Contexto</a></span> -->
 
 Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
 
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
+<!-- Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto -->
 
 ## Personas
 
@@ -84,7 +84,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RNF-003| O sistema deve cumprir com a Lei Geral de Proteção de Dados (LGPD) | ALTA |
 |RNF-004| O sistema deve atender aos critérios de acessibilidade | ALTA |
 |RNF-005| O sistema deverá usar a tecnologia React Native em seu desenvolvimento | ALTA |
-|RNF-006| O sistema deverá conter uma ampla base de dados sobre plantas | ALTA |
+|RNF-006| O sistema deverá conter plantas pré-cadastradas no banco de dados | ALTA |
 |RNF-007| O sistema deve possuir uma interface intuitiva e amigável para usuários de todas as idades e níveis de habilidade. | MÉDIA |
 
 <!-- Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
