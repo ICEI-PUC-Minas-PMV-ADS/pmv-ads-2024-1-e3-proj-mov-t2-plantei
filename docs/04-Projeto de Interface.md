@@ -13,11 +13,15 @@ O Diagrama de Fluxo apresenta um modelo que ilustra como o usuário pode navegar
 
 | ![Figura 1 - Primeira parte do fluxo do usuário](./img/04-fluxograma-1.png "Figura 1") |
 | :---------------------------------------------------------------------------------------: |
-|                      *Figura 1 - Primeira parte do fluxo do usuário*                      |
+|                      *Figura 1 - Parte 1 do Fluxo do usuário*                      |
 
 | ![Figura 2 - Última parte do fluxo do usuário](./img/04-fluxograma-2.png "Figura 2") |
 | :-------------------------------------------------------------------------------------: |
-|                      *Figura 2 - Última parte do fluxo do usuário*                      |
+|                      *Figura 2 - Parte 2.1 do Fluxo do usuário*                      |
+
+| ![Figura 3 - Última parte do fluxo do usuário](./img/04-fluxograma-3.png "Figura 2") |
+| :-------------------------------------------------------------------------------------: |
+|                      *Figura 3 - Parte 2.2 do Fluxo do usuário*                      |
 
 <!-- As referências abaixo irão auxiliá-lo na geração do artefato “Diagramas de Fluxo”.
 
