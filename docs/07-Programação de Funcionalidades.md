@@ -1,11 +1,16 @@
 # Programação de Funcionalidades
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>, <a href="4-Metodologia.md"> Metodologia</a>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>, <a href="5-Arquitetura da Solução.md"> Arquitetura da Solução</a>
+|ID    | Descrição do Requisito  | Artefato Gerado|
+|------|-----------------------------------------|----|
+|RF-001| A aplicação deve permitir que o usuário se cadastre, faça login, edite seu e-mail, senha e foto, apague sua conta e recupere sua senha. | - | 
+|RF-002| A aplicação deve permitir que o usuário adicione plantas de forma personalizada ou utilizando uma planta pré-cadastrada pelo sistema, além de poder editar e remover plantas. | - |
+|RF-003| A aplicação deve exibir informações gerais sobre as plantas pré-cadastradas no sistema, incluindo: nome, descrição, foto, frequência ideal de rega, fertilização e troca de vaso. | - |
+|RF-004| A aplicação deve disponibilizar para o usuário a opção de ativar ou desativar o recebimento de notificações de rega, fertilização e troca de vaso em um horário definido por ele. | - |
+|RF-005| A aplicação deve exibir todas as plantas adicionadas pelo usuário. | - |
+|RF-006| A aplicação deve exibir todas as futuras tarefas de cada planta adicionada pelo usuário. | - |
+|RF-007| A aplicação deve disponibilizar artigos variados sobre plantas. | - |
 
-Implementação do sistema descritas por meio dos requisitos funcionais e/ou não funcionais. Deve relacionar os requisitos atendidos os artefatos criados (código fonte) além das estruturas de dados utilizadas e as instruções para acesso e verificação da implementação que deve estar funcional no ambiente de hospedagem.
-
-Para cada requisito funcional, pode ser entregue um artefato desse tipo
-
+<!--
 > **Links Úteis**:
 >
 > - [Trabalhando com HTML5 Local Storage e JSON](https://www.devmedia.com.br/trabalhando-com-html5-local-storage-e-json/29045)
@@ -13,3 +18,4 @@ Para cada requisito funcional, pode ser entregue um artefato desse tipo
 > - [JSON Data Set Sample](https://opensource.adobe.com/Spry/samples/data_region/JSONDataSetSample.html)
 > - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
 > - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
+-->
