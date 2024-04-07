@@ -30,10 +30,40 @@ O Diagrama de Fluxo apresenta um modelo que ilustra como o usuário pode navegar
 
 ## Wireframes
 
-![Exemplo de Wireframe](img/wireframe-example.png)
+Os wireframes foram desenvolvidos utilizando o Figma. Para ter acesso a todas as telas do aplicativo, [clique aqui](https://figma.com/file/Bi6PZWAjAFd13eNVsdBe6k/plantei?type=design&node-id=105%3A2843&mode=design&t=SHOgVTdepgb96Mw1-1).
+Para acessar o wireframe de forma interativa [clique aqui](https://figma.com/proto/Bi6PZWAjAFd13eNVsdBe6k/plantei?type=design&node-id=172-464&t=SHOgVTdepgb96Mw1-0&scaling=min-zoom&page-id=105%3A2843).
 
-São protótipos usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante do layout de elementos fundamentais na interface.
- 
+### Fluxo com as Telas do App
+Este guia visual ilustra o fluxo de navegação do aplicativo, detalhando os principais passos em cada tela para as seguintes funcionalidades:
+
+#### 1. Cadastro, Login e Recuperação de Senha:
+![Figura](./img/06-fluxo-cadastro-login.png) 
+
+#### 2. Adicionar uma Planta Pré-Cadastrada:
+![Figura](./img/06-fluxo-planta-pre-cadastrada.png) 
+
+#### 3. Adicionar uma Planta Personalizada:
+![Figura](./img/06-fluxo-planta-personalizada.png) 
+
+#### 4. Editar Planta:
+![Figura](./img/06-fluxo-editar-planta.png) 
+
+#### 5. Visualizar Futuras Tarefas de uma Planta:
+![Figura](./img/06-fluxo-futuras-tarefas-1.png) 
+
+#### 6. Excluir Plantas:
+![Figura](./img/06-fluxo-excluir-planta.png) 
+
+#### 7. Futuras Tarefas:
+![Figura](./img/06-fluxo-futuras-tarefas.png) 
+
+#### 8. Configurações:
+![Figura](./img/06-fluxo-config.png) 
+
+#### 9. Acessar Artigos:
+![Figura](./img/06-fluxo-artigo.png)
+
+<!-- 
 > **Links Úteis**:
 > - [Protótipos vs Wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
 > - [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
@@ -42,3 +72,4 @@ São protótipos usados em design de interface para sugerir a estrutura de um si
 > - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
 > - [Axure](https://www.axure.com/edu) (Licença Educacional)
 > - [InvisionApp](https://www.invisionapp.com/) (Licença Educacional)
+-->
