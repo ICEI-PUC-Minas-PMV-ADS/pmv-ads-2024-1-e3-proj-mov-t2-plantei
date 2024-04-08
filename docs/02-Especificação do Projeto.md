@@ -30,23 +30,24 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 ### Análise da Situação Atual
 
-Apresente aqui os problemas existentes que viabilizam sua proposta. Apresente o modelo do sistema como ele funciona hoje. Caso sua proposta seja inovadora e não existam processos claramente definidos, apresente como as tarefas que o seu sistema pretende implementar são executadas atualmente, mesmo que não se utilize tecnologia computacional. 
+Modelo esta em processo de inovar o mundo dos criadores de plantas ulitilizaremos o Modelo BPMN para tentar mostrar de forma macro o projeto.
 
-### Descrição Geral da Proposta
 
-Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias.
+### Processo 1 – Gerenciamento de usuário
 
-### Processo 1 – NOME DO PROCESSO
+Começaremos com a tela de cadastro e inserção de dados.
+![Processo 1](img\VerificaçãodeUsuário.png)
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN. 
+### Processo 2 – Processo de gerenciamento de Planta
+![Processo 1](img\GerenciamentodePlantas.png)
 
-![Processo 1](img/02-bpmn-proc1.png)
+### Processo 3 - Gerenciameto de tarefas
+![Processo 1](img\GerenciamtentodeTarefas.png)
 
-### Processo 2 – NOME DO PROCESSO
+### Processo 4 - Verificação  de artigos
+![Porcesso](img\Verificaçãodeartigos.png)
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN.
-
-![Processo 2](img/02-bpmn-proc2.png)
+Por ser Um processo inovador precisaremos de mais tempo para a ampliação do time e verificação de novos processos.
 
 ### Indicadores de desempenho para o Aplicativo de Gerenciamento de Plantas Domésticas
 
