@@ -19,7 +19,7 @@ A metodologia contempla as definições de ferramental utilizado pela equipe tan
   <tr>
     <td style="border: 1px solid black; padding: 10px;">Projeto de Interface e  Wireframes</td>
     <td style="border: 1px solid black; padding: 10px;">Figma</td>
-    <td style="border: 1px solid black; padding: 10px;"><a href="https://www.figma.com/" target="_blank">Clique aqui</a> para acessar os Wireframes do projeto</td>
+    <td style="border: 1px solid black; padding: 10px;"><a href="https://www.figma.com/file/Bi6PZWAjAFd13eNVsdBe6k/plantei?type=design&node-id=105%3A2843&mode=design&t=ZOs8M5L5Kb0wwn5o-1" target="_blank">Clique aqui</a> para acessar os Wireframes do projeto</td>
   </tr>
   <tr>
     <td style="border: 1px solid black; padding: 10px;">Gerenciamento do Projeto</td>
