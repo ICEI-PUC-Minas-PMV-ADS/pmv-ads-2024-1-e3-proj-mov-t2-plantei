@@ -24,7 +24,7 @@ A metodologia contempla as definições de ferramental utilizado pela equipe tan
   <tr>
     <td style="border: 1px solid black; padding: 10px;">Gerenciamento do Projeto</td>
     <td style="border: 1px solid black; padding: 10px;">GitHub</td>
-    <td style="border: 1px solid black; padding: 10px;"><a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-plantei" target="_blank">Clique aqui</a> para acessar nosso gerenciador do Projeto</td>
+    <td style="border: 1px solid black; padding: 10px;"><a href="https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/783" target="_blank">Clique aqui</a> para acessar nosso gerenciador do Projeto</td>
   </tr>
 </table>
 
