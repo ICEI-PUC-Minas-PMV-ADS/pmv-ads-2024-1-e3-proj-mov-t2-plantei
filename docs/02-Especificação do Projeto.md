@@ -36,16 +36,17 @@ Modelo esta em processo de inovar o mundo dos criadores de plantas ulitilizaremo
 ### Processo 1 – Gerenciamento de usuário
 
 Começaremos com a tela de cadastro e inserção de dados.
-![Processo 1](img\VerificaçãodeUsuário.png)
+
+![Processo 1](img/Gerenciamento-de-Usuário.png)
 
 ### Processo 2 – Processo de gerenciamento de Planta
-![Processo 1](img\GerenciamentodePlantas.png)
+![Processo 1](img/Gerenciamento-de-Plantas.png)
 
 ### Processo 3 - Gerenciameto de tarefas
-![Processo 1](img\GerenciamtentodeTarefas.png)
+![Processo 1](img/Gerenciamento-de-Tarefas.png)
 
 ### Processo 4 - Verificação  de artigos
-![Porcesso](img\Verificaçãodeartigos.png)
+![Porcesso](img/Verificação-de-artigos.png)
 
 Por ser Um processo inovador precisaremos de mais tempo para a ampliação do time e verificação de novos processos.
 
