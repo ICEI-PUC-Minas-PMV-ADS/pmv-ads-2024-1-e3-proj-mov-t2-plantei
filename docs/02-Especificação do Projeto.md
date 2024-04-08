@@ -40,7 +40,7 @@ Começaremos com a tela de cadastro e inserção de dados.
 ![Processo 1](img/Gerenciamento-de-Usuário.png)
 
 ### Processo 2 – Processo de gerenciamento de Planta
-![Processo 1](img/Gerenciamento-de-Plantas.png)
+![Processo 1](img/Gerenciamento-de-Planta.png)
 
 ### Processo 3 - Gerenciameto de tarefas
 ![Processo 1](img/Gerenciamento-de-Tarefas.png)
