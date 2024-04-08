@@ -30,25 +30,20 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 ### Análise da Situação Atual
 
-Modelo esta em processo de inovar o mundo dos criadores de plantas ulitilizaremos o Modelo BPMN para tentar mostrar de forma macro o projeto.
+Este modelo tem como objetivo revolucionar o universo dos amantes de plantas. Através da aplicação do Modelo BPMN, apresentamos uma visão geral do projeto, mapeando seus principais processos e funcionalidades, com o intuito de proporcionar uma experiência completa e intuitiva para o usuário.
 
-
-### Processo 1 – Gerenciamento de usuário
-
-Começaremos com a tela de cadastro e inserção de dados.
+#### Processo 1 – Gerenciamento de usuário
 
 ![Processo 1](img/Gerenciamento-de-Usuário.png)
 
-### Processo 2 – Processo de gerenciamento de Planta
+#### Processo 2 – Processo de gerenciamento de Planta
 ![Processo 1](img/Gerenciamento-de-Planta.png)
 
-### Processo 3 - Gerenciameto de tarefas
+#### Processo 3 - Gerenciameto de tarefas
 ![Processo 1](img/Gerenciamento-de-Tarefas.png)
 
-### Processo 4 - Verificação  de artigos
+#### Processo 4 - Verificação  de artigos
 ![Porcesso](img/Verificação-de-artigos.png)
-
-Por ser Um processo inovador precisaremos de mais tempo para a ampliação do time e verificação de novos processos.
 
 ### Indicadores de desempenho para o Aplicativo de Gerenciamento de Plantas Domésticas
 
