@@ -9,6 +9,7 @@ export default {
   colors: {
     ...MD3LightTheme.colors,
     primary: "rgb(65, 162, 89)",
+    surfaceTint: "rgb(43, 136, 69)",
     onPrimary: "rgb(255, 255, 255)",
     primaryContainer: "rgb(157, 248, 152)",
     onPrimaryContainer: "rgb(0, 34, 4)",
