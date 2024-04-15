@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import InputSpinner from 'react-native-input-spinner';
 
-import theme from "../style/Theme"
+import Theme from "../style/Theme"
 
 export default function InputNumberSpinner() {
   return (
@@ -12,7 +12,7 @@ export default function InputNumberSpinner() {
       buttonStyle={styles.button}
       inputStyle={styles.input}
       rounded={false}
-      buttonTextColor={theme.colors.outlineVariant}
+      buttonTextColor={Theme.colors.outlineVariant}
       onChange={(num) => {
         console.log(num);
       }}
@@ -24,20 +24,20 @@ const styles = StyleSheet.create({
   container: {
     width: 124,
     borderWidth: 1,
-    borderColor: theme.colors.outlineVariant,
+    borderColor: Theme.colors.outlineVariant,
   },
 
   button: {
     width: 33,
-    backgroundColor: '#fff',
-    borderColor: theme.colors.outlineVariant,
-    color: theme.colors.outlineVariant,
+    backgroundColor: Theme.colors.background,
+    borderColor: Theme.colors.outlineVariant,
+    color: Theme.colors.outlineVariant,
     borderRadius: 4
   },
 
   input: {
     borderLeftWidth: 1,
     borderRightWidth: 1,
-    borderColor: theme.colors.outlineVariant,
+    borderColor: Theme.colors.outlineVariant,
   }
 });

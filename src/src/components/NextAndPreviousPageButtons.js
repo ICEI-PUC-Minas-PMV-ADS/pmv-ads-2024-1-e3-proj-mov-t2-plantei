@@ -1,19 +1,22 @@
 import { View, StyleSheet } from 'react-native';
 import { Button } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
 
-export default function TwoButtonsHorizontally() {
+export default function NextAndPreviousPageButtons({ nextPage }) {
+  const { navigate, canGoBack, goBack } = useNavigation()
+
   return (
     <View style={styles.container}>
       <Button
         style={styles.button}
         mode="contained-tonal"
-        onPress={() => console.log('Pressed')}>
+        onPress={() => canGoBack() && goBack()}>
         Voltar
       </Button>
       <Button
         style={styles.button}
         mode="contained"
-        onPress={() => console.log('Pressed')}>
+        onPress={() => nextPage && navigate(nextPage)}>
         Próximo
       </Button>
     </View>

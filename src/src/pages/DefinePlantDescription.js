@@ -3,14 +3,14 @@ import { Text, TextInput } from 'react-native-paper';
 
 import NavigationBar from '../components/NavigationBar';
 import ThreeSteps from '../components/ThreeSteps';
-import TwoButtonsHorizontally from '../components/TwoButtonsHorizontally';
+import NextAndPreviousPageButtons from '../components/NextAndPreviousPageButtons';
 
 import Theme from '../style/Theme';
 
 export default function DefinePlantDescription() {
   return (
     <>
-      <NavigationBar />
+      <NavigationBar title="Cadastrar planta personalizada" />
 
       <View style={styles.container}>
         <View style={styles.content}>
@@ -25,7 +25,7 @@ export default function DefinePlantDescription() {
           />
           <Text style={styles.exampleText}>Exemplo: Adora uma temperatura amena e iluminação indireta.</Text>
         </View>
-        <TwoButtonsHorizontally />
+        <NextAndPreviousPageButtons nextPage={'DefineFrequencyOfTasks'} />
       </View>
     </>
   );
@@ -55,7 +55,6 @@ const styles = StyleSheet.create({
 
   input: {
     height: 140,
-    backgroundColor: '#fff',
     borderColor: Theme.colors.outlineVariant,
   },
 

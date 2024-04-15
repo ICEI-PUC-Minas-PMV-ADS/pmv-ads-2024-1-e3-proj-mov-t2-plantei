@@ -1,7 +1,7 @@
 import { View, StyleSheet } from 'react-native';
 import { Text } from 'react-native-paper';
 
-import theme from "../style/Theme"
+import Theme from "../style/Theme"
 
 export default function ThreeSteps({ currentStep }) {
   return (
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     top: '50%',
     width: '100%',
     height: 1,
-    backgroundColor: theme.colors.secondaryContainer,
+    backgroundColor: Theme.colors.secondaryContainer,
   },
 
   steps: {
@@ -47,15 +47,15 @@ const StepsCompleted = StyleSheet.compose(
   styles.steps,
   {
     color: '#fff',
-    backgroundColor: theme.colors.primary,
+    backgroundColor: Theme.colors.primary,
   }
 )
 
 const PendingSteps = StyleSheet.compose(
   styles.steps,
   {
-    color: theme.colors.outline,
-    backgroundColor: theme.colors.secondaryContainer,
+    color: Theme.colors.outline,
+    backgroundColor: Theme.colors.secondaryContainer,
   }
 )
 

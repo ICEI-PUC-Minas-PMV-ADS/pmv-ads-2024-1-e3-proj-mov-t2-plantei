@@ -4,7 +4,7 @@ import { Text } from 'react-native-paper';
 import NavigationBar from '../components/NavigationBar';
 import ThreeSteps from '../components/ThreeSteps';
 import InputNumberSpinner from '../components/InputNumberSpinner';
-import TwoButtonsHorizontally from '../components/TwoButtonsHorizontally';
+import NextAndPreviousPageButtons from '../components/NextAndPreviousPageButtons';
 
 import WaterIcon from "../../assets/water-icon.svg";
 import LeafIcon from "../../assets/leaf-icon.svg";
@@ -15,7 +15,7 @@ import Theme from "../style/Theme"
 export default function DefineFrequencyOfTasks() {
   return (
     <>
-      <NavigationBar />
+      <NavigationBar title="Cadastrar planta personalizada" />
       
       <View style={styles.container}>
         <View style={styles.content}>
@@ -57,7 +57,7 @@ export default function DefineFrequencyOfTasks() {
             </View>
           </View>
         </View>
-        <TwoButtonsHorizontally />
+        <NextAndPreviousPageButtons />
       </View>
     </>
   );

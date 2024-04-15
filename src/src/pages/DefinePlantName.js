@@ -3,7 +3,7 @@ import { Text, TextInput } from 'react-native-paper';
 
 import NavigationBar from '../components/NavigationBar';
 import ThreeSteps from '../components/ThreeSteps';
-import TwoButtonsHorizontally from '../components/TwoButtonsHorizontally';
+import NextAndPreviousPageButtons from '../components/NextAndPreviousPageButtons';
 
 import Plant from "../../assets/generic-plant.svg";
 
@@ -12,7 +12,7 @@ import Theme from '../style/Theme';
 export default function DefinePlantName() {
   return (
     <>
-      <NavigationBar />
+      <NavigationBar title="Cadastrar planta personalizada" />
 
       <View style={styles.container}>
         <View style={styles.content}>
@@ -30,7 +30,7 @@ export default function DefinePlantName() {
             <Plant width={91} height={198} />
           </View>
         </View>
-        <TwoButtonsHorizontally />
+        <NextAndPreviousPageButtons nextPage={'DefinePlantDescription'} />
       </View>
     </>
   );
@@ -60,7 +60,6 @@ const styles = StyleSheet.create({
 
   input: {
     paddingVertical: 4,
-    backgroundColor: '#fff',
     borderColor: Theme.colors.outlineVariant,
   },
 
