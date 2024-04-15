@@ -7,11 +7,7 @@ import {
   Button,
 } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Welcome from './src/pages/Welcome';
-import DefinePlantName from './src/pages/DefinePlantName';
-import Home from './src/pages/Home';
-import MyFutureTasks from './src/pages/MyFutureTasks';
-
+import Routes from './src/Routes';
 
 import Theme from './src/style/Theme';
 
@@ -20,7 +16,7 @@ const theme = Theme;
 const App = () => (
   <Provider theme={theme}>
     <SafeAreaView style={{ flex: 1 }}>
-      <Home />
+      <Routes />
     </SafeAreaView>
   </Provider>
 );
