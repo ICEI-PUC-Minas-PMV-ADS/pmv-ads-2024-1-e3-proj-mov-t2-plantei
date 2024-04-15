@@ -57,26 +57,26 @@ export default function Home() {
         </Text>
         <View style={[styles.cardGroup, { marginTop: 30 }]}>
           <View style={[styles.card, { marginRight: 10 }]}>
-            <ProductCard />
+            <ProductCard image={<PlantCard />} text="Nova Planta" />
           </View>
           <View style={styles.card}>
-            <ProductCard />
+            <ProductCard image={<PlantCard />} text="Nova Planta" />
           </View>
         </View>
         <View style={[styles.cardGroup, { marginTop: 10 }]}>
           <View style={[styles.card, { marginRight: 10 }]}>
-            <ProductCard />
+            <ProductCard image={<PlantCard />} text="Nova Planta" />
           </View>
           <View style={styles.card}>
-            <ProductCard />
+            <ProductCard image={<PlantCard />} text="Nova Planta" />
           </View>
         </View>
         <View style={[styles.cardGroup, { marginTop: 10 }]}>
           <View style={[styles.card, { marginRight: 10 }]}>
-            <ProductCard />
+            <ProductCard image={<PlantCard />} text="Nova Planta" />
           </View>
           <View style={styles.card}>
-            <ProductCard />
+            <ProductCard image={<PlantCard />} text="Nova Planta" />
           </View>
         </View>
       </View>
@@ -131,8 +131,7 @@ const styles = StyleSheet.create({
   },
 
   card:{
-    maxWidth: '50%',
-    minWidth: '50%'
+    flex: 1,
   },
 
   cardGroup:{
