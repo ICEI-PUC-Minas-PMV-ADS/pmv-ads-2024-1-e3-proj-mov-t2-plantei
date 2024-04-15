@@ -9,7 +9,7 @@ export default function MyFutureTasks() {
   return (
     <View style={styles.container}>
       {/* Navigation bar */}
-      <NavigationBar title="Minhas Plantas" />
+      <NavigationBar title="Minhas Tarefas" />
       
       {/* Main content */}
       <View style={styles.content}>
