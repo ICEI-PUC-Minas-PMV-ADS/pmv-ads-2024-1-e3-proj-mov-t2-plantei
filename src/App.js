@@ -10,6 +10,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import Welcome from './src/pages/Welcome';
 import DefinePlantName from './src/pages/DefinePlantName';
 import Home from './src/pages/Home';
+import MyFutureTasks from './src/pages/MyFutureTasks';
+
 
 import Theme from './src/style/Theme';
 
