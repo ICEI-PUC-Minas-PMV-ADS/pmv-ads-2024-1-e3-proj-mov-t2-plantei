@@ -1,12 +1,13 @@
 import { View, StyleSheet, Image, useWindowDimensions } from 'react-native';
 import { Text, Button } from 'react-native-paper';
 
+
 export default function Welcome() {
 
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <Text variant="displaySmall" style={styles.title}>
+        <Text variant="headlineLarge" style={styles.title}>
           Cuide{'\n'}de suas plantas{'\n'}de forma fácil!
         </Text>
         <Image
@@ -40,7 +41,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    padding: 20,
+    padding: 30,
   },
 
     content: {
