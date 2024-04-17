@@ -1,41 +1,49 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Text, Button } from 'react-native-paper';
+import React from "react";
+import { View, StyleSheet } from "react-native";
+import { Text, Button } from "react-native-paper";
 
-import NavigationBar from '../components/NavigationBar';
-import BottomBar from '../components/BottomBar';
+import NavigationBar from "../components/NavigationBar";
+import NavigationBarBottom from "../components/NavigationBarBottom";
+
 
 export default function MyFutureTasks() {
   return (
-    <View style={styles.container}>
-      {/* Navigation bar */}
-      <NavigationContainer>
-        <NavigationBar title={"Minhas tarefas"} />
-      </NavigationContainer>
-      
-      {/* Main content */}
-      <View style={styles.content}>
-        <View style={styles.innerContent}>
-          <Text variant="displayLarge" style={styles.title}>😭</Text>
-          <Text variant="headlineSmall" style={styles.title}>
-            Você ainda não possui{'\n'}plantas cadastradas
-          </Text>
-          <Text variant="bodyMedium" style={styles.subtitle}>Comece seu jardim!{'\n'}Descubra a alegria de cuidar de{'\n'}plantas em seu lar.</Text>
-          <View style={styles.button}>
-            <Button
-              style={styles.buttonPrimary}
-              icon=""
-              mode="contained"
-              onPress={() => console.log('Pressed')}>
-              Quero cadastrar!
-            </Button>
+    <>
+      <View style={styles.container}>
+        {/* Navigation bar */}
+        <View>
+          <NavigationBar title={"Minhas tarefas"} />
+        </View>
+
+        {/* Main content */}
+        <View style={styles.content}>
+          <View style={styles.innerContent}>
+            <Text variant="displayLarge" style={styles.title}>
+              😭
+            </Text>
+            <Text variant="headlineSmall" style={styles.title}>
+              Você ainda não possui{"\n"}plantas cadastradas
+            </Text>
+            <Text variant="bodyMedium" style={styles.subtitle}>
+              Comece seu jardim!{"\n"}Descubra a alegria de cuidar de{"\n"}
+              plantas em seu lar.
+            </Text>
+            <View style={styles.button}>
+              <Button
+                style={styles.buttonPrimary}
+                icon=""
+                mode="contained"
+                onPress={() => console.log("Pressed")}
+              >
+                Quero cadastrar!
+              </Button>
+            </View>
           </View>
         </View>
       </View>
 
-      {/* Bottom bar */}
-      <BottomBar />
-    </View>
+      <NavigationBarBottom />
+    </>
   );
 }
 
@@ -48,21 +56,21 @@ const styles = StyleSheet.create({
   },
   innerContent: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     padding: 20,
   },
   title: {
     marginBottom: 40,
-    fontWeight: 'bold',
-    textAlign: 'center',
+    fontWeight: "bold",
+    textAlign: "center",
   },
   subtitle: {
     marginBottom: 40,
-    textAlign: 'center',
+    textAlign: "center",
   },
   button: {
-    width: '100%',
+    width: "100%",
   },
   buttonPrimary: {
     marginBottom: 10,
