@@ -7,6 +7,7 @@ import DefineFrequencyOfTasks from "./pages/DefineFrequencyOfTasks";
 import Home from "./pages/Home";
 import Welcome from "./pages/Welcome";
 import MyFutureTasks from "./pages/MyFutureTasks";
+import EmptyPlants from "./pages/EmptyPlants";
 
 import Theme from "./style/Theme";
 
@@ -16,7 +17,7 @@ export default function Routes() {
   return (
     <NavigationContainer theme={Theme}>
       <Navigator
-        initialRouteName="DefinePlantName"
+        initialRouteName="EmptyPlants"
         screenOptions={{
           headerShown: false,
         }}>
@@ -26,6 +27,7 @@ export default function Routes() {
         <Screen name="DefinePlantDescription" component={DefinePlantDescription} />
         <Screen name="DefineFrequencyOfTasks" component={DefineFrequencyOfTasks} />
         <Screen name="MyFutureTasks" component={MyFutureTasks} />
+        <Screen name="EmptyPlants" component={EmptyPlants} />
       </Navigator>
     </NavigationContainer>
   )
