@@ -16,7 +16,7 @@ export default function Routes() {
   return (
     <NavigationContainer theme={Theme}>
       <Navigator
-        initialRouteName="Welcome"
+        initialRouteName="DefinePlantName"
         screenOptions={{
           headerShown: false,
         }}>
