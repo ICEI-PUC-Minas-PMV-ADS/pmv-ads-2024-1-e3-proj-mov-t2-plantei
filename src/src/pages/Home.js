@@ -15,7 +15,6 @@ import Article from "../../assets/article-icon.svg";
 import PlantCard from "../../assets/plant1.svg";
 import ProductCard from "../components/ProductCard";
 import NavigationBarBottom from "../components/NavigationBarBottom";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Home() {
   return (
