@@ -39,28 +39,25 @@ Este guia visual ilustra o fluxo de navegação do aplicativo, detalhando os pri
 #### 1. Cadastro, Login e Recuperação de Senha:
 ![Figura](./img/06-fluxo-cadastro-login.png) 
 
-#### 2. Adicionar uma Planta Pré-Cadastrada:
-![Figura](./img/06-fluxo-planta-pre-cadastrada.png) 
-
-#### 3. Adicionar uma Planta Personalizada:
+#### 2. Adicionar uma Planta:
 ![Figura](./img/06-fluxo-planta-personalizada.png) 
 
-#### 4. Editar Planta:
+#### 3. Editar Planta:
 ![Figura](./img/06-fluxo-editar-planta.png) 
 
-#### 5. Visualizar Futuras Tarefas de uma Planta:
+#### 4. Visualizar Futuras Tarefas de uma Planta:
 ![Figura](./img/06-fluxo-futuras-tarefas-1.png) 
 
-#### 6. Excluir Plantas:
+#### 5. Excluir Plantas:
 ![Figura](./img/06-fluxo-excluir-planta.png) 
 
-#### 7. Futuras Tarefas:
+#### 6. Futuras Tarefas:
 ![Figura](./img/06-fluxo-futuras-tarefas.png) 
 
-#### 8. Configurações:
+#### 7. Configurações:
 ![Figura](./img/06-fluxo-config.png) 
 
-#### 9. Acessar Artigos:
+#### 8. Acessar Artigos:
 ![Figura](./img/06-fluxo-artigo.png)
 
 <!-- 
