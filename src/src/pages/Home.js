@@ -95,7 +95,8 @@ export default function Home() {
         </View>
       </ScrollView>
 
-      <NavigationBarBottom />
+      
+      <NavigationBarBottom/>
     </>
   );
 }

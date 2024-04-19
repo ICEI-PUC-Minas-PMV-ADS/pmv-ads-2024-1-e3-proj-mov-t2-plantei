@@ -1,8 +1,7 @@
 import * as React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, BoxShadow } from "react-native";
 import { BottomNavigation, Text } from "react-native-paper";
 import Theme from "../style/Theme";
-import { BoxShadow } from "react-native-shadow";
 
 const HomeRoute = () => <Text></Text>;
 
@@ -39,7 +38,7 @@ const NavigationBarBottom = () => {
       navigationState={{ index, routes }}
       onIndexChange={setIndex}
       renderScene={renderScene}
-      barStyle={{ backgroundColor: Theme.colors.secondaryContainer }}
+      barStyle={styles.bar}
       activeColor={Theme.colors.primary}
       style={styles.fixed}
     />
@@ -47,6 +46,13 @@ const NavigationBarBottom = () => {
 };
 
 const styles = StyleSheet.create({
+
+  bar:{
+    backgroundColor: Theme.colors.background,
+    borderTopWidth: 1,
+    borderColor: Theme.colors.outlineVariant,
+  },
+
   fixed: {
     position: "absolute",
     left: 0,
