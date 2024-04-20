@@ -3,9 +3,9 @@ import { Text } from "react-native-paper";
 
 import NavigationBarBottom from "../components/NavigationBarBottom";
 import NavigationBar from "../components/NavigationBar";
-import ProductCardId from "../components/ProductCardId";
+import ProductCardCategory from "../components/ProductCardCategory";
 
-import PlantCard from "../../assets/plant1.svg";
+import Plant from "../../assets/plant1.svg";
 
 export default function MyPlants() {
   return (
@@ -18,16 +18,13 @@ export default function MyPlants() {
             Lista das minhas plantas
           </Text>
           <View style={{ marginBottom: 10 }}>
-            <ProductCardId image={<PlantCard />} text="Nova Planta" id="#001" />
+            <ProductCardCategory image={<Plant width={40} />} text="Nome da planta" category="Peperômia" />
           </View>
           <View style={{ marginBottom: 10 }}>
-            <ProductCardId image={<PlantCard />} text="Nova Planta" id="#001" />
+            <ProductCardCategory image={<Plant width={40} />} text="Nome da planta" category="Peperômia" />
           </View>
           <View style={{ marginBottom: 10 }}>
-            <ProductCardId image={<PlantCard />} text="Nova Planta" id="#001" />
-          </View>
-          <View style={{ marginBottom: 10 }}>
-            <ProductCardId image={<PlantCard />} text="Nova Planta" id="#001" />
+            <ProductCardCategory image={<Plant width={40} />} text="Nome da planta" category="Peperômia" />
           </View>
         </View>
       </ScrollView>
