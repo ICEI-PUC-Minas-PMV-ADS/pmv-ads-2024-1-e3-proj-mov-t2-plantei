@@ -60,10 +60,11 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 16,
+    marginBottom: 10,
   },
   activeButton: {
-    borderBottomWidth: 1.5,
-    borderColor: "#41A259",
+    borderBottomWidth: 2,
+    borderColor: Theme.colors.primary,
   },
 });
 
