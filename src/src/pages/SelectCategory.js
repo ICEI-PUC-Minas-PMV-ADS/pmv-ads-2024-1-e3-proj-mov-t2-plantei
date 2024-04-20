@@ -11,7 +11,7 @@ import ProductCard from "../components/ProductCard";
 import NavigationBarBottom from "../components/NavigationBarBottom";
 import NavigationBar from "../components/NavigationBar";
 
-export default function Home() {
+export default function SelectCategory() {
   return (
     <>
           <NavigationBar title="Adicionar Planta" />
