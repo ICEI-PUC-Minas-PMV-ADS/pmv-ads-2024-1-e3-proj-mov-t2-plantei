@@ -1,35 +1,46 @@
 import React, { useState } from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
+import { View, Text, TouchableHighlight, StyleSheet } from "react-native";
+import Theme from "../style/Theme";
 
 const NavigationBarMiddle = () => {
   const [activeButton, setActiveButton] = useState("Planta");
 
   return (
     <View style={styles.container}>
-      <View
+      <TouchableHighlight
         style={[
           styles.buttonContainer,
           activeButton === "Planta" && styles.activeButton,
         ]}
+        underlayColor="transparent"
+        onPress={() => setActiveButton("Planta")}
       >
-        <Button
-          title="Planta"
-          color="#516351"
-          onPress={() => setActiveButton("Planta")}
-        />
-      </View>
-      <View
+        <Text
+          style={[
+            styles.buttonText,
+            { color: activeButton === "Planta" ? "#41A259" : "black" },
+          ]}
+        >
+          Planta
+        </Text>
+      </TouchableHighlight>
+      <TouchableHighlight
         style={[
           styles.buttonContainer,
           activeButton === "Período" && styles.activeButton,
         ]}
+        underlayColor="transparent"
+        onPress={() => setActiveButton("Período")}
       >
-        <Button
-          title="Período"
-          color="#516351"
-          onPress={() => setActiveButton("Período")}
-        />
-      </View>
+        <Text
+          style={[
+            styles.buttonText,
+            { color: activeButton === "Período" ? "#41A259" : "black" },
+          ]}
+        >
+          Período
+        </Text>
+      </TouchableHighlight>
     </View>
   );
 };
@@ -43,6 +54,12 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flex: 1,
     marginHorizontal: 5,
+    backgroundColor: Theme.colors.background,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  buttonText: {
+    fontSize: 16,
   },
   activeButton: {
     borderBottomWidth: 1.5,
