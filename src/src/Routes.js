@@ -10,6 +10,8 @@ import EmptyTasks from "./pages/EmptyTasks";
 import EmptyPlants from "./pages/EmptyPlants";
 import MyPlants from "./pages/MyPlants";
 import ConfirmPopUp from "./components/ConfirmPopUp";
+import SelectCategory from "./pages/SelectCategory";
+
 
 import Theme from "./style/Theme";
 
@@ -19,7 +21,7 @@ export default function Routes() {
   return (
     <NavigationContainer theme={Theme}>
       <Navigator
-        initialRouteName="MyPlants"
+        initialRouteName="SelectCategory"
         screenOptions={{
           headerShown: false,
         }}>
@@ -32,6 +34,7 @@ export default function Routes() {
         <Screen name="EmptyPlants" component={EmptyPlants} />
         <Screen name="MyPlants" component={MyPlants} />
         <Screen name="ConfirmPopUp" component={ConfirmPopUp} />
+        <Screen name="SelectCategory" component={SelectCategory} />
       </Navigator>
     </NavigationContainer>
   )
