@@ -1,5 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Image from '../../src/assets/generica.png';
 
 import DefinePlantName from "./pages/DefinePlantName";
 import DefinePlantDescription from "./pages/DefinePlantDescription";
@@ -14,8 +15,11 @@ import SelectCategory from "./pages/SelectCategory";
 import ListFutureTasks from "./pages/ListFutureTasks";
 import ListFutureTasksDetails from "./pages/ListFutureTasksDetails";
 import PlantTasks from "./pages/PlantTasks";
+import ConfirmRegistrationPopUp from "./components/ConfirmRegistrationPopUp";
+import ListFutureTasksByPeriod from "./pages/ListFutureTasksbyPeriod";
 
 import Theme from "./style/Theme";
+
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -23,7 +27,7 @@ export default function Routes() {
   return (
     <NavigationContainer theme={Theme}>
       <Navigator
-        initialRouteName="PlantTasks"
+        initialRouteName="ListFutureTasks"
         screenOptions={{
           headerShown: false,
         }}
@@ -50,6 +54,10 @@ export default function Routes() {
           component={ListFutureTasksDetails}
         />
         <Screen name="PlantTasks" component={PlantTasks} />
+        <Screen name="ConfirmRegistrationPopUp">
+          {props => <ConfirmRegistrationPopUp {...props} image={Image} />} 
+          </Screen>
+        <Screen name="ListFutureTasksByPeriod" component={ListFutureTasksByPeriod} />
       </Navigator>
     </NavigationContainer>
   );
