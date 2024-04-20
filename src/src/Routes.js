@@ -11,7 +11,9 @@ import EmptyPlants from "./pages/EmptyPlants";
 import MyPlants from "./pages/MyPlants";
 import ConfirmPopUp from "./components/ConfirmPopUp";
 import SelectCategory from "./pages/SelectCategory";
-
+import ListFutureTasks from "./pages/ListFutureTasks";
+import ListFutureTasksDetails from "./pages/ListFutureTasksDetails";
+import PlantTasks from "./pages/PlantTasks";
 
 import Theme from "./style/Theme";
 
@@ -21,21 +23,34 @@ export default function Routes() {
   return (
     <NavigationContainer theme={Theme}>
       <Navigator
-        initialRouteName="SelectCategory"
+        initialRouteName="PlantTasks"
         screenOptions={{
           headerShown: false,
-        }}>
+        }}
+      >
         <Screen name="Welcome" component={Welcome} />
         <Screen name="Home" component={Home} />
         <Screen name="DefinePlantName" component={DefinePlantName} />
-        <Screen name="DefinePlantDescription" component={DefinePlantDescription} />
-        <Screen name="DefineFrequencyOfTasks" component={DefineFrequencyOfTasks} />
+        <Screen
+          name="DefinePlantDescription"
+          component={DefinePlantDescription}
+        />
+        <Screen
+          name="DefineFrequencyOfTasks"
+          component={DefineFrequencyOfTasks}
+        />
         <Screen name="EmptyTasks" component={EmptyTasks} />
         <Screen name="EmptyPlants" component={EmptyPlants} />
         <Screen name="MyPlants" component={MyPlants} />
         <Screen name="ConfirmPopUp" component={ConfirmPopUp} />
         <Screen name="SelectCategory" component={SelectCategory} />
+        <Screen name="ListFutureTasks" component={ListFutureTasks} />
+        <Screen
+          name="ListFutureTasksDetails"
+          component={ListFutureTasksDetails}
+        />
+        <Screen name="PlantTasks" component={PlantTasks} />
       </Navigator>
     </NavigationContainer>
-  )
+  );
 }
