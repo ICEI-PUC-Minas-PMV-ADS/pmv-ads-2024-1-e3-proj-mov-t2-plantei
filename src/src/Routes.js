@@ -14,6 +14,7 @@ import ConfirmPopUp from "./components/ConfirmPopUp";
 import SelectCategory from "./pages/SelectCategory";
 import ListFutureTasks from "./pages/ListFutureTasks";
 import ListFutureTasksDetails from "./pages/ListFutureTasksDetails";
+import PlantDetails from "./pages/PlantDetails";
 import PlantTasks from "./pages/PlantTasks";
 import ConfirmRegistrationPopUp from "./components/ConfirmRegistrationPopUp";
 import ListFutureTasksByPeriod from "./pages/ListFutureTasksbyPeriod";
@@ -27,7 +28,7 @@ export default function Routes() {
   return (
     <NavigationContainer theme={Theme}>
       <Navigator
-        initialRouteName="ListFutureTasks"
+        initialRouteName="ListFutureTasksByPeriod"
         screenOptions={{
           headerShown: false,
         }}
@@ -58,6 +59,7 @@ export default function Routes() {
           {props => <ConfirmRegistrationPopUp {...props} image={Image} />} 
           </Screen>
         <Screen name="ListFutureTasksByPeriod" component={ListFutureTasksByPeriod} />
+        <Screen name="PlantDetails" component={PlantDetails} />
       </Navigator>
     </NavigationContainer>
   );

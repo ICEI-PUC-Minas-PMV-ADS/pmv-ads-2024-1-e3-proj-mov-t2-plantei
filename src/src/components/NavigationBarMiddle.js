@@ -1,42 +1,52 @@
 import React, { useState } from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
+import { View, Text, TouchableHighlight, StyleSheet } from "react-native";
 import { useNavigation } from '@react-navigation/native';
+import Theme from "../style/Theme";
 
 const NavigationBarMiddle = () => {
-  const navigation = useNavigation(); // Get navigation reference
   const [activeButton, setActiveButton] = useState("Planta");
+  const navigation = useNavigation(); // Get navigation reference
 
   return (
     <View style={styles.container}>
-      <View
+      <TouchableHighlight
         style={[
           styles.buttonContainer,
           activeButton === "Planta" && styles.activeButton,
         ]}
+        underlayColor="transparent"
+        onPress={() => {setActiveButton("Planta");
+        navigation.navigate('ListFutureTasks');
+      }}
       >
-        <Button
-          title="Planta"
-          color="#516351"
-          onPress={() => {setActiveButton("Planta");
-          navigation.navigate('ListFutureTasks');
-        }}
-        />
-      </View>
-      <View
+        <Text
+          style={[
+            styles.buttonText,
+            { color: activeButton === "Planta" ? "#41A259" : "black" },
+          ]}
+        >
+          Planta
+        </Text>
+      </TouchableHighlight>
+      <TouchableHighlight
         style={[
           styles.buttonContainer,
           activeButton === "Período" && styles.activeButton,
         ]}
+        underlayColor="transparent"
+        onPress={() => {setActiveButton("Período");
+        navigation.navigate('ListFutureTasksByPeriod');
+      }}
       >
-        <Button
-          title="Período"
-          color="#516351"
-          onPress={() => {
-            setActiveButton("Período");
-            navigation.navigate('ListFutureTasksByPeriod');
-          }}
-        />
-      </View>
+        <Text
+          style={[
+            styles.buttonText,
+            { color: activeButton === "Período" ? "#41A259" : "black" },
+          ]}
+        >
+          Período
+        </Text>
+      </TouchableHighlight>
     </View>
   );
 };
@@ -50,10 +60,17 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flex: 1,
     marginHorizontal: 5,
+    backgroundColor: Theme.colors.background,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  buttonText: {
+    fontSize: 16,
+    marginBottom: 10,
   },
   activeButton: {
-    borderBottomWidth: 1.5,
-    borderColor: "#41A259",
+    borderBottomWidth: 2,
+    borderColor: Theme.colors.primary,
   },
 });
 
