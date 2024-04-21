@@ -168,7 +168,7 @@ A equipe fará o gerenciamento do tempo a partir de "Issues" e "Milestones". Par
 
 Utilizando o recurso "Projects" foi feita a organização das tarefas em Backlogs específicos para cada Sprint, proporcionando clareza e visibilidade do progresso do projeto. Os Backlogs de cada etapa foram iniciados e terão incrementos ao longo do projeto. Para acessar o painel [clique aqui](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/783/views/1).
 
-![Milestones](img/02-gerenciamento-projeto.png)
+![Milestones](img/02-kaban.png)
 
 Para melhor visualização do período em que cada etapa e tarefa deve ser entregue, foi feito um painel com base no diagrama de Gantt. Para ter acesso completo [clique aqui](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/783/views/7).
 ![Gerenciamento por período](img/02-gerenciamento-por-periodo.png)
@@ -178,7 +178,7 @@ Para melhor visualização do período em que cada etapa e tarefa deve ser entre
 ## Gerenciamento de Equipe
 
 Para atingir as metas estabelecidas para o projeto, é fundamental um gerenciamento e pessoas que motive e capacite a equipe a trabalhar de forma coesa e eficiente. Com base nisso, foi criado um painel que oferece uma visão completa de todos os membros da equipe e suas tarefas, facilitando o acompanhamento do progresso individual e do projeto como um todo. Para acessar o painel completo [clique aqui](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/783/views/8).
-![Gerenciamento de equipe](img/02-gerenciamento-pessoas.png)
+![Gerenciamento de equipe](img/02-contribuicoes.png)
 
 A organização da equipe está apresentada conforme abaixo:
 
