@@ -25,6 +25,7 @@ export default function ListFutureTasksDetails() {
               image={<Plant width={40} />}
               text="Nome da planta"
               category="Peperômia"
+              showArrow={false}
             />
           </View>
           <View style={{ marginBottom: 10 }}>
