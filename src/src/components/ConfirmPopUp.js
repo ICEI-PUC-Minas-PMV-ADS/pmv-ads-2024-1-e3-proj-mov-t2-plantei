@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Modal, Text, View, StyleSheet, TouchableOpacity } from "react-native";
-import Theme from "../style/Theme";
+import { Modal, View, StyleSheet, TouchableOpacity } from "react-native";
+import { Text, Button } from "react-native-paper";
 
 const ConfirmPopUp = () => {
   const [modalVisible, setModalVisible] = useState(true);
@@ -17,29 +17,39 @@ const ConfirmPopUp = () => {
       >
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
-            <Text style={styles.titleConfirm}>
-              Confirmar conclusão da tarefa
+            <Text
+              style={[{ fontWeight: "bold" }, { marginBottom: 10 }]}
+              variant="titleLarge"
+            >
+              Confirmar conclusão{"\n"}da tarefa
             </Text>
-            <Text style={styles.title}>
+            <Text style={{ marginBottom: 10 }} variant="bodyMedium">
               Ao confirmar, uma nova tarefa será gerada com uma próxima data.
             </Text>
-            <Text style={styles.titlebold2}>Essa ação é irreversível.</Text>
-            <Text style={styles.titlebold}>
+            <Text
+              style={[{ fontWeight: "bold" }, { marginBottom: 10 }]}
+              variant="bodyMedium"
+            >
+              Essa ação é irreversível.
+            </Text>
+            <Text style={{ fontWeight: "bold" }} variant="bodyMedium">
               Deseja realmente concluir a tarefa?
             </Text>
             <View style={styles.buttonContainer}>
-              <TouchableOpacity
+              <Button
                 onPress={() => setModalVisible(!modalVisible)}
-                style={[styles.button, { backgroundColor: "#f5f5f5" }]}
+                style={styles.button}
+                mode="contained-tonal"
               >
-                <Text style={styles.buttonTextC}>Cancelar</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
+                Cancelar
+              </Button>
+              <Button
                 onPress={() => setModalVisible(!modalVisible)}
-                style={[styles.button, { backgroundColor: "#5bb551" }]}
+                style={styles.button}
+                mode="contained"
               >
-                <Text style={styles.buttonText}>Confirmar</Text>
-              </TouchableOpacity>
+                Confirmar
+              </Button>
             </View>
           </View>
         </View>
@@ -54,66 +64,33 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+
   modalContainer: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
+
   modalContent: {
     backgroundColor: "white",
     marginHorizontal: 15,
     borderRadius: 25,
     alignItems: "center",
-    paddingVertical: 35,
+    padding: 30,
+    alignItems: "flex-start",
   },
-  titleConfirm: {
-    textAlign: "left",
-    color: "grey",
-    fontSize: 24,
-    marginVertical: 10,
-    fontWeight: "bold",
-  },
-  title: {
-    color: Theme.colors.secondary,
-    alignSelf: "flex-start",
-    marginHorizontal: 31,
-    fontSize: 14,
-  },
+
   buttonContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
     marginTop: 20,
+    flexDirection: "row",
+    columnGap: 9,
+    width: "100%",
+    alignSelf: "center",
   },
+
   button: {
-    paddingVertical: 13,
-    paddingHorizontal: 33,
-    borderRadius: 30,
-    alignItems: "center",
-    marginHorizontal: 8,
-  },
-  buttonText: {
-    color: "white",
-    fontSize: 16,
-  },
-  buttonTextC: {
-    color: "gray",
-    fontSize: 16,
-  },
-  titlebold2: {
-    fontSize: 14,
-    fontWeight: "bold",
-    color: "gray",
-    marginVertical: 10,
-    marginHorizontal: 31,
-    textAlign: "left",
-    alignSelf: "flex-start",
-  },
-  titlebold: {
-    fontWeight: "bold",
-    color: "grey",
-    alignSelf: "flex-start",
-    marginHorizontal: 31,
+    flex: 1,
   },
 });
 

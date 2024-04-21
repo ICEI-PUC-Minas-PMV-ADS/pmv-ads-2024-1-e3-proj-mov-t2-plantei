@@ -27,10 +27,10 @@ export default function ListFutureTasksDetails() {
             <FertilizeAlert image={<Leaf width={40} />} text="Nome da planta" />
           </View>
           <View style={{ marginBottom: 10 }}>
-            <VaseAlert image={<Vase width={40} />} text="Trocar vaso" />
+            <VaseAlert image={<Vase width={40} />} text="Nome da planta" />
           </View>
           <View style={{ marginBottom: 10 }}>
-            <VaseAlert image={<Vase width={40} />} text="Trocar vaso" />
+            <VaseAlert image={<Vase width={40} />} text="Nome da planta" />
           </View>
         </View>
       </ScrollView>
