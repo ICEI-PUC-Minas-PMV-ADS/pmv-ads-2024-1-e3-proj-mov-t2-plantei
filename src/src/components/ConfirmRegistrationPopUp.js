@@ -1,7 +1,13 @@
 import React, { useState } from "react";
-import { Modal, Text, View, StyleSheet, TouchableOpacity, Image} from "react-native";
+import {
+  Modal,
+  Text,
+  View,
+  StyleSheet,
+  Image,
+} from "react-native";
+import { Button } from "react-native-paper";
 import Theme from "../style/Theme";
-
 
 export default function ConfirmRegistrationPopUp({ image }) {
   const [modalVisible, setModalVisible] = useState(true);
@@ -20,26 +26,36 @@ export default function ConfirmRegistrationPopUp({ image }) {
           <View style={styles.modalContent}>
             {image && (
               <View style={styles.imageContainer} resizeMode="contain">
-                <Image source={image} style={styles.plantImage}resizeMode="contain"/>
+                <Image
+                  source={image}
+                  style={styles.plantImage}
+                  resizeMode="contain"
+                />
               </View>
             )}
-            <Text style={styles.title}>
-              Planta cadastrada com sucesso!
-            </Text>
+            <Text style={styles.title}>Planta cadastrada com sucesso!</Text>
             <View style={styles.buttonContainer}>
-              <TouchableOpacity
-                onPress={() => setModalVisible(!modalVisible)}
-                style={[styles.button, { backgroundColor: "#41A259" }]}
-              >
-                <Text style={styles.buttonText}>Tudo certo!</Text>
-              </TouchableOpacity>
+                <Button
+                  style={styles.button}
+                  mode="contained-tonal"
+                  onPress={() => setModalVisible(!modalVisible)}
+                >
+                  Cancelar
+                </Button>
+                <Button
+                  style={styles.button}
+                  mode="contained"
+                  onPress={() => setModalVisible(!modalVisible)}
+                  >
+                  Confirmar
+                </Button>
             </View>
           </View>
         </View>
       </Modal>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -58,39 +74,36 @@ const styles = StyleSheet.create({
     marginHorizontal: 25,
     borderRadius: 25,
     alignItems: "center",
-    paddingVertical: 35,
+    padding: 30,
   },
+
   imageContainer: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
   },
+
   plantImage: {
     width: "144",
     alignSelf: "flex-start",
     aspectRatio: 1,
-    marginBottom: 20
+    marginBottom: 20,
   },
   title: {
     color: Theme.colors.secondary,
-    alignSelf: "flex-start",
-    marginHorizontal: 31,
+    textAlign: "center",
+    marginHorizontal: 30,
     fontSize: 16,
   },
   buttonContainer: {
+    marginTop: 20,
     flexDirection: "row",
-    justifyContent: "center",
-    marginTop: 35,
+    columnGap: 9,
+    width: "100%",
+    alignSelf: "center",
   },
+
   button: {
-    paddingVertical: 13,
-    paddingHorizontal: 70,
-    borderRadius: 30,
-    alignItems: "center",
-    marginHorizontal: 8,
-  },
-  buttonText: {
-    color: "white",
-    fontSize: 16,
+    flex: 1,
   },
 });

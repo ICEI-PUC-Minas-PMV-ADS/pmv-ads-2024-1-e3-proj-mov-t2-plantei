@@ -28,7 +28,7 @@ export default function Routes() {
   return (
     <NavigationContainer theme={Theme}>
       <Navigator
-        initialRouteName="ListFutureTasksByPeriod"
+        initialRouteName="ConfirmRegistrationPopUp"
         screenOptions={{
           headerShown: false,
         }}

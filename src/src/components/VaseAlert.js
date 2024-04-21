@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { View, StyleSheet, Switch } from "react-native";
 import { Text, Divider } from "react-native-paper";
-import Theme from "../style/Theme";
 
-export default function VaseAlert({ image, text, category, showArrow = true }) {
+export default function VaseAlert({ image, text}) {
   const [isEnabled, setIsEnabled] = useState(false);
 
   const toggleSwitch = () => {
@@ -29,9 +28,8 @@ export default function VaseAlert({ image, text, category, showArrow = true }) {
             {image}
             <View>
               <Text style={{ marginRight: 12 }} variant="titleMedium">
-                {text}
+                Trocar vaso {text}
               </Text>
-              <Text style={styles.subtitle}>Nome da planta</Text>
             </View>
           </View>
         </View>
@@ -52,7 +50,7 @@ export default function VaseAlert({ image, text, category, showArrow = true }) {
               onValueChange={toggleSwitch}
               value={isEnabled}
             />
-            <Text style={{ marginRight: 12 }} variant="titleSmall">
+            <Text style={{ marginRight: 12 }} variant="bodySmall">
               Marque como concluído quando{"\n"}finalizar a tarefa!
             </Text>
           </View>

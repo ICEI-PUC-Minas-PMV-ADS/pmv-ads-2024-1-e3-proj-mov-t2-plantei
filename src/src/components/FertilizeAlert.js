@@ -1,14 +1,8 @@
 import React, { useState } from "react";
 import { View, StyleSheet, Switch } from "react-native";
 import { Text, Divider } from "react-native-paper";
-import Theme from "../style/Theme";
 
-export default function FertilizeAlert({
-  image,
-  text,
-  category,
-  showArrow = true,
-}) {
+export default function FertilizeAlert({ image, text}) {
   const [isEnabled, setIsEnabled] = useState(false);
 
   const toggleSwitch = () => {
@@ -32,9 +26,11 @@ export default function FertilizeAlert({
             }}
           >
             {image}
-            <Text style={{ marginRight: 12 }} variant="titleMedium">
-              {text}
-            </Text>
+            <View>
+              <Text style={{ marginRight: 12 }} variant="titleMedium">
+                Fertilizar {text}
+              </Text>
+            </View>
           </View>
         </View>
         <Divider />
@@ -54,7 +50,7 @@ export default function FertilizeAlert({
               onValueChange={toggleSwitch}
               value={isEnabled}
             />
-            <Text style={{ marginRight: 12 }} variant="titleSmall">
+            <Text style={{ marginRight: 12 }} variant="bodySmall">
               Marque como concluído quando{"\n"}finalizar a tarefa!
             </Text>
           </View>
@@ -82,7 +78,10 @@ const styles = StyleSheet.create({
   },
 
   cardContent: {
-    flexDirection: "row",
-    alignItems: "center",
+    alignItems: "start",
+  },
+  subtitle: {
+    fontSize: 14,
+    color: "gray",
   },
 });
