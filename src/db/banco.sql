@@ -1,3 +1,4 @@
+-- Os scripts DDL abaixo foram feitos para o SGBD SQLite.
 BEGIN TRANSACTION;
 CREATE TABLE IF NOT EXISTS "artigos" (
 	"id"	INTEGER NOT NULL,
