@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { View, Text, TouchableHighlight, StyleSheet } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 import Theme from "../style/Theme";
 
 const NavigationBarMiddle = () => {
   const [activeButton, setActiveButton] = useState("Planta");
+  const navigation = useNavigation(); // Get navigation reference
 
   return (
     <View style={styles.container}>
@@ -13,7 +15,9 @@ const NavigationBarMiddle = () => {
           activeButton === "Planta" && styles.activeButton,
         ]}
         underlayColor="transparent"
-        onPress={() => setActiveButton("Planta")}
+        onPress={() => {setActiveButton("Planta");
+        navigation.navigate('ListFutureTasks');
+      }}
       >
         <Text
           style={[
@@ -30,7 +34,9 @@ const NavigationBarMiddle = () => {
           activeButton === "Período" && styles.activeButton,
         ]}
         underlayColor="transparent"
-        onPress={() => setActiveButton("Período")}
+        onPress={() => {setActiveButton("Período");
+        navigation.navigate('ListFutureTasksByPeriod');
+      }}
       >
         <Text
           style={[
