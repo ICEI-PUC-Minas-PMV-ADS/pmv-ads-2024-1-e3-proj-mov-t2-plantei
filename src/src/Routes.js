@@ -18,9 +18,9 @@ import PlantDetails from "./pages/PlantDetails";
 import PlantTasks from "./pages/PlantTasks";
 import ConfirmRegistrationPopUp from "./components/ConfirmRegistrationPopUp";
 import ListFutureTasksByPeriod from "./pages/ListFutureTasksbyPeriod";
+import EditProfile from "./pages/EditProfile";
 
 import Theme from "./style/Theme";
-
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -56,10 +56,11 @@ export default function Routes() {
         />
         <Screen name="PlantTasks" component={PlantTasks} />
         <Screen name="ConfirmRegistrationPopUp">
-          {props => <ConfirmRegistrationPopUp {...props} image={Image} />} 
-          </Screen>
+          {props => <ConfirmRegistrationPopUp {...props} image={Image} />}
+        </Screen>
         <Screen name="ListFutureTasksByPeriod" component={ListFutureTasksByPeriod} />
         <Screen name="PlantDetails" component={PlantDetails} />
+        <Screen name="EditProfile" component={EditProfile} />
       </Navigator>
     </NavigationContainer>
   );
