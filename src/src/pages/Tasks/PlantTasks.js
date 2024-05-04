@@ -1,19 +1,19 @@
 import { View, StyleSheet, ScrollView } from "react-native";
 import { Text } from "react-native-paper";
 
-import NavigationBar from "../components/NavigationBar";
-import ProductCardCategory from "../components/ProductCardCategory";
+import NavigationBar from "../../components/NavigationBar";
+import ProductCardCategory from "../../components/ProductCardCategory";
 
-import Plant from "../../assets/plant1.svg";
-import Leaf from "../../assets/leaf-icon.svg";
-import Vase from "../../assets/plant-vase-icon.svg";
-import FertilizeAlert from "../components/FertilizeAlert";
-import VaseAlert from "../components/VaseAlert";
+import Plant from "../../../assets/plant1.svg";
+import Leaf from "../../../assets/leaf-icon.svg";
+import Vase from "../../../assets/plant-vase-icon.svg";
+import FertilizeAlert from "../../components/FertilizeAlert";
+import VaseAlert from "../../components/VaseAlert";
 
-export default function ListFutureTasksDetails() {
+export default function PlantTasks() {
   return (
     <>
-      <NavigationBar title="Futuras tarefas" />
+      <NavigationBar title="Minhas plantas" />
 
       <ScrollView style={styles.container}>
         <View>
@@ -25,7 +25,6 @@ export default function ListFutureTasksDetails() {
               image={<Plant width={40} />}
               text="Nome da planta"
               category="Peperômia"
-              showArrow={false}
             />
           </View>
           <View style={{ marginBottom: 10 }}>

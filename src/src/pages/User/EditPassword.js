@@ -4,8 +4,8 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
-import NavigationBar from "../components/NavigationBar";
-import CustomTextInput from '../components/CustomTextInput';
+import NavigationBar from "../../components/NavigationBar";
+import CustomTextInput from '../../components/CustomTextInput';
 
 const schema = yup.object({
   // Adicione mais regras de validação.

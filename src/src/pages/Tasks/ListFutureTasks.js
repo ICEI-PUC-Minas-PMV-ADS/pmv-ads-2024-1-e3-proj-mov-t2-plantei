@@ -1,12 +1,12 @@
 import { View, StyleSheet, ScrollView } from "react-native";
 import { Text } from "react-native-paper";
 
-import NavigationBarBottom from "../components/NavigationBarBottom";
-import NavigationBar from "../components/NavigationBar";
-import NavigationBarMiddle from "../components/NavigationBarMiddle";
-import ProductCardCategory from "../components/ProductCardCategory";
+import NavigationBarBottom from "../../components/NavigationBarBottom";
+import NavigationBar from "../../components/NavigationBar";
+import NavigationBarMiddle from "../../components/NavigationBarMiddle";
+import ProductCardCategory from "../../components/ProductCardCategory";
 
-import Plant from "../../assets/plant1.svg";
+import Plant from "../../../assets/plant1.svg";
 
 export default function ListFutureTasks() {
   return (

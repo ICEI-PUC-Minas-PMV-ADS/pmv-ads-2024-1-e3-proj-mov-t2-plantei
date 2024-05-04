@@ -1,13 +1,13 @@
 import { View, StyleSheet } from "react-native";
 import { Text, Button } from "react-native-paper";
 
-import Theme from "../style/Theme";
-import NavigationBarPlantDetails from "../components/NavigationBarPlantDetails";
+import Theme from "../../style/Theme";
+import NavigationBarPlantDetails from "../../components/NavigationBarPlantDetails";
 
-import Plant from "../../assets/plant1.svg";
-import WaterIcon from "../../assets/water-icon.svg";
-import LeafIcon from "../../assets/leaf-icon.svg";
-import PlantVaseIcon from "../../assets/plant-vase-icon.svg";
+import Plant from "../../../assets/plant1.svg";
+import WaterIcon from "../../../assets/water-icon.svg";
+import LeafIcon from "../../../assets/leaf-icon.svg";
+import PlantVaseIcon from "../../../assets/plant-vase-icon.svg";
 
 export default function PlantDetails() {
   return (

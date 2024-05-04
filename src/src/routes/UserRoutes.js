@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import EditProfile from "../pages/EditProfile";
-import EditPassword from "../pages/EditPassword";
+import EditProfile from "../pages/User/EditProfile";
+import EditPassword from "../pages/User/EditPassword";
 
 const { Screen, Group } = createNativeStackNavigator();
 

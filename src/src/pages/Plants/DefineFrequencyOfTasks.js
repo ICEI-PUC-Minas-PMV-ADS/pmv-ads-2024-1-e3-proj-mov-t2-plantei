@@ -1,16 +1,16 @@
 import { View, StyleSheet } from 'react-native';
 import { Text } from 'react-native-paper';
 
-import NavigationBar from '../components/NavigationBar';
-import ThreeSteps from '../components/ThreeSteps';
-import InputNumberSpinner from '../components/InputNumberSpinner';
-import NextAndPreviousPageButtons from '../components/NextAndPreviousPageButtons';
+import NavigationBar from '../../components/NavigationBar';
+import ThreeSteps from '../../components/ThreeSteps';
+import InputNumberSpinner from '../../components/InputNumberSpinner';
+import NextAndPreviousPageButtons from '../../components/NextAndPreviousPageButtons';
 
-import WaterIcon from "../../assets/water-icon.svg";
-import LeafIcon from "../../assets/leaf-icon.svg";
-import PlantVaseIcon from "../../assets/plant-vase-icon.svg";
+import WaterIcon from "../../../assets/water-icon.svg";
+import LeafIcon from "../../../assets/leaf-icon.svg";
+import PlantVaseIcon from "../../../assets/plant-vase-icon.svg";
 
-import Theme from "../style/Theme"
+import Theme from "../../style/Theme"
 
 export default function DefineFrequencyOfTasks() {
   return (

@@ -1,13 +1,13 @@
 import { View, StyleSheet } from 'react-native';
 import { Text, TextInput } from 'react-native-paper';
 
-import NavigationBar from '../components/NavigationBar';
-import ThreeSteps from '../components/ThreeSteps';
-import NextAndPreviousPageButtons from '../components/NextAndPreviousPageButtons';
+import NavigationBar from '../../components/NavigationBar';
+import ThreeSteps from '../../components/ThreeSteps';
+import NextAndPreviousPageButtons from '../../components/NextAndPreviousPageButtons';
 
-import Plant from "../../assets/generic-plant.svg";
+import Plant from "../../../assets/generic-plant.svg";
 
-import Theme from '../style/Theme';
+import Theme from '../../style/Theme';
 
 export default function DefinePlantName() {
   return (

@@ -7,10 +7,10 @@ import { TouchableOpacity } from 'react-native';
 import * as yup from 'yup';
 import * as ImagePicker from 'expo-image-picker'
 
-import NavigationBar from "../components/NavigationBar";
-import CustomTextInput from '../components/CustomTextInput';
+import NavigationBar from "../../components/NavigationBar";
+import CustomTextInput from '../../components/CustomTextInput';
 
-import Theme from '../style/Theme';
+import Theme from '../../style/Theme';
 
 const schema = yup.object({
   // Adicione mais regras de validação.
@@ -60,7 +60,7 @@ export default function EditProfile() {
           ) : (
             <Image
               style={styles.image}
-              source={require('../../assets/user.png')}
+              source={require('../../../assets/user.png')}
             />
           )}
           <TouchableOpacity

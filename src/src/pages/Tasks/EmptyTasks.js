@@ -1,26 +1,24 @@
 import { View, StyleSheet } from "react-native";
 import { Text, Button } from "react-native-paper";
 
-import Emoji from "../../assets/emoji-crying.svg";
-import NavigationBarBottom from "../components/NavigationBarBottom";
-import NavigationBar from "../components/NavigationBar";
+import Emoji from "../../../assets/emoji-crying.svg";
+import NavigationBarBottom from "../../components/NavigationBarBottom";
+import NavigationBar from "../../components/NavigationBar";
 
-
-export default function EmptyPlant() {
+export default function EmptyTasks() {
   return (
     <>
-      <NavigationBar title="Minhas plantas" />
+      <NavigationBar title="Minhas tarefas" />
 
       <View style={styles.container}>
         <View style={styles.img}>
-        <Emoji/>
+          <Emoji />
         </View>
         <Text variant="headlineLarge" style={styles.title}>
-          Você ainda{"\n"}não possui plantas{"\n"}cadastradas
+          Você ainda{"\n"}não possui tarefas
         </Text>
         <Text variant="bodyLarge" style={styles.subtitle}>
-          Comece seu jardim!{"\n"}Descubra a alegria de cuidar{"\n"}de plantas
-          em seu lar.
+        Controle e organização:{"\n"}cadastre suas plantas e tenha as{"\n"}datas na palma da mão!
         </Text>
         <Button
           style={styles.buttonPrimary}
@@ -45,7 +43,7 @@ const styles = StyleSheet.create({
   },
 
   img: {
-    alignItems: 'center',
+    alignItems: "center",
     marginBottom: 30,
   },
 

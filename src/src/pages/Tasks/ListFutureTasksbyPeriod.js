@@ -1,15 +1,15 @@
 import { View, StyleSheet, ScrollView } from "react-native";
 import { Text } from "react-native-paper";
 
-import NavigationBar from "../components/NavigationBar";
-import ProductCardCategory from "../components/ProductCardCategory";
-import NavigationBarMiddle from "../components/NavigationBarMiddle";
+import NavigationBar from "../../components/NavigationBar";
+import ProductCardCategory from "../../components/ProductCardCategory";
+import NavigationBarMiddle from "../../components/NavigationBarMiddle";
 
-import Plant from "../../assets/plant1.svg";
-import Leaf from "../../assets/leaf-icon.svg";
-import Vase from "../../assets/plant-vase-icon.svg";
-import FertilizeAlert from "../components/FertilizeAlert";
-import VaseAlert from "../components/VaseAlert";
+import Plant from "../../../assets/plant1.svg";
+import Leaf from "../../../assets/leaf-icon.svg";
+import Vase from "../../../assets/plant-vase-icon.svg";
+import FertilizeAlert from "../../components/FertilizeAlert";
+import VaseAlert from "../../components/VaseAlert";
 
 export default function ListFutureTasksDetails() {
   return (

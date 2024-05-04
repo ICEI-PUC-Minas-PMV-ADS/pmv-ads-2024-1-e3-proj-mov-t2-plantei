@@ -4,12 +4,12 @@ import {
   ScrollView,
 } from "react-native";
 import { Text } from "react-native-paper";
-import Theme from "../style/Theme";
+import Theme from "../../style/Theme";
 
-import Plant from "../../assets/plant1.svg";
-import ProductCard from "../components/ProductCard";
-import NavigationBarBottom from "../components/NavigationBarBottom";
-import NavigationBar from "../components/NavigationBar";
+import Plant from "../../../assets/plant1.svg";
+import ProductCard from "../../components/ProductCard";
+import NavigationBarBottom from "../../components/NavigationBarBottom";
+import NavigationBar from "../../components/NavigationBar";
 
 export default function SelectCategory() {
   return (

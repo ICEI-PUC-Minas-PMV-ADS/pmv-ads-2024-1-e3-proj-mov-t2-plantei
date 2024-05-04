@@ -1,10 +1,10 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import ListFutureTasks from "../pages/ListFutureTasks";
-import ListFutureTasksDetails from "../pages/ListFutureTasksDetails";
-import EmptyTasks from "../pages/EmptyTasks";
-import PlantTasks from "../pages/PlantTasks";
-import ListFutureTasksbyPeriod from "../pages/ListFutureTasksbyPeriod";
+import ListFutureTasks from "../pages/Tasks/ListFutureTasks";
+import ListFutureTasksDetails from "../pages/Tasks/ListFutureTasksDetails";
+import EmptyTasks from "../pages/Tasks/EmptyTasks";
+import PlantTasks from "../pages/Tasks/PlantTasks";
+import ListFutureTasksbyPeriod from "../pages/Tasks/ListFutureTasksbyPeriod";
 
 const { Screen, Group } = createNativeStackNavigator();
 

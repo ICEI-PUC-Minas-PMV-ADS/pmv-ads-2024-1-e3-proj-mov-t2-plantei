@@ -1,12 +1,12 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import EmptyPlants from "../pages/EmptyPlants";
-import MyPlants from "../pages/MyPlants";
-import DefinePlantName from "../pages/DefinePlantName";
-import DefinePlantDescription from "../pages/DefinePlantDescription";
-import DefineFrequencyOfTasks from "../pages/DefineFrequencyOfTasks";
-import PlantDetails from "../pages/PlantDetails";
-import SelectCategory from "../pages/SelectCategory";
+import EmptyPlants from "../pages/Plants/EmptyPlants";
+import MyPlants from "../pages/Plants/MyPlants";
+import DefinePlantName from "../pages/Plants/DefinePlantName";
+import DefinePlantDescription from "../pages/Plants/DefinePlantDescription";
+import DefineFrequencyOfTasks from "../pages/Plants/DefineFrequencyOfTasks";
+import PlantDetails from "../pages/Plants/PlantDetails";
+import SelectCategory from "../pages/Plants/SelectCategory";
 
 const { Screen, Group } = createNativeStackNavigator();
 
