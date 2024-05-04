@@ -7,7 +7,7 @@ import {
   Button,
 } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Routes from './src/Routes';
+import Routes from './src/routes';
 
 import Theme from './src/style/Theme';
 
