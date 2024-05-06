@@ -96,3 +96,7 @@ Teste 10 - Teste de Navegação
 |02|0|- segundos|-|-|
 |03|0|- segundos|-|-|
 |04|0|- segundos|-|-|
+# Pesquisa da satisfação
+![Processo 1](img/pesquisa01.png)
+![Processo 2](img/pesquisa02.png)
+![Processo 3](img/pesquisa03.png)
