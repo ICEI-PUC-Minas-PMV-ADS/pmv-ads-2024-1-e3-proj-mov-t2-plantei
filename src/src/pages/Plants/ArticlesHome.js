@@ -1,26 +1,26 @@
 import { View, StyleSheet, Text, Image, ScrollView } from "react-native";
 
-import NavigationBarBottom from "../components/NavigationBarBottom";
-import NavigationBar from "../components/NavigationBar";
-import Theme from "../style/Theme";
+import NavigationBarBottom from "../../components/NavigationBarBottom";
+import NavigationBar from "../../components/NavigationBar";
+import Theme from "../../style/Theme";
 
 export default function ArticlesHome() {
-  // Suponha que você tenha uma lista de artigos em destaque com URLs das imagens
+  
   const featuredArticles = [
     {
       title: "Descubra 10 Plantas Brasileiras Irresistíveis para sua Casa",
       
-      imageUrl: require("../../assets/PLANTAS.png"), // Caminho relativo para a imagem
+      imageUrl: require("../../../assets/PLANTAS.png"), 
     },
     {
       title: "Dicas e Truques para Rega, Adubação e Troca de Vaso",
 
-      imageUrl: require("../../assets/PLANTAS2.png"), // Caminho relativo para a imagem
+      imageUrl: require("../../../assets/PLANTAS2.png"), 
     },
     {
       title: "Dicas e Truques para Rega, Adubação e Troca de Vaso",
 
-      imageUrl: require("../../assets/PLANTAS3.png"), // Caminho relativo para a imagem
+      imageUrl: require("../../../assets/PLANTAS3.png"), 
     },
     
   ];
@@ -30,13 +30,13 @@ export default function ArticlesHome() {
       <NavigationBar title="Guia verde" />
       <ScrollView contentContainerStyle={styles.container}>
         <Text style={styles.title}>Artigos em destaque</Text>
-        {/* Mapeie a lista de artigos em destaque e renderize cada um */}
+       
         {featuredArticles.map((article, index) => (
           <View key={index} style={styles.articleContainer}>
             <Image
               source={article.imageUrl}
               style={styles.articleImage}
-              resizeMode="cover" // Ajusta a imagem para cobrir toda a área
+              resizeMode="cover" 
             />
             <Text style={styles.articleTitle}>{article.title}</Text>
             <Text style={styles.articleContent}>{article.content}</Text>
