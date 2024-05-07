@@ -1,9 +1,9 @@
 import React from "react";
 import { View, StyleSheet, Text, Image, ScrollView, Dimensions } from "react-native";
 
-import NavigationBarBottom from "../components/NavigationBarBottom";
-import NavigationBar from "../components/NavigationBar";
-import Theme from "../style/Theme";
+
+import NavigationBar from "../../components/NavigationBar";
+import Theme from "../../style/Theme";
 
 export default function ArticlesView() {
   const screenWidth = Dimensions.get('window').width;
@@ -13,8 +13,8 @@ export default function ArticlesView() {
       <NavigationBar title="Guia verde" />
       <ScrollView contentContainerStyle={styles.container}>
         <Image
-          source={require("../../assets/PLANTAS.png")}
-          style={[styles.articleImage, { width: '140%' }]} // Definindo a largura da imagem como a largura da tela
+          source={require("../../../assets/PLANTAS.png")}
+          style={[styles.articleImage, { width: '140%' }]} 
           resizeMode="cover"
         />
         <Text style={styles.title}>Descubra 10 Plantas Brasileiras Irresistíveis para sua Casa</Text>
