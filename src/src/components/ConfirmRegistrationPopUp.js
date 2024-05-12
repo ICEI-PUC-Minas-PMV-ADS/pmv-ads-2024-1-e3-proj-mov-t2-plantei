@@ -7,68 +7,79 @@ import {
   Image,
 } from "react-native";
 import { Button } from "react-native-paper";
+import { useNavigation } from "@react-navigation/native";
+
 import Theme from "../style/Theme";
 
-export default function ConfirmRegistrationPopUp({ image }) {
-  const [modalVisible, setModalVisible] = useState(true);
+export default function ConfirmRegistrationPopUp({ image, onChangeModalVisible, modalVisible, methodHttp }) {
+  const { navigate } = useNavigation()
 
   return (
-    <View style={styles.container}>
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          setModalVisible(!modalVisible);
-        }}
-      >
-        <View style={styles.modalContainer}>
-          <View style={styles.modalContent}>
-            {image && (
-              <View style={styles.imageContainer} resizeMode="contain">
-                <Image
-                  source={image}
-                  style={styles.plantImage}
-                  resizeMode="contain"
-                />
-              </View>
-            )}
-            <Text style={styles.title}>Planta cadastrada com sucesso!</Text>
-            <View style={styles.buttonContainer}>
+    <Modal
+      animationType="slide"
+      transparent={true}
+      visible={modalVisible}
+      onRequestClose={() => {
+        onChangeModalVisible(!modalVisible);
+      }}
+    >
+      <View style={styles.modalContainer}>
+        <View style={styles.modalContent}>
+          {image && (
+            <View style={styles.imageContainer} resizeMode="contain">
+              <Image
+                style={[styles.plantImage, { width: 70, height: 70 }]}
+                source={{ uri: image }}
+                resizeMode="contain"
+              />
+            </View>
+          )}
+          <Text style={styles.title}>Planta cadastrada com sucesso!</Text>
+          <View style={styles.buttonContainer}>
+            {methodHttp === 'post' || 'edit' ? (
+              <Button
+                style={styles.button}
+                mode="contained"
+                onPress={() => {
+                  onChangeModalVisible(!modalVisible)
+                  navigate("MyPlants")
+                }}
+              >
+                Tudo certo!
+              </Button>
+            ) : (
+              <>
                 <Button
                   style={styles.button}
                   mode="contained-tonal"
-                  onPress={() => setModalVisible(!modalVisible)}
+                  onPress={() => onChangeModalVisible(!modalVisible)}
                 >
                   Cancelar
                 </Button>
                 <Button
                   style={styles.button}
                   mode="contained"
-                  onPress={() => setModalVisible(!modalVisible)}
-                  >
-                  Confirmar
+                  onPress={() => onChangeModalVisible(!modalVisible)}
+                >
+                  Salvar
                 </Button>
-            </View>
+              </>
+            )}
           </View>
         </View>
-      </Modal>
-    </View>
+      </View>
+    </Modal>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
   modalContainer: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
+
   modalContent: {
     backgroundColor: "white",
     marginHorizontal: 30,
@@ -78,25 +89,29 @@ const styles = StyleSheet.create({
   },
 
   imageContainer: {
-    display: "flex",
+    width: 144,
+    height: 144,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: '#F2FBF2',
+    borderRadius: 15
   },
 
   plantImage: {
-    width: "144",
-    alignSelf: "flex-start",
     aspectRatio: 1,
-    marginBottom: 20,
+    margin: '0 auto'
   },
+
   title: {
+    maxWidth: 130,
     color: Theme.colors.secondary,
     textAlign: "center",
     marginHorizontal: 30,
+    marginVertical: 12,
     fontSize: 16,
   },
+
   buttonContainer: {
-    marginTop: 20,
     flexDirection: "row",
     columnGap: 9,
     width: "100%",

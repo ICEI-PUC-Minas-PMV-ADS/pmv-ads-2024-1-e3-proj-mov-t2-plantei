@@ -1,13 +1,28 @@
 import { View, StyleSheet } from 'react-native';
-import { Text, TextInput } from 'react-native-paper';
+import { useContext } from 'react';
+import { Text } from 'react-native-paper';
+import { useForm } from 'react-hook-form';
+import { useNavigation } from '@react-navigation/native';
 
 import NavigationBar from '../../components/NavigationBar';
 import ThreeSteps from '../../components/ThreeSteps';
-import NextAndPreviousPageButtons from '../../components/NextAndPreviousPageButtons';
-
-import Theme from '../../style/Theme';
+import ButtonsToAdvanceAndReturnForm from '../../components/ButtonsToAdvanceAndReturnForm';
+import CustomTextInput from '../../components/CustomTextInput';
+import { RegisterPlantContext } from '../../contexts/RegisterPlantContext';
 
 export default function DefinePlantDescription() {
+  const { navigate } = useNavigation()
+  const { plantDataAdded, changePlantDataAdded } = useContext(RegisterPlantContext)
+
+  const { control, handleSubmit, formState: { errors } } = useForm({
+    defaultValues: { description: plantDataAdded.description }
+  })
+
+  function handleDescriptionSubmit(formData) {
+    changePlantDataAdded({ ...plantDataAdded, description: formData.description })
+    navigate("DefineFrequencyOfTasks")
+  }
+
   return (
     <>
       <NavigationBar title="Cadastrar planta personalizada" />
@@ -16,16 +31,16 @@ export default function DefinePlantDescription() {
         <View style={styles.content}>
           <ThreeSteps currentStep={2} />
           <Text style={styles.title}>Defina uma boa descrição para sua planta</Text>
-          <TextInput
-            style={styles.input}
-            outlineStyle={styles.input}
+          <CustomTextInput
+            control={control}
+            errors={errors}
             multiline
-            mode="outlined"
+            name="description"
             placeholder="Descrição"
           />
           <Text style={styles.exampleText}>Exemplo: Adora uma temperatura amena e iluminação indireta.</Text>
         </View>
-        <NextAndPreviousPageButtons nextPage={'DefineFrequencyOfTasks'} />
+        <ButtonsToAdvanceAndReturnForm onSubmit={handleSubmit(handleDescriptionSubmit)} />
       </View>
     </>
   );
@@ -51,11 +66,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     alignSelf: 'center',
-  },
-
-  input: {
-    height: 140,
-    borderColor: Theme.colors.outlineVariant,
   },
 
   exampleText: {

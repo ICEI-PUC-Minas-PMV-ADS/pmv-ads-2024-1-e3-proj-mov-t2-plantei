@@ -1,51 +1,77 @@
+import { useContext, useEffect, useState } from "react";
 import {
   View,
   StyleSheet,
   ScrollView,
+  TouchableOpacity,
 } from "react-native";
 import { Text } from "react-native-paper";
-import Theme from "../../style/Theme";
+import { useNavigation } from "@react-navigation/native";
 
-import Plant from "../../../assets/plant1.svg";
+import { RegisterPlantContext } from "../../contexts/RegisterPlantContext";
+import api from "../../services/api"
 import ProductCard from "../../components/ProductCard";
 import NavigationBarBottom from "../../components/NavigationBarBottom";
 import NavigationBar from "../../components/NavigationBar";
 
+import Theme from "../../style/Theme";
+
 export default function SelectCategory() {
+  const { navigate } = useNavigation()
+  const { plantDataAdded, changePlantDataAdded } = useContext(RegisterPlantContext)
+  const [categories, setCategories] = useState([])
+
+  async function getCategories() {
+    try {
+      const { data } = await api.get('/categories');
+      setCategories(data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  function handleSelectingCategory(category) {
+    const plantData = {
+      ...plantDataAdded,
+      httpMethod: 'post',
+      userId: "1",
+      categoryId: category.id,
+      category: { ...category }
+    }
+
+    changePlantDataAdded({
+      ...plantData,
+    })
+
+    navigate("DefinePlantName")
+  }
+
+  useEffect(() => {
+    getCategories()
+  }, [])
+
   return (
     <>
-          <NavigationBar title="Adicionar Planta" />
+      <NavigationBar title="Adicionar Planta" />
 
       <ScrollView>
-        <View>
-          <View style={styles.container}>
-            <Text style={styles.title} variant="titleLarge">
-              Selecione uma categoria{"\n"}para sua planta
-            </Text>
-            <View style={[styles.cardGroup, { marginTop: 30 }]}>
-              <View style={[styles.card, { marginRight: 10 }]}>
-                <ProductCard image={<Plant />} text="Nova Planta" />
-              </View>
-              <View style={styles.card}>
-                <ProductCard image={<Plant />} text="Nova Planta" />
-              </View>
-            </View>
-            <View style={[styles.cardGroup, { marginTop: 10 }]}>
-              <View style={[styles.card, { marginRight: 10 }]}>
-                <ProductCard image={<Plant />} text="Nova Planta" />
-              </View>
-              <View style={styles.card}>
-                <ProductCard image={<Plant />} text="Nova Planta" />
-              </View>
-            </View>
-            <View style={[styles.cardGroup, { marginTop: 10 }]}>
-              <View style={[styles.card, { marginRight: 10 }]}>
-                <ProductCard image={<Plant />} text="Nova Planta" />
-              </View>
-              <View style={styles.card}>
-                <ProductCard image={<Plant />} text="Nova Planta" />
-              </View>
-            </View>
+        <View style={styles.container}>
+          <Text style={styles.title} variant="titleLarge">
+            Selecione uma categoria{"\n"}para sua planta
+          </Text>
+          <View style={[styles.cardGroup, { marginTop: 30 }]}>
+            {categories.map((category) => (
+              <TouchableOpacity
+                key={category.id}
+                style={styles.card}
+                activeOpacity={0.6}
+                onPress={() => handleSelectingCategory(category)}
+              >
+                <View style={{ padding: 6 }}>
+                  <ProductCard image={category.image} text={category.name} />
+                </View>
+              </TouchableOpacity>
+            ))}
           </View>
         </View>
       </ScrollView>
@@ -57,8 +83,9 @@ export default function SelectCategory() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 30,
+    padding: 24,
     paddingTop: 0,
+    paddingBottom: 110,
   },
 
   homeHeaderBackground: {
@@ -91,6 +118,7 @@ const styles = StyleSheet.create({
 
   title: {
     fontWeight: "bold",
+    paddingLeft: 6
   },
 
   textColor: {
@@ -103,11 +131,12 @@ const styles = StyleSheet.create({
   },
 
   card: {
-    flex: 1,
+    width: '50%'
   },
 
   cardGroup: {
     flexDirection: "row",
     justifyContent: "space-between",
+    flexWrap: 'wrap'
   },
 });

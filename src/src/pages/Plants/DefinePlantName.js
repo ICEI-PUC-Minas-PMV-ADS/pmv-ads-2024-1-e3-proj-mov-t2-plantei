@@ -1,15 +1,35 @@
-import { View, StyleSheet } from 'react-native';
-import { Text, TextInput } from 'react-native-paper';
+import { View, StyleSheet, Image } from 'react-native';
+import { useContext } from 'react';
+import { Text } from 'react-native-paper';
+import { useForm } from 'react-hook-form';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useNavigation } from '@react-navigation/native';
 
+import { RegisterPlantContext } from '../../contexts/RegisterPlantContext';
 import NavigationBar from '../../components/NavigationBar';
 import ThreeSteps from '../../components/ThreeSteps';
-import NextAndPreviousPageButtons from '../../components/NextAndPreviousPageButtons';
+import ButtonsToAdvanceAndReturnForm from '../../components/ButtonsToAdvanceAndReturnForm';
+import CustomTextInput from '../../components/CustomTextInput';
 
-import Plant from "../../../assets/generic-plant.svg";
-
-import Theme from '../../style/Theme';
+const schema = yup.object({
+  name: yup.string().required("Escolha um nome para sua planta"),
+})
 
 export default function DefinePlantName() {
+  const { navigate } = useNavigation()
+  const { plantDataAdded, changePlantDataAdded } = useContext(RegisterPlantContext)
+
+  const { control, handleSubmit, formState: { errors } } = useForm({
+    defaultValues: { name: plantDataAdded.name },
+    resolver: yupResolver(schema),
+  })
+
+  function handleNameSubmit(formData) {
+    changePlantDataAdded({ ...plantDataAdded, name: formData.name })
+    navigate("DefinePlantDescription")
+  }
+
   return (
     <>
       <NavigationBar title="Cadastrar planta personalizada" />
@@ -19,18 +39,21 @@ export default function DefinePlantName() {
           <ThreeSteps currentStep={1} />
           <Text style={styles.title}>Como sua planta irá se chamar?</Text>
 
-          <TextInput
-            style={styles.input}
-            outlineStyle={styles.input}
-            mode="outlined"
+          <CustomTextInput
+            control={control}
+            errors={errors}
+            name="name"
             placeholder="Nome da planta"
           />
 
           <View style={styles.containerImage}>
-            <Plant width={91} height={198} />
+            <Image
+              style={{ width: 50, height: 50 }}
+              source={{ uri: plantDataAdded.image }}
+            />
           </View>
         </View>
-        <NextAndPreviousPageButtons nextPage={'DefinePlantDescription'} />
+        <ButtonsToAdvanceAndReturnForm onSubmit={handleSubmit(handleNameSubmit)} />
       </View>
     </>
   );
@@ -56,11 +79,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     alignSelf: 'center',
-  },
-
-  input: {
-    paddingVertical: 4,
-    borderColor: Theme.colors.outlineVariant,
   },
 
   containerImage: {

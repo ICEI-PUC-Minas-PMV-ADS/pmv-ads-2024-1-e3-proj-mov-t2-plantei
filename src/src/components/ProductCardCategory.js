@@ -1,4 +1,4 @@
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Image } from "react-native";
 import { Text } from "react-native-paper";
 import Theme from "../style/Theme";
 import Arrow from "../../assets/arrow.svg";
@@ -13,7 +13,13 @@ export default function ProductCardCategory({
     <View style={styles.card}>
       <View>
         <View style={styles.cardContent}>
-          <View style={{ marginRight: 12 }}>{image}</View>
+          <View style={{ marginRight: 12 }}>
+            <Image
+              style={{ width: 40, height: 40 }}
+              source={{ uri: image }}
+              resizeMode="contain"
+            />
+          </View>
           <View>
             <Text style={{ marginRight: 12 }} variant="titleMedium">
               {text}

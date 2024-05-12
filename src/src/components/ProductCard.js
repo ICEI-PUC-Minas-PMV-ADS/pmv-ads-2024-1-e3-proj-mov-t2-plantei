@@ -1,20 +1,24 @@
-import { View, StyleSheet} from "react-native";
+import { View, StyleSheet, Image } from "react-native";
 import { Text } from "react-native-paper";
 import Theme from "../style/Theme";
 
 export default function ProductCard({ image, text }) {
   return (
     <View>
-        <View style={styles.card}>
-          <View>
-            <View style={styles.cardImage}>
-              {image}
-            </View>
-            <View style={styles.cardText}>
-              <Text variant="labelLarge">{text}</Text>
-            </View>
+      <View style={styles.card}>
+        <View>
+          <View style={styles.cardImage}>
+            <Image
+              style={{ width: 75, height: 75 }}
+              source={{ uri: image }}
+              resizeMode="contain"
+            />
+          </View>
+          <View style={styles.cardText}>
+            <Text variant="labelLarge" style={styles.plantName}>{text}</Text>
           </View>
         </View>
+      </View>
     </View>
   );
 }
@@ -41,4 +45,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     height: 70,
   },
+
+  plantName: {
+    textAlign: 'center'
+  }
 });

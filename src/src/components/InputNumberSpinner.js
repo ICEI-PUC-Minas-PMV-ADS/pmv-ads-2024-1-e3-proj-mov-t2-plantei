@@ -3,18 +3,18 @@ import InputSpinner from 'react-native-input-spinner';
 
 import Theme from "../style/Theme"
 
-export default function InputNumberSpinner() {
+export default function InputNumberSpinner({ value, onChangeValue }) {
   return (
     <InputSpinner
-      initialValue={1}
+      value={value}
       min={1}
       style={styles.container}
       buttonStyle={styles.button}
       inputStyle={styles.input}
       rounded={false}
       buttonTextColor={Theme.colors.outlineVariant}
-      onChange={(num) => {
-        console.log(num);
+      onChange={(number) => {
+        onChangeValue(number);
       }}
     />
   );

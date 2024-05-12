@@ -2,8 +2,9 @@ import { View, StyleSheet } from 'react-native';
 import { Button } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 
-export default function NextAndPreviousPageButtons({ nextPage }) {
-  const { navigate, canGoBack, goBack } = useNavigation()
+// buttons to advance and return form -- alterar nome componente
+export default function NextAndPreviousPageButtons({ onSubmit }) {
+  const { canGoBack, goBack } = useNavigation()
 
   return (
     <View style={styles.container}>
@@ -16,7 +17,7 @@ export default function NextAndPreviousPageButtons({ nextPage }) {
       <Button
         style={styles.button}
         mode="contained"
-        onPress={() => nextPage && navigate(nextPage)}>
+        onPress={() => onSubmit()}>
         Próximo
       </Button>
     </View>

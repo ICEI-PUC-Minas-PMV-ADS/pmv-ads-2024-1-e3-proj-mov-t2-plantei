@@ -6,17 +6,19 @@ import {
   ScrollView,
 } from "react-native";
 import { Text } from "react-native-paper";
+import { useNavigation } from '@react-navigation/native';
 import Theme from "../style/Theme";
 
 import Plant from "../../assets/plant-icon.svg";
 import Task from "../../assets/splitscreen_add-icon";
 import Article from "../../assets/article-icon.svg";
 
-import PlantCard from "../../assets/plant1.svg";
 import ProductCard from "../components/ProductCard";
 import NavigationBarBottom from "../components/NavigationBarBottom";
 
 export default function Home() {
+  const { navigate } = useNavigation()
+
   return (
     <>
       <ScrollView>
@@ -37,7 +39,7 @@ export default function Home() {
               </View>
               <View style={styles.homeHeaderNav}>
                 <View style={styles.navItem} marginRight={10}>
-                  <TouchableOpacity onPress={() => console.log("Pressed")}>
+                  <TouchableOpacity onPress={() => navigate("MyPlants")}>
                     <Plant width={24} height={24} marginBottom={10} />
                     <Text style={styles.textColor} variant="bodySmall">
                       Minhas{"\n"}plantas
@@ -48,7 +50,7 @@ export default function Home() {
                   <TouchableOpacity onPress={() => console.log("Pressed")}>
                     <Task width={24} height={24} marginBottom={10} />
                     <Text style={styles.textColor} variant="bodySmall">
-                      Minhas{"\n"}plantas
+                      Futuras{"\n"}tarefas
                     </Text>
                   </TouchableOpacity>
                 </View>
@@ -69,33 +71,33 @@ export default function Home() {
             </Text>
             <View style={[styles.cardGroup, { marginTop: 30 }]}>
               <View style={[styles.card, { marginRight: 10 }]}>
-                <ProductCard image={<PlantCard />} text="Nova Planta" />
+                <ProductCard image="https://i.imgur.com/pJcQkXG.png" text="Nova Planta" />
               </View>
               <View style={styles.card}>
-                <ProductCard image={<PlantCard />} text="Nova Planta" />
+                <ProductCard image="https://i.imgur.com/pJcQkXG.png" text="Nova Planta" />
               </View>
             </View>
             <View style={[styles.cardGroup, { marginTop: 10 }]}>
               <View style={[styles.card, { marginRight: 10 }]}>
-                <ProductCard image={<PlantCard />} text="Nova Planta" />
+                <ProductCard image="https://i.imgur.com/pJcQkXG.png" text="Nova Planta" />
               </View>
               <View style={styles.card}>
-                <ProductCard image={<PlantCard />} text="Nova Planta" />
+                <ProductCard image="https://i.imgur.com/pJcQkXG.png" text="Nova Planta" />
               </View>
             </View>
             <View style={[styles.cardGroup, { marginTop: 10 }]}>
               <View style={[styles.card, { marginRight: 10 }]}>
-                <ProductCard image={<PlantCard />} text="Nova Planta" />
+                <ProductCard image="https://i.imgur.com/pJcQkXG.png" text="Nova Planta" />
               </View>
               <View style={styles.card}>
-                <ProductCard image={<PlantCard />} text="Nova Planta" />
+                <ProductCard image="https://i.imgur.com/pJcQkXG.png" text="Nova Planta" />
               </View>
             </View>
           </View>
         </View>
       </ScrollView>
-      
-      <NavigationBarBottom/>
+
+      <NavigationBarBottom />
     </>
   );
 }
@@ -103,6 +105,7 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     padding: 30,
+    paddingBottom: 110
   },
 
   homeHeaderBackground: {
