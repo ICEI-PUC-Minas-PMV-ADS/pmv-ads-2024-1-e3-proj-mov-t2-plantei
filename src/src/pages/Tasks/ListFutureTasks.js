@@ -22,35 +22,35 @@ export default function ListFutureTasks() {
           </Text>
           <View style={{ marginBottom: 10 }}>
             <ProductCardCategory
-              image={<Plant width={40} />}
+              image="https://i.imgur.com/pJcQkXG.png"
               text="Nome da planta"
               category="Peperômia"
             />
           </View>
           <View style={{ marginBottom: 10 }}>
             <ProductCardCategory
-              image={<Plant width={40} />}
+              image="https://i.imgur.com/pJcQkXG.png"
               text="Nome da planta"
               category="Peperômia"
             />
           </View>
           <View style={{ marginBottom: 10 }}>
             <ProductCardCategory
-              image={<Plant width={40} />}
+              image="https://i.imgur.com/pJcQkXG.png"
               text="Nome da planta"
               category="Peperômia"
             />
           </View>
           <View style={{ marginBottom: 10 }}>
             <ProductCardCategory
-              image={<Plant width={40} />}
+              image="https://i.imgur.com/pJcQkXG.png"
               text="Nome da planta"
               category="Peperômia"
             />
           </View>
           <View style={{ marginBottom: 10 }}>
             <ProductCardCategory
-              image={<Plant width={40} />}
+              image="https://i.imgur.com/pJcQkXG.png"
               text="Nome da planta"
               category="Peperômia"
             />
