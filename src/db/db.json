@@ -5,9 +5,9 @@
       "id": "1",
       "name": "Personalizada",
       "image": "https://i.imgur.com/pJcQkXG.png",
-      "watering_frequency_days": 0,
-      "fertilization_frequency_days": 0,
-      "vase_change_frequency_days": 0
+      "watering_frequency_days": 1,
+      "fertilization_frequency_days": 1,
+      "vase_change_frequency_days": 1
     },
     {
       "id": "2",
@@ -90,8 +90,80 @@
       "vase_change_frequency_days": 365
     }
   ],
-  "plants": [],
-  "plants_frequency": [],
-  "tasks": [],
+  "plants": [
+    {
+      "id": "fbc9",
+      "userId": "1",
+      "categoryId": "1",
+      "name": "Peperomia personalizada",
+      "description": "Clima quente e pouca água "
+    },
+    {
+      "id": "9e90",
+      "userId": "1",
+      "categoryId": "7",
+      "name": "Orquídea vermelha",
+      "description": "Pouca água e muito sol"
+    }
+  ],
+  "plants_frequency": [
+    {
+      "id": "e8f8",
+      "plantId": "fbc9",
+      "watering_frequency_days": 4,
+      "fertilization_frequency_days": 14,
+      "vase_change_frequency_days": 365
+    }
+  ],
+  "tasks": [
+    {
+      "id": "8dec",
+      "userId": "1",
+      "plantId": "fbc9",
+      "tipo": "Rega",
+      "status": "Em andamento",
+      "notificationDate": "2024-05-16T00:04:42.112Z"
+    },
+    {
+      "id": "1c40",
+      "userId": "1",
+      "plantId": "fbc9",
+      "tipo": "Fertilizar",
+      "status": "Em andamento",
+      "notificationDate": "2024-05-26T00:04:42.112Z"
+    },
+    {
+      "id": "e3ea",
+      "userId": "1",
+      "plantId": "fbc9",
+      "tipo": "Vaso",
+      "status": "Em andamento",
+      "notificationDate": "2025-05-12T00:04:42.112Z"
+    },
+    {
+      "id": "3120",
+      "userId": "1",
+      "plantId": "9e90",
+      "tipo": "Rega",
+      "status": "Em andamento",
+      "notificationDate": "2024-05-19T00:06:17.161Z"
+    },
+    {
+      "id": "90f0",
+      "userId": "1",
+      "plantId": "9e90",
+      "tipo": "Fertilizar",
+      "status": "Em andamento",
+      "notificationDate": "2024-06-11T00:06:17.161Z"
+    },
+    {
+      "id": "692d",
+      "userId": "1",
+      "plantId": "9e90",
+      "tipo": "Vaso",
+      "status": "Em andamento",
+      "notificationDate": "2026-05-12T00:06:17.161Z"
+    }
+  ],
   "articles": []
 }
