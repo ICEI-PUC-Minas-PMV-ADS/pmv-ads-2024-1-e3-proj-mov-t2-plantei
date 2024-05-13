@@ -7,7 +7,9 @@ export default function TaskDetailsCard({ icon, color, daysForTheTask, taskName 
   function checkTheNumberOfDays(days, taskName) {
     let text = ''
 
-    if (days === 7) {
+    if (days === 0) {
+      text = 'Valor inválido!'
+    } else if (days === 7) {
       text = `A ${taskName} deve ser feita uma vez por semana`
     } else if (days === 1) {
       text = `A ${taskName} deve ser feita todos os dias`
@@ -18,11 +20,10 @@ export default function TaskDetailsCard({ icon, color, daysForTheTask, taskName 
     } else if (days < 30) {
       text = `A ${taskName} deve ser feita a cada ${days} dias`
     } else if (days < 365) {
-      text = `A ${taskName} deve ser feita a cada ${days / 7} semanas`
+      text = `A ${taskName} deve ser feita a cada ${Math.floor(days / 30)} meses`
     } else if (days > 365) {
-      text = `A ${taskName} deve ser feita a cada ${days / 365} anos`
+      text = `A ${taskName} deve ser feita a cada ${Math.floor(days / 365)} anos`
     }
-    // Arredondar as divisões para evitar números quebrados?
 
     return text
   }
