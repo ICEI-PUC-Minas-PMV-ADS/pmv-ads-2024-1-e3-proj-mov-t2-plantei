@@ -1,74 +1,48 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { View, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { Text } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 
 import api from "../../services/api";
-import { RegisterPlantContext } from "../../contexts/RegisterPlantContext";
 import EmptyPlants from "./EmptyPlants";
 import NavigationBarBottom from "../../components/NavigationBarBottom";
 import NavigationBar from "../../components/NavigationBar";
 import ProductCardCategory from "../../components/ProductCardCategory";
 
 export default function MyPlants() {
-  const { navigate } = useNavigation()
-  const { changePlantDataAdded } = useContext(RegisterPlantContext)
   const [myPlants, setMyPlants] = useState([])
+  const [isLoadingPlants, setIsLoadingPlants] = useState(true)
+  const { navigate } = useNavigation()
 
   async function getMyPlants() {
+    setIsLoadingPlants(true)
     try {
       const { data } = await api.get('/plants?_embed=category');
       setMyPlants(data);
     } catch (error) {
       console.error(error);
     }
-  }
-
-  async function getCustomFrequency(plant) {
-    try {
-      const { data } = await api.get(`/plants_frequency?plantId=${plant.id}`);
-      changePlantDataAdded({
-        ...plant,
-        category: {
-          ...plant.category,
-          watering_frequency_days: data[0].watering_frequency_days,
-          fertilization_frequency_days: data[0].fertilization_frequency_days / 7,
-          vase_change_frequency_days: data[0].vase_change_frequency_days / 365
-        }
-      })
-    } catch (error) {
-      console.error(error);
-    }
+    setIsLoadingPlants(false)
   }
 
   function handleSelectingPlant(plant) {
-    plant.category.name === "Personalizada" ? (
-      getCustomFrequency(plant)
-    ) : (
-      changePlantDataAdded({
-        ...plant,
-        category: {
-          ...plant.category,
-          watering_frequency_days: plant.category.watering_frequency_days,
-          fertilization_frequency_days: plant.category.fertilization_frequency_days / 7,
-          vase_change_frequency_days: plant.category.vase_change_frequency_days / 365
-        }
-      })
-    )
-
-    navigate('PlantDetails')
+    navigate('PlantDetails', { plantId: plant.id })
   }
 
   useEffect(() => {
     getMyPlants()
   }, [])
 
+  if (isLoadingPlants) {
+    return <></>
+  }
+
   return (
     <>
       <NavigationBar title="Minhas plantas" />
 
       <ScrollView style={styles.container}>
-        {myPlants.length > 0 ? (
+        {!isLoadingPlants && myPlants.length > 0 ? (
           <View>
             <Text style={styles.title} variant="titleLarge">
               Lista das minhas plantas

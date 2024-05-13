@@ -1,8 +1,9 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { View, StyleSheet, Image } from "react-native";
 import { Text, Button, Appbar } from "react-native-paper";
 
+import api from "../../services/api";
 import { RegisterPlantContext } from "../../contexts/RegisterPlantContext";
 import TaskDetailsCard from "../../components/TaskDetailsCard";
 import ConfirmRegistrationPopUp from "../../components/ConfirmRegistrationPopUp";
@@ -13,19 +14,55 @@ import PlantVaseIcon from "../../../assets/plant-vase-icon.svg";
 
 import Theme from "../../style/Theme";
 
-export default function PlantDetails() {
-  const { navigate, goBack, canGoBack } = useNavigation()
-  const { plantDataAdded, changePlantDataAdded } = useContext(RegisterPlantContext)
-
+export default function PlantDetails({ route }) {
+  const { changePlantDataAdded } = useContext(RegisterPlantContext)
+  const { plantId } = route.params;
+  const [myPlant, setMyPlant] = useState({})
+  const [isLoadingPlant, setIsLoadingPlant] = useState(true)
   const [modalVisible, setModalVisible] = useState(false);
+  const { navigate, goBack, canGoBack } = useNavigation()
+
+  async function getPlant() {
+    setIsLoadingPlant(true)
+    try {
+      const { data } = await api.get(`/plants/${plantId}?_embed=category`);
+      const plantDataRequest = data
+      setMyPlant({ ...plantDataRequest })
+
+      if (plantDataRequest.category.name === "Personalizada") {
+        const { data } = await api.get(`/plants_frequency?plantId=${plantId}`);
+        const frequencyDataRequest = data[0]
+        setMyPlant(oldState => ({
+          ...oldState,
+          category: {
+            ...oldState.category,
+            watering_frequency_days: frequencyDataRequest.watering_frequency_days,
+            fertilization_frequency_days: frequencyDataRequest.fertilization_frequency_days,
+            vase_change_frequency_days: frequencyDataRequest.vase_change_frequency_days,
+          }
+        }))
+      }
+    } catch (error) {
+      console.error(error);
+    }
+    setIsLoadingPlant(false)
+  }
 
   function handleClickEdit() {
+    changePlantDataAdded({ ...myPlant, httpMethod: 'edit' })
     navigate("DefinePlantName")
-    changePlantDataAdded({ ...plantDataAdded, httpMethod: 'edit' })
   }
 
   function handleClickDelete() {
     setModalVisible(!modalVisible)
+  }
+
+  useEffect(() => {
+    getPlant()
+  }, [])
+
+  if (isLoadingPlant) {
+    return <></>
   }
 
   return (
@@ -42,39 +79,39 @@ export default function PlantDetails() {
           <View style={styles.content}>
             <Image
               style={{ width: 130, height: 130 }}
-              source={{ uri: plantDataAdded.category.image }}
+              source={{ uri: myPlant.category.image }}
               resizeMode="contain"
             />
             <Text
               style={styles.title}
               variant="titleLarge"
             >
-              {plantDataAdded.name}
+              {myPlant.name}
             </Text>
             <Text
               style={styles.description}
               variant="bodyLarge"
             >
-              {plantDataAdded.description}
+              {myPlant.description}
             </Text>
           </View>
         </View>
         <View style={styles.container}>
           <TaskDetailsCard
             taskName="rega"
-            daysForTheTask={plantDataAdded.category.watering_frequency_days}
+            daysForTheTask={myPlant.category.watering_frequency_days}
             icon={<WaterIcon />}
             color="#006874"
           />
           <TaskDetailsCard
             taskName="fertilização"
-            daysForTheTask={plantDataAdded.category.fertilization_frequency_days}
+            daysForTheTask={myPlant.category.fertilization_frequency_days}
             icon={<LeafIcon />}
             color="#795900"
           />
           <TaskDetailsCard
             taskName="troca de vaso"
-            daysForTheTask={plantDataAdded.category.vase_change_frequency_days}
+            daysForTheTask={myPlant.category.vase_change_frequency_days}
             icon={<PlantVaseIcon />}
             color="#1C5129"
           />
@@ -89,7 +126,7 @@ export default function PlantDetails() {
       </View>
 
       {modalVisible && <ConfirmRegistrationPopUp
-        image={plantDataAdded.category.image}
+        image={myPlant.category.image}
         modalVisible={modalVisible}
         onChangeModalVisible={setModalVisible}
         methodHttp="post"
