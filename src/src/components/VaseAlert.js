@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { View, StyleSheet, Switch } from "react-native";
 import { Text, Divider } from "react-native-paper";
+import Vase from "../../assets/plant-vase-icon.svg";
 
-export default function VaseAlert({ image, text}) {
+
+export default function VaseAlert({ date, text }) {
   const [isEnabled, setIsEnabled] = useState(false);
 
   const toggleSwitch = () => {
@@ -13,7 +15,7 @@ export default function VaseAlert({ image, text}) {
     <View style={styles.card}>
       <View>
         <Text style={{ marginRight: 12 }} variant="titleSmall">
-          24/05/2024
+          {date}
         </Text>
         <View style={styles.cardContent}>
           <View
@@ -25,10 +27,11 @@ export default function VaseAlert({ image, text}) {
               marginBottom: 15,
             }}
           >
-            {image}
+            <Vase width={40} />
             <View>
               <Text style={{ marginRight: 12 }} variant="titleMedium">
-                Trocar vaso {text}
+                Trocar vaso {"\n"}
+                {text}
               </Text>
             </View>
           </View>

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { View, StyleSheet, Switch } from "react-native";
 import { Text, Divider } from "react-native-paper";
-import Leaf from "../../assets/leaf-icon.svg";
+import Water from "../../assets/water-icon.svg";
 
-
-export default function FertilizeAlert({ date, text}) {
+export default function WaterAlert({ date, text}) {
   const [isEnabled, setIsEnabled] = useState(false);
 
   const toggleSwitch = () => {
@@ -27,10 +26,10 @@ export default function FertilizeAlert({ date, text}) {
               marginBottom: 15,
             }}
           >
-            <Leaf width={40} />
+            <Water width={40} />
             <View>
               <Text style={{ marginRight: 12 }} variant="titleMedium">
-                Fertilizar{"\n"}
+                Regar {"\n"}
                 {text}
               </Text>
             </View>

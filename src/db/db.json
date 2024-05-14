@@ -121,7 +121,7 @@
       "userId": "1",
       "plantId": "fbc9",
       "tipo": "Rega",
-      "status": "Em andamento",
+      "status": 1,
       "notificationDate": "2024-05-16T00:04:42.112Z"
     },
     {
@@ -129,7 +129,7 @@
       "userId": "1",
       "plantId": "fbc9",
       "tipo": "Fertilizar",
-      "status": "Em andamento",
+      "status": 1,
       "notificationDate": "2024-05-26T00:04:42.112Z"
     },
     {
@@ -137,7 +137,7 @@
       "userId": "1",
       "plantId": "fbc9",
       "tipo": "Vaso",
-      "status": "Em andamento",
+      "status": 1,
       "notificationDate": "2025-05-12T00:04:42.112Z"
     },
     {
@@ -145,7 +145,7 @@
       "userId": "1",
       "plantId": "9e90",
       "tipo": "Rega",
-      "status": "Em andamento",
+      "status": 1,
       "notificationDate": "2024-05-19T00:06:17.161Z"
     },
     {
@@ -153,7 +153,7 @@
       "userId": "1",
       "plantId": "9e90",
       "tipo": "Fertilizar",
-      "status": "Em andamento",
+      "status": 1,
       "notificationDate": "2024-06-11T00:06:17.161Z"
     },
     {
@@ -161,7 +161,7 @@
       "userId": "1",
       "plantId": "9e90",
       "tipo": "Vaso",
-      "status": "Em andamento",
+      "status": 1,
       "notificationDate": "2026-05-12T00:06:17.161Z"
     }
   ],
