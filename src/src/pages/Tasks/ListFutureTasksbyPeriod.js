@@ -1,17 +1,40 @@
-import { View, StyleSheet, ScrollView } from "react-native";
+import React, { useEffect, useState } from "react";
+import { View, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { Text } from "react-native-paper";
+import { format, parseISO } from "date-fns";
 
 import NavigationBar from "../../components/NavigationBar";
-import ProductCardCategory from "../../components/ProductCardCategory";
 import NavigationBarMiddle from "../../components/NavigationBarMiddle";
+import NavigationBarBottom from "../../components/NavigationBarBottom";
 
-import Plant from "../../../assets/plant1.svg";
-import Leaf from "../../../assets/leaf-icon.svg";
-import Vase from "../../../assets/plant-vase-icon.svg";
 import FertilizeAlert from "../../components/FertilizeAlert";
 import VaseAlert from "../../components/VaseAlert";
+import WaterAlert from "../../components/WaterAlert";
+import api from "../../services/api";
 
-export default function ListFutureTasksDetails() {
+export default function ListFutureTasksByPeriod() {
+  const [tasks, setTasks] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  async function getOnGoingTasks() {
+    setLoading(true);
+    try {
+      const response = await api.get("/tasks?userId=1&status=1&_embed=plant");
+      setTasks(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+    setLoading(false);
+  }
+
+  useEffect(() => {
+    getOnGoingTasks();
+  }, []);
+
+  if (loading) {
+    return <></>;
+  }
+
   return (
     <>
       <NavigationBar title="Futuras tarefas" />
@@ -19,21 +42,50 @@ export default function ListFutureTasksDetails() {
       <NavigationBarMiddle />
 
       <ScrollView style={styles.container}>
-        <View>
-          <Text style={styles.title} variant="titleLarge">
-            Próximas tarefas
-          </Text>
-          <View style={{ marginBottom: 10 }}>
-            <FertilizeAlert image={<Leaf width={40} />} text="Nome da planta" />
+        {!loading && tasks.length > 0 ? (
+          <View>
+            <Text style={styles.title} variant="titleLarge">
+              Próximas tarefas
+            </Text>
+            {tasks.map((task) => (
+              <View key={task.id}>
+                <View style={{ marginBottom: 10 }}>
+                  {task.tipo == "Vaso" ? (
+                    <VaseAlert
+                      date={format(
+                        parseISO(task.notificationDate),
+                        "dd/MM/yyyy"
+                      )}
+                      text={task.plant.name}
+                    />
+                  ) : task.tipo == "Fertilizar" ? (
+                    <FertilizeAlert
+                      date={format(
+                        parseISO(task.notificationDate),
+                        "dd/MM/yyyy"
+                      )}
+                      text={task.plant.name}
+                    />
+                  ) : (
+                    <WaterAlert
+                      date={format(
+                        parseISO(task.notificationDate),
+                        "dd/MM/yyyy"
+                      )}
+                      text={task.plant.name}
+                    />
+                  )}
+                </View>
+              </View>
+            ))}
           </View>
-          <View style={{ marginBottom: 10 }}>
-            <VaseAlert image={<Vase width={40} />} text="Nome da planta" />
-          </View>
-          <View style={{ marginBottom: 10 }}>
-            <VaseAlert image={<Vase width={40} />} text="Nome da planta" />
-          </View>
-        </View>
+        ) : (
+          <></>
+        )}
       </ScrollView>
+
+      <NavigationBarBottom />
+
     </>
   );
 }

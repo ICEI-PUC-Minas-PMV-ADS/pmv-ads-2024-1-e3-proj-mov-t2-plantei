@@ -77,21 +77,21 @@ export default function DefineFrequencyOfTasks() {
         userId: "1",
         plantId: plantId,
         tipo: 'Rega',
-        status: 'Em andamento',
+        status: 1,
         notificationDate: setNotificationDate(wateringFrequencyInput, 1)
       },
       fertilizationTask: {
         userId: "1",
         plantId: plantId,
         tipo: 'Fertilizar',
-        status: 'Em andamento',
+        status: 1,
         notificationDate: setNotificationDate(fertilizationFrequencyInput, 7)
       },
       potChangeTask: {
         userId: "1",
         plantId: plantId,
         tipo: 'Vaso',
-        status: 'Em andamento',
+        status: 1,
         notificationDate: setNotificationDate(vaseChangeFrequencyInput, 365)
       }
     }
@@ -146,7 +146,7 @@ export default function DefineFrequencyOfTasks() {
 
   async function editOngoingTasks() {
     try {
-      const { data } = await api.get(`/tasks?plantId=${plantDataAdded.id}&status=Em%20andamento`);
+      const { data } = await api.get(`/tasks?plantId=${plantDataAdded.id}&status=1`);
 
       data.forEach(async (task) => {
         let days = 0
