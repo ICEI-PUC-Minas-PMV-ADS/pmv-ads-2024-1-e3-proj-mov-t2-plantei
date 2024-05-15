@@ -3,6 +3,8 @@ import { useContext } from 'react';
 import { Text } from 'react-native-paper';
 import { useForm } from 'react-hook-form';
 import { useNavigation } from '@react-navigation/native';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 import NavigationBar from '../../components/NavigationBar';
 import ThreeSteps from '../../components/ThreeSteps';
@@ -10,12 +12,17 @@ import ButtonsToAdvanceAndReturnForm from '../../components/ButtonsToAdvanceAndR
 import CustomTextInput from '../../components/CustomTextInput';
 import { RegisterPlantContext } from '../../contexts/RegisterPlantContext';
 
+const schema = yup.object({
+  description: yup.string().trim().required("Escolha uma descrição para sua planta"),
+})
+
 export default function DefinePlantDescription() {
   const { navigate } = useNavigation()
   const { plantDataAdded, changePlantDataAdded } = useContext(RegisterPlantContext)
 
   const { control, handleSubmit, formState: { errors } } = useForm({
-    defaultValues: { description: plantDataAdded.description }
+    defaultValues: { description: plantDataAdded.description },
+    resolver: yupResolver(schema),
   })
 
   function handleDescriptionSubmit(formData) {
