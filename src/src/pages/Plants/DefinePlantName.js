@@ -13,7 +13,7 @@ import ButtonsToAdvanceAndReturnForm from '../../components/ButtonsToAdvanceAndR
 import CustomTextInput from '../../components/CustomTextInput';
 
 const schema = yup.object({
-  name: yup.string().required("Escolha um nome para sua planta"),
+  name: yup.string().trim().required("Escolha um nome para sua planta"),
 })
 
 export default function DefinePlantName() {
