@@ -165,5 +165,21 @@
       "notificationDate": "2026-05-12T00:06:17.161Z"
     }
   ],
-  "articles": []
+  "articles": [
+    {
+      "id":"1",
+      "titulo":"Descubra 10 Plantas Brasileiras Irresistíveis para sua Casa",
+      "imagem":"https://i.imgur.com/fGCu6YU.png"
+    },
+    {
+      "id":"2",
+      "titulo":"Dicas e Truques para Rega, Adubação e Troca de Vaso",
+      "imagem":"https://i.imgur.com/xyiK7wu.png"
+    },
+    {
+      "id":"3",
+      "titulo":"Dicas e Truques para Rega, Adubação e Troca de Vaso",
+      "imagem":"https://imgur.com/YmCFdvS.png"
+    }
+  ]
 }
