@@ -31,16 +31,11 @@ export default function SelectCategory() {
   }
 
   function handleSelectingCategory(category) {
-    const plantData = {
-      ...plantDataAdded,
+    changePlantDataAdded({
       httpMethod: 'post',
-      userId: "1",
+      userId: plantDataAdded.userId,
       categoryId: category.id,
       category: { ...category }
-    }
-
-    changePlantDataAdded({
-      ...plantData,
     })
 
     navigate("DefinePlantName")

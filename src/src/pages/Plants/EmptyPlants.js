@@ -3,9 +3,6 @@ import { Text, Button } from "react-native-paper";
 import { useNavigation } from '@react-navigation/native';
 
 import Emoji from "../../../assets/emoji-crying.svg";
-import NavigationBarBottom from "../../components/NavigationBarBottom";
-import NavigationBar from "../../components/NavigationBar";
-
 
 export default function EmptyPlant() {
   const { navigate } = useNavigation()
