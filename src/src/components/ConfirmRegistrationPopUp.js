@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import {
   Modal,
   Text,
@@ -11,7 +10,14 @@ import { useNavigation } from "@react-navigation/native";
 
 import Theme from "../style/Theme";
 
-export default function ConfirmRegistrationPopUp({ image, onChangeModalVisible, modalVisible, methodHttp }) {
+export default function ConfirmRegistrationPopUp({
+  image,
+  onChangeModalVisible,
+  modalVisible,
+  methodHttp,
+  plantName,
+  additionalText
+}) {
   const { navigate } = useNavigation()
 
   return (
@@ -34,21 +40,48 @@ export default function ConfirmRegistrationPopUp({ image, onChangeModalVisible, 
               />
             </View>
           )}
-          <Text style={styles.title}>Planta cadastrada com sucesso!</Text>
-          <View style={styles.buttonContainer}>
-            {methodHttp === 'post' || 'edit' ? (
-              <Button
-                style={styles.button}
-                mode="contained"
-                onPress={() => {
-                  onChangeModalVisible(!modalVisible)
-                  navigate("MyPlants")
-                }}
-              >
-                Tudo certo!
-              </Button>
-            ) : (
-              <>
+
+          {methodHttp === 'post' && (
+            <>
+              <Text style={styles.title}>Planta cadastrada com sucesso!</Text>
+              <View style={styles.buttonContainer}>
+                <Button
+                  style={styles.button}
+                  mode="contained"
+                  onPress={() => {
+                    onChangeModalVisible(!modalVisible)
+                    navigate("MyPlants")
+                  }}
+                >
+                  Tudo certo!
+                </Button>
+              </View>
+            </>
+          )}
+
+          {methodHttp === 'edit' && (
+            <>
+              <Text style={styles.title}>Planta atualizada com sucesso!</Text>
+              {additionalText && <Text style={styles.additionalText}>{additionalText}</Text>}
+              <View style={styles.buttonContainer}>
+                <Button
+                  style={styles.button}
+                  mode="contained"
+                  onPress={() => {
+                    onChangeModalVisible(!modalVisible)
+                    navigate('MyPlants', { refresh: true });
+                  }}
+                >
+                  Tudo certo!
+                </Button>
+              </View>
+            </>
+          )}
+
+          {methodHttp === 'delete' && (
+            <>
+              <Text style={styles.title}>Deseja mesmo excluir {plantName}?</Text>
+              <View style={styles.buttonContainer}>
                 <Button
                   style={styles.button}
                   mode="contained-tonal"
@@ -59,13 +92,17 @@ export default function ConfirmRegistrationPopUp({ image, onChangeModalVisible, 
                 <Button
                   style={styles.button}
                   mode="contained"
-                  onPress={() => onChangeModalVisible(!modalVisible)}
+                  onPress={() => {
+                    console.log('Apagar')
+                    // navigate("MyPlants")
+                  }}
                 >
-                  Salvar
+                  Apagar
                 </Button>
-              </>
-            )}
-          </View>
+              </View>
+            </>
+          )}
+
         </View>
       </View>
     </Modal>
@@ -109,6 +146,12 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
     marginVertical: 12,
     fontSize: 16,
+  },
+
+  additionalText: {
+    color: Theme.colors.secondary,
+    textAlign: "center",
+    marginBottom: 12
   },
 
   buttonContainer: {

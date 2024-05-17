@@ -49,7 +49,17 @@ export default function PlantDetails({ route }) {
   }
 
   function handleClickEdit() {
-    changePlantDataAdded({ ...myPlant, httpMethod: 'edit' })
+    changePlantDataAdded({
+      ...myPlant,
+      httpMethod: 'edit',
+      category: {
+        ...myPlant.category,
+        watering_frequency_days: myPlant.category.watering_frequency_days,
+        fertilization_frequency_days: myPlant.category.fertilization_frequency_days,
+        vase_change_frequency_days: myPlant.category.vase_change_frequency_days,
+      }
+    })
+
     navigate("DefinePlantName")
   }
 

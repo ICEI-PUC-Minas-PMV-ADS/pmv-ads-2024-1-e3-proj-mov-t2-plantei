@@ -18,26 +18,39 @@ import PlantVaseIcon from "../../../assets/plant-vase-icon.svg";
 import Theme from "../../style/Theme"
 
 export default function DefineFrequencyOfTasks() {
-  const { plantDataAdded, changePlantDataAdded } = useContext(RegisterPlantContext)
+  const { plantDataAdded } = useContext(RegisterPlantContext)
+
+  const {
+    watering_frequency_days: wateringFrequencyContext,
+    fertilization_frequency_days: fertilizationFrequencyContext,
+    vase_change_frequency_days: vaseChangeFrequencyContext
+  } = plantDataAdded.category
+
+  const { name: categoryName } = plantDataAdded.category
+  const { httpMethod } = plantDataAdded
+  const customPlantOrPlantEdit =
+    categoryName === 'Personalizada' || httpMethod === "edit"
+
+  let fertilizationFrequency = 0
+  let vaseChangeFrequency = 0
 
   const [modalVisible, setModalVisible] = useState(false);
 
   const [wateringFrequencyInput, setWateringFrequencyInput]
-    = useState(plantDataAdded.category.watering_frequency_days)
+    = useState(wateringFrequencyContext)
   const [fertilizationFrequencyInput, setFertilizationFrequencyInput]
-    = useState(plantDataAdded.category.fertilization_frequency_days)
+    = useState(Math.floor(fertilizationFrequencyContext / 7))
   const [vaseChangeFrequencyInput, setVaseChangeFrequencyInput]
-    = useState(plantDataAdded.category.vase_change_frequency_days)
+    = useState(Math.floor(vaseChangeFrequencyContext / 365))
 
   function handleFrequencySubmit() {
-    changePlantDataAdded({
-      ...plantDataAdded,
-      watering_frequency_days: wateringFrequencyInput,
-      fertilization_frequency_days: fertilizationFrequencyInput,
-      vase_change_frequency_days: vaseChangeFrequencyInput
-    })
+    fertilizationFrequency
+      = fertilizationFrequencyContext % 7 + fertilizationFrequencyInput * 7
 
-    plantDataAdded.httpMethod === 'post' ? (
+    vaseChangeFrequency
+      = vaseChangeFrequencyContext % 365 + vaseChangeFrequencyInput * 365
+
+    httpMethod === 'post' ? (
       registerPlant()
     ) : (
       editPlant()
@@ -47,7 +60,7 @@ export default function DefineFrequencyOfTasks() {
   async function registerPlant() {
     try {
       const { data } = await api.post('/plants', {
-        userId: "1",
+        userId: plantDataAdded.userId,
         categoryId: plantDataAdded.category.id,
         name: plantDataAdded.name,
         description: plantDataAdded.description
@@ -58,41 +71,33 @@ export default function DefineFrequencyOfTasks() {
     }
   }
 
-  function setNotificationDate(extraDays, weight) {
-    const currentDate = new Date()
-    let totalDays = 0
-
-    plantDataAdded.category.name === "Personalizada" ? (
-      totalDays = extraDays * weight
-    ) : (
-      totalDays = extraDays
-    )
-
-    return new Date(currentDate.setDate(currentDate.getDate() + totalDays))
-  }
-
   async function registerFirstTasks(plantId) {
+    function calculateNotificationDate(extraDays) {
+      const currentDate = new Date()
+      return new Date(currentDate.setDate(currentDate.getDate() + extraDays))
+    }
+
     const tasks = {
       wateringTask: {
-        userId: "1",
+        userId: plantDataAdded.userId,
         plantId: plantId,
         tipo: 'Rega',
         status: 1,
-        notificationDate: setNotificationDate(wateringFrequencyInput, 1)
+        notificationDate: calculateNotificationDate(wateringFrequencyInput)
       },
       fertilizationTask: {
-        userId: "1",
+        userId: plantDataAdded.userId,
         plantId: plantId,
         tipo: 'Fertilizar',
         status: 1,
-        notificationDate: setNotificationDate(fertilizationFrequencyInput, 7)
+        notificationDate: calculateNotificationDate(fertilizationFrequency)
       },
       potChangeTask: {
-        userId: "1",
+        userId: plantDataAdded.userId,
         plantId: plantId,
         tipo: 'Vaso',
         status: 1,
-        notificationDate: setNotificationDate(vaseChangeFrequencyInput, 365)
+        notificationDate: calculateNotificationDate(vaseChangeFrequency)
       }
     }
 
@@ -100,7 +105,7 @@ export default function DefineFrequencyOfTasks() {
       await api.post('/tasks', tasks.wateringTask);
       await api.post('/tasks', tasks.fertilizationTask);
       await api.post('/tasks', tasks.potChangeTask);
-      plantDataAdded.category.name === 'Personalizada' ? (
+      categoryName === 'Personalizada' ? (
         registerTaskFrequencies(plantId)
       ) : (
         setModalVisible(!modalVisible))
@@ -114,8 +119,8 @@ export default function DefineFrequencyOfTasks() {
       await api.post('/plants_frequency', {
         plantId: plantId,
         watering_frequency_days: wateringFrequencyInput,
-        fertilization_frequency_days: fertilizationFrequencyInput * 7,
-        vase_change_frequency_days: vaseChangeFrequencyInput * 365,
+        fertilization_frequency_days: fertilizationFrequency,
+        vase_change_frequency_days: vaseChangeFrequency,
       });
       setModalVisible(!modalVisible)
     } catch (error) {
@@ -123,49 +128,31 @@ export default function DefineFrequencyOfTasks() {
     }
   }
 
+  function haveAnyFrequenciesBeenEdited() {
+    if (wateringFrequencyContext !== wateringFrequencyInput ||
+      Math.floor(fertilizationFrequencyContext / 7) !== fertilizationFrequencyInput ||
+      Math.floor(vaseChangeFrequencyContext / 365) !== vaseChangeFrequencyInput) {
+      return true
+    } else {
+      return false
+    }
+  }
+
   async function editPlant() {
     try {
       const { data } = await api.patch(`/plants/${plantDataAdded.id}`, {
-        categoryId: "1",
+        categoryId: haveAnyFrequenciesBeenEdited() ? "1" : plantDataAdded.category.id,
         name: plantDataAdded.name,
         description: plantDataAdded.description
       });
 
-      editOngoingTasks()
-
-      plantDataAdded.category.name === "Personalizada" ? (
+      if (categoryName === "Personalizada") {
         editCustomFrequency()
-      ) : (
+      } else if (haveAnyFrequenciesBeenEdited()) {
         registerTaskFrequencies(data.id)
-      )
-
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-  async function editOngoingTasks() {
-    try {
-      const { data } = await api.get(`/tasks?plantId=${plantDataAdded.id}&status=1`);
-
-      data.forEach(async (task) => {
-        let days = 0
-        let weight = 1
-
-        if (task.tipo === 'Rega') {
-          days = wateringFrequencyInput
-        } else if (task.tipo === 'Fertilizar') {
-          days = fertilizationFrequencyInput
-          weight = 7
-        } else if (task.tipo === 'Vaso') {
-          days = vaseChangeFrequencyInput
-          weight = 365
-        }
-
-        await api.patch(`/tasks/${task.id}`, {
-          notificationDate: setNotificationDate(days, weight)
-        });
-      })
+      } else {
+        setModalVisible(!modalVisible)
+      }
 
     } catch (error) {
       console.error(error);
@@ -177,8 +164,8 @@ export default function DefineFrequencyOfTasks() {
       const plantsFrequency = await api.get(`/plants_frequency?plantId=${plantDataAdded.id}`);
       await api.patch(`/plants_frequency/${plantsFrequency.data[0].id}`, {
         watering_frequency_days: wateringFrequencyInput,
-        fertilization_frequency_days: fertilizationFrequencyInput * 7,
-        vase_change_frequency_days: vaseChangeFrequencyInput * 365,
+        fertilization_frequency_days: fertilizationFrequency,
+        vase_change_frequency_days: vaseChangeFrequency,
       });
       setModalVisible(!modalVisible)
     } catch (error) {
@@ -193,81 +180,79 @@ export default function DefineFrequencyOfTasks() {
       <View style={styles.container}>
         <View style={styles.content}>
           <ThreeSteps currentStep={3} />
-          {plantDataAdded.category.name === 'Personalizada' || plantDataAdded.httpMethod === "edit" ? (
-            <Text style={styles.title}>Defina a frequência das tarefas abaixo</Text>
-          ) : (
-            <Text style={styles.title}>Saiba como cuidar da sua planta</Text>
-          )}
 
-          {plantDataAdded.category.name === 'Personalizada' || plantDataAdded.httpMethod === "edit" ? (
-            <View style={styles.containerFunctionality}>
-              <View style={styles.containerTaskType}>
-                <WaterIcon />
-                <Text style={styles.wateringTaskText}>Rega</Text>
-              </View>
-              <View style={styles.controlContainer}>
-                <Text>Em dias</Text>
-                <InputNumberSpinner
-                  value={wateringFrequencyInput}
-                  onChangeValue={setWateringFrequencyInput}
-                />
-              </View>
-            </View>
-          ) : (
-            <TaskDetailsCard
-              taskName="rega"
-              daysForTheTask={wateringFrequencyInput}
-              icon={<WaterIcon />}
-              color="#006874"
-            />
-          )}
+          {customPlantOrPlantEdit ? (
+            <>
+              <Text style={styles.title}>Defina a frequência das tarefas abaixo</Text>
 
-          {plantDataAdded.category.name === 'Personalizada' || plantDataAdded.httpMethod === "edit" ? (
-            <View style={styles.containerFunctionality}>
-              <View style={styles.containerTaskType}>
-                <LeafIcon />
-                <Text style={styles.fertilizerTaskText}>Adubo</Text>
+              <View style={styles.containerFunctionality}>
+                <View style={styles.containerTaskType}>
+                  <WaterIcon />
+                  <Text style={styles.wateringTaskText}>Rega</Text>
+                </View>
+                <View style={styles.controlContainer}>
+                  <Text>Em dias</Text>
+                  <InputNumberSpinner
+                    value={wateringFrequencyInput}
+                    onChangeValue={setWateringFrequencyInput}
+                  />
+                </View>
               </View>
-              <View style={styles.controlContainer}>
-                <Text>Em semanas</Text>
-                <InputNumberSpinner
-                  value={fertilizationFrequencyInput}
-                  onChangeValue={setFertilizationFrequencyInput}
-                />
-              </View>
-            </View>
-          ) : (
-            <TaskDetailsCard
-              taskName="fertilização"
-              daysForTheTask={fertilizationFrequencyInput}
-              icon={<LeafIcon />}
-              color="#795900"
-            />
-          )}
 
-          {plantDataAdded.category.name === 'Personalizada' || plantDataAdded.httpMethod === "edit" ? (
-            <View style={styles.containerFunctionality}>
-              <View style={styles.containerTaskType}>
-                <PlantVaseIcon />
-                <Text style={styles.taskTextToChangeTheVase}>Vaso</Text>
+              <View style={styles.containerFunctionality}>
+                <View style={styles.containerTaskType}>
+                  <LeafIcon />
+                  <Text style={styles.fertilizerTaskText}>Adubo</Text>
+                </View>
+                <View style={styles.controlContainer}>
+                  <Text>Em semanas</Text>
+                  <InputNumberSpinner
+                    value={fertilizationFrequencyInput}
+                    onChangeValue={setFertilizationFrequencyInput}
+                  />
+                </View>
               </View>
-              <View style={styles.controlContainer}>
-                <Text>Em anos</Text>
-                <InputNumberSpinner
-                  value={vaseChangeFrequencyInput}
-                  onChangeValue={setVaseChangeFrequencyInput}
-                />
-              </View>
-            </View>
-          ) : (
-            <TaskDetailsCard
-              taskName="troca de vaso"
-              daysForTheTask={vaseChangeFrequencyInput}
-              icon={<PlantVaseIcon />}
-              color="#1C5129"
-            />
-          )}
 
+              <View style={styles.containerFunctionality}>
+                <View style={styles.containerTaskType}>
+                  <PlantVaseIcon />
+                  <Text style={styles.taskTextToChangeTheVase}>Vaso</Text>
+                </View>
+                <View style={styles.controlContainer}>
+                  <Text>Em anos</Text>
+                  <InputNumberSpinner
+                    value={vaseChangeFrequencyInput}
+                    onChangeValue={setVaseChangeFrequencyInput}
+                  />
+                </View>
+              </View>
+            </>
+          ) : (
+            <>
+              <Text style={styles.title}>Saiba como cuidar da sua planta</Text>
+
+              <TaskDetailsCard
+                taskName="rega"
+                daysForTheTask={wateringFrequencyInput}
+                icon={<WaterIcon />}
+                color="#006874"
+              />
+
+              <TaskDetailsCard
+                taskName="fertilização"
+                daysForTheTask={fertilizationFrequencyInput}
+                icon={<LeafIcon />}
+                color="#795900"
+              />
+
+              <TaskDetailsCard
+                taskName="troca de vaso"
+                daysForTheTask={vaseChangeFrequencyInput}
+                icon={<PlantVaseIcon />}
+                color="#1C5129"
+              />
+            </>
+          )}
         </View>
         <ButtonsToAdvanceAndReturnForm onSubmit={handleFrequencySubmit} />
       </View>
@@ -276,7 +261,10 @@ export default function DefineFrequencyOfTasks() {
         image={plantDataAdded.category.image}
         modalVisible={modalVisible}
         onChangeModalVisible={setModalVisible}
-        methodHttp={plantDataAdded.httpMethod}
+        methodHttp={httpMethod}
+        additionalText={haveAnyFrequenciesBeenEdited() ? (
+          'As próximas tarefas criadas usarão a nova frequência definida por você.'
+        ) : null}
       />}
     </>
   );
