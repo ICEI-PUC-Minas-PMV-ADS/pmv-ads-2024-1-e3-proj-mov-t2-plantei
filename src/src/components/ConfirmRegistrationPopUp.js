@@ -81,7 +81,7 @@ export default function ConfirmRegistrationPopUp({
 
           {methodHttp === 'delete' && (
             <>
-              <Text style={styles.title}>Deseja mesmo excluir {plantName}?</Text>
+              <Text style={styles.title}>Deseja mesmo excluir{"\n"}{plantName}?</Text>
               <View style={styles.buttonContainer}>
                 <Button
                   style={styles.button}
@@ -95,7 +95,6 @@ export default function ConfirmRegistrationPopUp({
                   mode="contained"
                   onPress={() => {
                     onConfirmDeletion()
-                    navigate('MyPlants', { refresh: true });
                   }}
                 >
                   Apagar
@@ -141,7 +140,6 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    maxWidth: 130,
     color: Theme.colors.secondary,
     textAlign: "center",
     marginHorizontal: 30,

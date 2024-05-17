@@ -94,6 +94,8 @@ export default function PlantDetails({ route }) {
     async function deletePlant() {
       try {
         await api.delete(`/plants/${plantId}`);
+        
+        navigate('MyPlants', { refresh: true });
       } catch (error) {
         console.error(error);
       }
@@ -175,6 +177,7 @@ export default function PlantDetails({ route }) {
         modalVisible={modalVisible}
         onChangeModalVisible={setModalVisible}
         methodHttp="delete"
+        plantName={myPlant.name}
         onConfirmDeletion={handleConfirmDeletion}
       />}
     </>
