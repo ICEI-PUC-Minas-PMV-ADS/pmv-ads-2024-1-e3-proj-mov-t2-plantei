@@ -63,8 +63,43 @@ export default function PlantDetails({ route }) {
     navigate("DefinePlantName")
   }
 
-  function handleClickDelete() {
-    setModalVisible(!modalVisible)
+  async function handleConfirmDeletion() {
+    async function deleteTasks() {
+      try {
+        const { data: tasks } = await api.get(`/tasks?plantId=${plantId}`);
+
+        tasks.forEach(async (task) => {
+          await api.delete(`/tasks/${task.id}`);
+        })
+
+        deleteFrequency()
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    async function deleteFrequency() {
+      try {
+        if (myPlant.category.name === "Personalizada") {
+          const { data: plantsFrequency } = await api.get(`/plants_frequency?plantId=${plantId}`);
+          await api.delete(`/plants_frequency/${plantsFrequency[0].id}`);
+        }
+
+        deletePlant()
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    async function deletePlant() {
+      try {
+        await api.delete(`/plants/${plantId}`);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    deleteTasks()
   }
 
   useEffect(() => {
@@ -81,7 +116,7 @@ export default function PlantDetails({ route }) {
         <Appbar.BackAction onPress={() => canGoBack() && goBack()} />
         <Appbar.Content titleStyle={styles.titleHeader} title="Minhas plantas" />
         <Appbar.Action icon="playlist-edit" onPress={handleClickEdit} />
-        <Appbar.Action icon="trash-can-outline" onPress={handleClickDelete} />
+        <Appbar.Action icon="trash-can-outline" onPress={() => { setModalVisible(!modalVisible) }} />
       </Appbar.Header>
 
       <View>
@@ -139,7 +174,8 @@ export default function PlantDetails({ route }) {
         image={myPlant.category.image}
         modalVisible={modalVisible}
         onChangeModalVisible={setModalVisible}
-        methodHttp="post"
+        methodHttp="delete"
+        onConfirmDeletion={handleConfirmDeletion}
       />}
     </>
   );

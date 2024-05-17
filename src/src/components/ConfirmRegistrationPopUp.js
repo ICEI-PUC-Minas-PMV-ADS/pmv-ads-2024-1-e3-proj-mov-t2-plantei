@@ -16,7 +16,8 @@ export default function ConfirmRegistrationPopUp({
   modalVisible,
   methodHttp,
   plantName,
-  additionalText
+  additionalText,
+  onConfirmDeletion
 }) {
   const { navigate } = useNavigation()
 
@@ -93,8 +94,8 @@ export default function ConfirmRegistrationPopUp({
                   style={styles.button}
                   mode="contained"
                   onPress={() => {
-                    console.log('Apagar')
-                    // navigate("MyPlants")
+                    onConfirmDeletion()
+                    navigate('MyPlants', { refresh: true });
                   }}
                 >
                   Apagar
