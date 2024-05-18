@@ -9,6 +9,7 @@ const PlusRoute = () => <Text></Text>;
 
 const SettingsRoute = () => <Text></Text>;
 
+
 const NavigationBarBottom = () => {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
