@@ -1,16 +1,19 @@
 import * as React from "react";
-import { View, StyleSheet, BoxShadow } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 import { BottomNavigation, Text } from "react-native-paper";
 import Theme from "../style/Theme";
+import { useNavigation } from "@react-navigation/native";
 
-const HomeRoute = () => <Text></Text>;
 
-const PlusRoute = () => <Text></Text>;
+const HomeRoute = () => <></>;
 
-const SettingsRoute = () => <Text></Text>;
+const PlusRoute = () => <></>;
+
+const SettingsRoute = () => <></>;
 
 
 const NavigationBarBottom = () => {
+  const navigation = useNavigation();
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
     {
@@ -28,10 +31,24 @@ const NavigationBarBottom = () => {
     },
   ]);
 
+  React.useEffect(() => {
+    switch (routes[index].key) {
+      case "home":
+        navigation.navigate("Home");
+        break;
+      case "plus":
+        navigation.navigate("SelectCategory");
+        break;
+      case "settings":
+        navigation.navigate("Settings");
+        break;
+    }
+  }, [index, navigation, routes]);
+
   const renderScene = BottomNavigation.SceneMap({
-    home: HomeRoute,
-    plus: PlusRoute,
-    settings: SettingsRoute,
+    home: () => null,
+    plus: () => null,
+    settings: () => null,
   });
 
   return (
