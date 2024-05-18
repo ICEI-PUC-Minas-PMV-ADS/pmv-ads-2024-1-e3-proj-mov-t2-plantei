@@ -19,7 +19,7 @@ export default function Routes() {
   return (
     <NavigationContainer theme={Theme}>
       <Navigator
-        initialRouteName="Settings"
+        initialRouteName="MyPlants"
         screenOptions={{
           headerShown: false,
         }}
