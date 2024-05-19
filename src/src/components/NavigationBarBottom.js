@@ -2,15 +2,7 @@ import * as React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { BottomNavigation, Text } from "react-native-paper";
 import Theme from "../style/Theme";
-import { useNavigation } from "@react-navigation/native";
-
-
-const HomeRoute = () => <></>;
-
-const PlusRoute = () => <></>;
-
-const SettingsRoute = () => <></>;
-
+import { useNavigation, useFocusEffect} from "@react-navigation/native";
 
 const NavigationBarBottom = () => {
   const navigation = useNavigation();
@@ -31,7 +23,8 @@ const NavigationBarBottom = () => {
     },
   ]);
 
-  React.useEffect(() => {
+  const handleIndexChange = (index) => {
+    setIndex(index);
     switch (routes[index].key) {
       case "home":
         navigation.navigate("Home");
@@ -42,8 +35,28 @@ const NavigationBarBottom = () => {
       case "settings":
         navigation.navigate("Settings");
         break;
+      default:
+        break;
     }
-  }, [index, navigation, routes]);
+  };
+
+  useFocusEffect(
+    React.useCallback(() => {
+      switch (navigation.getState().routes[navigation.getState().index].name) {
+        case "Home":
+          setIndex(0);
+          break;
+        case "SelectCategory":
+          setIndex(1);
+          break;
+        case "Settings":
+          setIndex(2);
+          break;
+        default:
+          break;
+      }
+    }, [navigation])
+  );
 
   const renderScene = BottomNavigation.SceneMap({
     home: () => null,
@@ -54,7 +67,7 @@ const NavigationBarBottom = () => {
   return (
     <BottomNavigation
       navigationState={{ index, routes }}
-      onIndexChange={setIndex}
+      onIndexChange={handleIndexChange}
       renderScene={renderScene}
       barStyle={styles.bar}
       activeColor={Theme.colors.primary}
@@ -64,8 +77,7 @@ const NavigationBarBottom = () => {
 };
 
 const styles = StyleSheet.create({
-
-  bar:{
+  bar: {
     backgroundColor: Theme.colors.background,
     borderTopWidth: 1,
     borderColor: Theme.colors.outlineVariant,

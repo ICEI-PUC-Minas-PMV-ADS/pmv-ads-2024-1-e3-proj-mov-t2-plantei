@@ -47,7 +47,7 @@ export default function Home() {
                   </TouchableOpacity>
                 </View>
                 <View style={styles.navItem} marginRight={10}>
-                  <TouchableOpacity onPress={() => console.log("Pressed")}>
+                  <TouchableOpacity onPress={() => navigate("ListFutureTasks")}>
                     <Task width={24} height={24} marginBottom={10} />
                     <Text style={styles.textColor} variant="bodySmall">
                       Futuras{"\n"}tarefas
