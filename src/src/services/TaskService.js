@@ -1,4 +1,5 @@
 import api from "../../src/services/api";
+import { format, parseISO } from "date-fns";
 
 const updateStatus = async (id, status, plantId, tipo) => {
   const response = await api.patch(`/tasks/${id}`, {
@@ -50,7 +51,19 @@ function setNotificationDate(extraDays) {
   return new Date(currentDate.setDate(currentDate.getDate() + totalDays));
 }
 
+const isDateOlderThanNow = (date) => {
+  const now = new Date();
+  return new Date(date) < now;
+};
+
+const createDataString = (date) => {
+  return format(
+    parseISO(date),
+    "dd/MM/yyyy"
+  ) + (isDateOlderThanNow(date) ? ' - Atrasado' : '')
+}
 
 export default {
-  updateStatus
+  updateStatus,
+  createDataString
 };

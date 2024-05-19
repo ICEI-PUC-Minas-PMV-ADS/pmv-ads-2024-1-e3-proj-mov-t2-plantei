@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { View, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { Text } from "react-native-paper";
-import { format, parseISO } from "date-fns";
 
 import NavigationBar from "../../components/NavigationBar";
 import NavigationBarMiddle from "../../components/NavigationBarMiddle";
 import NavigationBarBottom from "../../components/NavigationBarBottom";
 
+import TaskService from "../../../src/services/TaskService";
 import FertilizeAlert from "../../components/FertilizeAlert";
 import VaseAlert from "../../components/VaseAlert";
 import WaterAlert from "../../components/WaterAlert";
@@ -54,22 +54,25 @@ export default function ListFutureTasksByPeriod() {
                     <VaseAlert
                       id={task.id}
                       plantId={task.plant.id}
-                      date={createDataString(task.notificationDate)}
+                      date={TaskService.createDataString(task.notificationDate)}
                       text={task.plant.name}
+                      redirect=""
                     />
                   ) : task.tipo == "Fertilizar" ? (
                     <FertilizeAlert
                       id={task.id}
                       plantId={task.plant.id}
-                      date={createDataString(task.notificationDate)}
+                      date={TaskService.createDataString(task.notificationDate)}
                       text={task.plant.name}
+                      redirect=""
                     />
                   ) : (
                     <WaterAlert
                       id={task.id}
                       plantId={task.plant.id}
-                      date={createDataString(task.notificationDate)}
+                      date={TaskService.createDataString(task.notificationDate)}
                       text={task.plant.name}
+                      redirect=""
                     />
                   )}
                 </View>
@@ -85,18 +88,6 @@ export default function ListFutureTasksByPeriod() {
 
     </>
   );
-}
-
-const isDateOlderThanNow = (date) => {
-  const now = new Date();
-  return new Date(date) < now;
-};
-
-const createDataString = (date) => {
-  return format(
-    parseISO(date),
-    "dd/MM/yyyy"
-  ) + (isDateOlderThanNow(date) ? ' - Atrasado' : '')
 }
 
 const styles = StyleSheet.create({
