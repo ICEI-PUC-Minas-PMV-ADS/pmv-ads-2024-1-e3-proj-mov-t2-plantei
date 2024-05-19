@@ -19,7 +19,7 @@ export default function ListFutureTasksByPeriod() {
   async function getOnGoingTasks() {
     setLoading(true);
     try {
-      const response = await api.get("/tasks?userId=1&status=1&_embed=plant");
+      const response = await api.get("/tasks?userId=1&status=1&_embed=plant&_sort=notificationDate");
       setTasks(response.data);
     } catch (error) {
       console.error(error);
@@ -52,26 +52,23 @@ export default function ListFutureTasksByPeriod() {
                 <View style={{ marginBottom: 10 }}>
                   {task.tipo == "Vaso" ? (
                     <VaseAlert
-                      date={format(
-                        parseISO(task.notificationDate),
-                        "dd/MM/yyyy"
-                      )}
+                      id={task.id}
+                      plantId={task.plant.id}
+                      date={createDataString(task.notificationDate)}
                       text={task.plant.name}
                     />
                   ) : task.tipo == "Fertilizar" ? (
                     <FertilizeAlert
-                      date={format(
-                        parseISO(task.notificationDate),
-                        "dd/MM/yyyy"
-                      )}
+                      id={task.id}
+                      plantId={task.plant.id}
+                      date={createDataString(task.notificationDate)}
                       text={task.plant.name}
                     />
                   ) : (
                     <WaterAlert
-                      date={format(
-                        parseISO(task.notificationDate),
-                        "dd/MM/yyyy"
-                      )}
+                      id={task.id}
+                      plantId={task.plant.id}
+                      date={createDataString(task.notificationDate)}
                       text={task.plant.name}
                     />
                   )}
@@ -90,11 +87,24 @@ export default function ListFutureTasksByPeriod() {
   );
 }
 
+const isDateOlderThanNow = (date) => {
+  const now = new Date();
+  return new Date(date) < now;
+};
+
+const createDataString = (date) => {
+  return format(
+    parseISO(date),
+    "dd/MM/yyyy"
+  ) + (isDateOlderThanNow(date) ? ' - Atrasado' : '')
+}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 30,
     paddingTop: 0,
+    marginBottom: 80,
   },
 
   title: {

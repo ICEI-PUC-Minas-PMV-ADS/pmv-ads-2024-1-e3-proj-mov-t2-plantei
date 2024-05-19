@@ -2,13 +2,17 @@ import React, { useState } from "react";
 import { View, StyleSheet, Switch } from "react-native";
 import { Text, Divider } from "react-native-paper";
 import Vase from "../../assets/plant-vase-icon.svg";
+import TaskService from "../../src/services/TaskService";
+import { useNavigation } from '@react-navigation/native';
 
-
-export default function VaseAlert({ date, text }) {
+export default function VaseAlert({ id, plantId, date, text }) {
   const [isEnabled, setIsEnabled] = useState(false);
+  const navigation = useNavigation();
 
-  const toggleSwitch = () => {
+  const toggleSwitch = async () => {
     setIsEnabled((previousState) => !previousState);
+    await TaskService.updateStatus(id, 2, plantId, "Vaso");
+    navigation.push("ListFutureTasksByPeriod");
   };
 
   return (
