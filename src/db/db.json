@@ -108,7 +108,7 @@
     {
       "id": "179b",
       "userId": "1",
-      "categoryId": "2",
+      "categoryId": "1",
       "name": "Plantinha",
       "description": "Meia sombra"
     }
@@ -120,200 +120,23 @@
       "watering_frequency_days": 4,
       "fertilization_frequency_days": 14,
       "vase_change_frequency_days": 365
+    },
+    {
+      "id": "b4aa",
+      "plantId": "179b",
+      "watering_frequency_days": 3,
+      "fertilization_frequency_days": 365,
+      "vase_change_frequency_days": 730
     }
   ],
   "tasks": [
     {
-      "id": "8dec",
-      "userId": "1",
-      "plantId": "fbc9",
-      "tipo": "Rega",
-      "status": 2,
-      "notificationDate": "2024-05-16T00:04:42.112Z"
-    },
-    {
-      "id": "5920",
-      "userId": "1",
-      "plantId": "fbc9",
-      "tipo": "Rega",
-      "status": 2,
-      "notificationDate": "2024-05-19T13:06:08.148Z"
-    },
-    {
-      "id": "4ad8",
-      "userId": "1",
-      "plantId": "fbc9",
-      "tipo": "Rega",
-      "status": 2,
-      "notificationDate": "2024-05-23T13:14:06.238Z"
-    },
-    {
-      "id": "94ac",
-      "userId": "1",
-      "plantId": "fbc9",
-      "tipo": "Rega",
-      "status": 2,
-      "notificationDate": "2024-05-23T14:14:49.596Z"
-    },
-    {
-      "id": "46ec",
-      "userId": "1",
-      "plantId": "fbc9",
-      "tipo": "Rega",
-      "status": 2,
-      "notificationDate": "2024-05-23T14:15:13.863Z"
-    },
-    {
-      "id": "1816",
-      "userId": "1",
-      "plantId": "fbc9",
-      "tipo": "Rega",
-      "status": 2,
-      "notificationDate": "2024-05-23T14:38:02.084Z"
-    },
-    {
-      "id": "aec0",
+      "id": "0fb1",
       "userId": "1",
       "plantId": "fbc9",
       "tipo": "Rega",
       "status": 1,
-      "notificationDate": "2024-05-23T14:38:15.774Z"
-    },
-    {
-      "id": "3278",
-      "userId": "1",
-      "plantId": "179b",
-      "tipo": "Rega",
-      "status": 2,
-      "notificationDate": "2024-05-26T14:41:47.406Z"
-    },
-    {
-      "id": "8bc1",
-      "userId": "1",
-      "plantId": "179b",
-      "tipo": "Fertilizar",
-      "status": 2,
-      "notificationDate": "2025-05-19T14:41:47.406Z"
-    },
-    {
-      "id": "5c3e",
-      "userId": "1",
-      "plantId": "179b",
-      "tipo": "Vaso",
-      "status": 2,
-      "notificationDate": "2026-05-19T14:41:47.406Z"
-    },
-    {
-      "id": "bbc3",
-      "userId": "1",
-      "plantId": "179b",
-      "tipo": "Fertilizar",
-      "status": 2,
-      "notificationDate": "2025-05-19T14:43:31.032Z"
-    },
-    {
-      "id": "9216",
-      "userId": "1",
-      "plantId": "179b",
-      "tipo": "Rega",
-      "status": 2,
-      "notificationDate": "2024-05-26T14:43:42.162Z"
-    },
-    {
-      "id": "9cf5",
-      "userId": "1",
-      "plantId": "179b",
-      "tipo": "Fertilizar",
-      "status": 2,
-      "notificationDate": "2025-05-19T14:43:45.150Z"
-    },
-    {
-      "id": "5dc1",
-      "userId": "1",
-      "plantId": "179b",
-      "tipo": "Vaso",
-      "status": 2,
-      "notificationDate": "2026-05-19T14:50:06.173Z"
-    },
-    {
-      "id": "2812",
-      "userId": "1",
-      "plantId": "179b",
-      "tipo": "Fertilizar",
-      "status": 2,
-      "notificationDate": "2025-05-19T14:50:10.444Z"
-    },
-    {
-      "id": "f8d9",
-      "userId": "1",
-      "plantId": "179b",
-      "tipo": "Vaso",
-      "status": 2,
-      "notificationDate": "2026-05-19T14:52:06.566Z"
-    },
-    {
-      "id": "37a9",
-      "userId": "1",
-      "plantId": "179b",
-      "tipo": "Vaso",
-      "status": 2,
-      "notificationDate": "2026-05-19T14:53:19.319Z"
-    },
-    {
-      "id": "2976",
-      "userId": "1",
-      "plantId": "179b",
-      "tipo": "Vaso",
-      "status": 2,
-      "notificationDate": "2026-05-19T14:55:11.391Z"
-    },
-    {
-      "id": "0495",
-      "userId": "1",
-      "plantId": "179b",
-      "tipo": "Vaso",
-      "status": 2,
-      "notificationDate": "2026-05-19T14:56:54.661Z"
-    },
-    {
-      "id": "6575",
-      "userId": "1",
-      "plantId": "179b",
-      "tipo": "Fertilizar",
-      "status": 2,
-      "notificationDate": "2025-05-19T14:57:25.358Z"
-    },
-    {
-      "id": "998e",
-      "userId": "1",
-      "plantId": "179b",
-      "tipo": "Fertilizar",
-      "status": 2,
-      "notificationDate": "2025-05-19T15:01:19.065Z"
-    },
-    {
-      "id": "6f5a",
-      "userId": "1",
-      "plantId": "179b",
-      "tipo": "Vaso",
-      "status": 1,
-      "notificationDate": "2026-05-19T15:01:24.133Z"
-    },
-    {
-      "id": "07fc",
-      "userId": "1",
-      "plantId": "179b",
-      "tipo": "Rega",
-      "status": 1,
-      "notificationDate": "2024-05-26T15:06:44.747Z"
-    },
-    {
-      "id": "e00e",
-      "userId": "1",
-      "plantId": "179b",
-      "tipo": "Fertilizar",
-      "status": 1,
-      "notificationDate": "2025-05-19T15:06:54.999Z"
+      "notificationDate": "2024-05-23T18:15:21.085Z"
     }
   ],
   "articles": [

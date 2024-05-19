@@ -166,7 +166,8 @@ export default function PlantDetails({ route }) {
             style={styles.buttonPrimary}
             icon=""
             mode="contained"
-            onPress={() => console.log('Pressed')}>
+            onPress={() => navigate('ListFutureTasksDetails', { plant: myPlant })
+          }>
             Visualizar tarefas dessa planta
           </Button>
         </View>

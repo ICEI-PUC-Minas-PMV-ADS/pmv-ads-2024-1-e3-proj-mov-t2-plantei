@@ -4,15 +4,22 @@ import { Text, Divider } from "react-native-paper";
 import Vase from "../../assets/plant-vase-icon.svg";
 import TaskService from "../../src/services/TaskService";
 import { useNavigation } from '@react-navigation/native';
+import api from "../../src/services/api";
 
-export default function VaseAlert({ id, plantId, date, text }) {
+export default function VaseAlert({ id, plantId, date, text, redirect }) {
   const [isEnabled, setIsEnabled] = useState(false);
   const navigation = useNavigation();
 
   const toggleSwitch = async () => {
     setIsEnabled((previousState) => !previousState);
-    await TaskService.updateStatus(id, 2, plantId, "Vaso");
-    navigation.push("ListFutureTasksByPeriod");
+    await TaskService.updateStatus(id, 2, plantId, "Rega");
+    if(redirect == "plant"){
+      const { data } = await api.get(`/plants/${plantId}?_embed=category`);
+      const plant = data
+      navigation.push('ListFutureTasksDetails', { plant: plant })
+    } else {
+      navigation.push("ListFutureTasksByPeriod")
+    }
   };
 
   return (
