@@ -57,7 +57,7 @@ export default function Login({ navigation }) {
           />
 
           <TouchableOpacity
-            onPress={() => navigation.navigate("RedefinePassword")}
+            onPress={() => navigation.navigate("FirstStepOfPasswordReset")}
           >
             <Text style={styles.forgotPasswordText}>Esqueceu sua senha?</Text>
             <Text style={styles.resetLink}>Clique aqui para redefinir</Text>

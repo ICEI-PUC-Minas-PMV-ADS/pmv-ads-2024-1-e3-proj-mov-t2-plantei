@@ -5,7 +5,8 @@ import EditPassword from "../pages/User/EditPassword";
 import Settings from "../pages/User/Settings";
 import Register from "../pages/User/Register";
 import Login from "../pages/User/Login";
-import RedefinePassword from "../pages/User/RedefinePassword";
+import FirstStepOfPasswordReset from "../pages/User/FirstStepOfPasswordReset";
+import SecondStepOfPasswordReset from "../pages/User/SecondStepOfPasswordReset";
 
 const { Screen, Group } = createNativeStackNavigator();
 
@@ -17,7 +18,8 @@ export default function UserRoutes() {
       <Screen name="Settings" component={Settings} />
       <Screen name="Register" component={Register} />
       <Screen name="Login" component={Login} />
-      <Screen name="RedefinePassword" component={RedefinePassword} />
+      <Screen name="FirstStepOfPasswordReset" component={FirstStepOfPasswordReset} />
+      <Screen name="SecondStepOfPasswordReset" component={SecondStepOfPasswordReset} />
     </Group>
   );
 }

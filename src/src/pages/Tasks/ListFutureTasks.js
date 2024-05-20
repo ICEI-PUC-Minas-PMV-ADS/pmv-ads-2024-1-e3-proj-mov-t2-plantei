@@ -10,7 +10,7 @@ import NavigationBar from "../../components/NavigationBar";
 import NavigationBarMiddle from "../../components/NavigationBarMiddle";
 import ProductCardCategory from "../../components/ProductCardCategory";
 
-export default function MyPlants({ route }) {
+export default function ListFutureTasks({ route }) {
   const parametersToReload = route.params;
   const [myPlants, setMyPlants] = useState([])
   const [isLoadingPlants, setIsLoadingPlants] = useState(true)
