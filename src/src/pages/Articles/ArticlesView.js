@@ -1,73 +1,49 @@
 import React from "react";
-import { View, StyleSheet, Text, Image, ScrollView, Dimensions } from "react-native";
-
+import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
 import NavigationBar from "../../components/NavigationBar";
 import Theme from "../../style/Theme";
 
-export default function ArticlesView() {
-  const screenWidth = Dimensions.get('window').width;
+export default function ArticleView({ route }) {
+  const { article } = route.params;
 
   return (
-    <>
+    <View style={styles.container}>
       <NavigationBar title="Guia verde" />
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView contentContainerStyle={styles.scrollViewContent}>
         <Image
-          source={require("../../../assets/PLANTAS.png")}
-          style={[styles.articleImage, { width: '140%' }]} 
+          style={{ width: "120%", height: 200, marginHorizontal:-10, }}
+          source={{ uri: article.imagem }}
           resizeMode="cover"
         />
-        <Text style={styles.title}>Descubra 10 Plantas Brasileiras Irresistíveis para sua Casa</Text>
-        <Text style={styles.subtitle}>
-          A rica biodiversidade do Brasil se estende para o mundo das plantas, oferecendo uma variedade incrível de espécies para decorar e dar vida à sua casa. Descubra 10 plantas brasileiras irresistíveis que combinam beleza natural com características únicas, elevando o estilo da sua decoração e criando um ambiente mais verde e relaxante.
-        </Text>
-        <Text style={styles.paragraph}>
-          <Text style={styles.topic}>1. Costela-de-Adão (Monstera deliciosa):</Text>{"\n"}
-          - Folhas grandes e fenestradas, criando um visual único e elegante.{"\n"}
-          - Fácil de cuidar, ideal para iniciantes na jardinagem.{"\n"}
-          - Prefere ambientes internos com luz indireta e solo úmido.
-        </Text>
-        <Text style={styles.paragraph}>
-          <Text style={styles.topic}>2. Jiboia (Epipremnum aureum):</Text>{"\n"}
-          - Folhas verde-escuras com bordas douradas, perfeitas para cestos suspensos ou como trepadeira.{"\n"}
-          - Adaptável a diferentes condições de luminosidade e solo.{"\n"}
-          - Purifica o ar, tornando o ambiente mais saudável.
-        </Text>
-      </ScrollView> 
-      
-    </>
+
+        <Text style={styles.title}>{article.titulo}</Text>
+        <Text style={styles.content}>{article.conteudo}</Text>
+      </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: 5,
-    paddingHorizontal: 50,
+    flex: 1,
+    
+  },
+  scrollViewContent: {
+    paddingHorizontal: 10, 
+    paddingVertical: 50, 
   },
   title: {
-    fontSize: 22,
-    marginBottom: 20,
+    fontSize: 20,
+    marginBottom: 20, 
     fontWeight: "bold",
     color: Theme.colors.secondary,
-    marginVertical:20,
+    padding: 30,
+    marginVertical:-10,
   },
-  subtitle: {
-    marginBottom: 20,
+  content: {
+    fontSize: 16,
     color: Theme.colors.secondary,
-    fontSize: 15,
-    lineHeight: 24,
-  },
-  articleImage: {
-    height: 200,
-    marginHorizontal:-60,
-    
-  },  
-  paragraph: {
-    marginBottom: 20,
-    color: Theme.colors.secondary,
-    fontSize: 15,
-    lineHeight: 24,
-  },
-  topic: {
-    fontWeight: "bold",
+    padding: 30,
+    marginVertical:-60,
   },
 });
