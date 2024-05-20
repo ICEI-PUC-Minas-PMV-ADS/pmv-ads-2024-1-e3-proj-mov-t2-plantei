@@ -40,7 +40,7 @@ export default function MyPlants({ route }) {
 
   return (
     <>
-      <NavigationBar title="Minhas plantas" />
+      <NavigationBar title="Minhas plantas" screen="Home" />
 
       <ScrollView style={styles.scroll}>
         <View style={styles.content}>
