@@ -8,7 +8,7 @@ import api from "../../services/api";
 
 export default function ArticlesHome() {
   const [featuredArticles, setFeaturedArticles] = useState([]);
-  const [expandedArticles, setExpandedArticles] = useState([]); // Estado para controlar se cada artigo está expandido
+  const [expandedArticles, setExpandedArticles] = useState([]); 
   const navigation = useNavigation();
 
   useEffect(() => {
@@ -16,7 +16,7 @@ export default function ArticlesHome() {
       try {
         const response = await api.get("/articles");
         setFeaturedArticles(response.data);
-        // Inicialize o estado expandido com false para cada artigo
+       
         setExpandedArticles(new Array(response.data.length).fill(false));
       } catch (error) {
         console.error("Erro ao buscar artigos:", error);
