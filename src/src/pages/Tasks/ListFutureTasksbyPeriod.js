@@ -43,7 +43,7 @@ export default function ListFutureTasksByPeriod() {
 
       <ScrollView style={styles.container}>
         {!loading && tasks.length > 0 ? (
-          <View>
+          <View style={styles.content}>
             <Text style={styles.title} variant="titleLarge">
               Próximas tarefas
             </Text>
@@ -95,7 +95,10 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 30,
     paddingTop: 0,
-    marginBottom: 80,
+  },
+
+  content: {
+    paddingBottom: 110,
   },
 
   title: {

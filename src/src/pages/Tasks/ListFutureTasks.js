@@ -46,7 +46,7 @@ export default function MyPlants({ route }) {
 
       <ScrollView style={styles.container}>
         {!isLoadingPlants && myPlants.length > 0 ? (
-          <View>
+          <View style={styles.plantContent}>
             <Text style={styles.title} variant="titleLarge">
               Próximas tarefas
             </Text>
@@ -81,6 +81,9 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 30,
     paddingTop: 0,
+  },
+
+  plantContent: {
     paddingBottom: 110,
   },
 

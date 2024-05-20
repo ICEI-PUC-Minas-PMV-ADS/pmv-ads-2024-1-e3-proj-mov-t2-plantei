@@ -42,31 +42,33 @@ export default function MyPlants({ route }) {
     <>
       <NavigationBar title="Minhas plantas" />
 
-      <ScrollView style={styles.container}>
-        {!isLoadingPlants && myPlants.length > 0 ? (
-          <View>
-            <Text style={styles.title} variant="titleLarge">
-              Lista das minhas plantas
-            </Text>
-            <View style={styles.plantsContainer}>
-              {myPlants.map((plant) => (
-                <TouchableOpacity
-                  key={plant.id}
-                  activeOpacity={0.6}
-                  onPress={() => handleSelectingPlant(plant)}
-                >
-                  <ProductCardCategory
-                    image={plant.category.image}
-                    text={plant.name}
-                    category={plant.category.name}
-                  />
-                </TouchableOpacity>
-              ))}
+      <ScrollView style={styles.scroll}>
+        <View style={styles.content}>
+          {!isLoadingPlants && myPlants.length > 0 ? (
+            <View>
+              <Text style={styles.title} variant="titleLarge">
+                Lista das minhas plantas
+              </Text>
+              <View style={styles.plantsContainer}>
+                {myPlants.map((plant) => (
+                  <TouchableOpacity
+                    key={plant.id}
+                    activeOpacity={0.6}
+                    onPress={() => handleSelectingPlant(plant)}
+                  >
+                    <ProductCardCategory
+                      image={plant.category.image}
+                      text={plant.name}
+                      category={plant.category.name}
+                    />
+                  </TouchableOpacity>
+                ))}
+              </View>
             </View>
-          </View>
-        ) : (
-          <EmptyPlants />
-        )}
+          ) : (
+            <EmptyPlants />
+          )}
+        </View>
       </ScrollView>
 
       <NavigationBarBottom />
@@ -75,10 +77,13 @@ export default function MyPlants({ route }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  scroll: {
     flex: 1,
     padding: 30,
     paddingTop: 0,
+  },
+
+  content: {
     paddingBottom: 110,
   },
 
