@@ -9,7 +9,7 @@ import Welcome from "../pages/Welcome";
 import ConfirmPopUp from "../components/ConfirmPopUp";
 import ConfirmRegistrationPopUp from "../components/ConfirmRegistrationPopUp";
 
-import Image from '../../assets/generica.png';
+import Image from "../../assets/generica.png";
 
 import Theme from "../style/Theme";
 
@@ -19,7 +19,7 @@ export default function Routes() {
   return (
     <NavigationContainer theme={Theme}>
       <Navigator
-        initialRouteName="Home"
+        initialRouteName="Login"
         screenOptions={{
           headerShown: false,
         }}
@@ -29,7 +29,7 @@ export default function Routes() {
           <Screen name="Home" component={Home} />
           <Screen name="ConfirmPopUp" component={ConfirmPopUp} />
           <Screen name="ConfirmRegistrationPopUp">
-            {props => <ConfirmRegistrationPopUp {...props} image={Image} />}
+            {(props) => <ConfirmRegistrationPopUp {...props} image={Image} />}
           </Screen>
         </Group>
         {UserRoutes()}
