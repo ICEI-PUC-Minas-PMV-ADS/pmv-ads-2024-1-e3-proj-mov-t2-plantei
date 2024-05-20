@@ -4,12 +4,10 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import UserRoutes from "./UserRoutes";
 import PlantRoutes from "./PlantRoutes";
 import TasksRoutes from "./TasksRoutes";
+import ArticlesRoutes from "./ArticlesRoutes";
 import Home from "../pages/Home";
 import Welcome from "../pages/Welcome";
 import ConfirmPopUp from "../components/ConfirmPopUp";
-import ConfirmRegistrationPopUp from "../components/ConfirmRegistrationPopUp";
-
-import Image from "../../assets/generica.png";
 
 import Theme from "../style/Theme";
 
@@ -28,13 +26,11 @@ export default function Routes() {
           <Screen name="Welcome" component={Welcome} />
           <Screen name="Home" component={Home} />
           <Screen name="ConfirmPopUp" component={ConfirmPopUp} />
-          <Screen name="ConfirmRegistrationPopUp">
-            {(props) => <ConfirmRegistrationPopUp {...props} image={Image} />}
-          </Screen>
         </Group>
         {UserRoutes()}
         {PlantRoutes()}
         {TasksRoutes()}
+        {ArticlesRoutes()}
       </Navigator>
     </NavigationContainer>
   );
