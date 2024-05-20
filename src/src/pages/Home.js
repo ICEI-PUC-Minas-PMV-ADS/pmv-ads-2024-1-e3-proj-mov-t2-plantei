@@ -1,3 +1,4 @@
+import { useContext, useEffect, useState } from "react";
 import {
   View,
   StyleSheet,
@@ -7,17 +8,46 @@ import {
 } from "react-native";
 import { Text } from "react-native-paper";
 import { useNavigation } from '@react-navigation/native';
-import Theme from "../style/Theme";
+
+import api from "../services/api";
+import { RegisterPlantContext } from "../contexts/RegisterPlantContext";
+import ProductCard from "../components/ProductCard";
+import NavigationBarBottom from "../components/NavigationBarBottom";
 
 import Plant from "../../assets/plant-icon.svg";
 import Task from "../../assets/splitscreen_add-icon";
 import Article from "../../assets/article-icon.svg";
 
-import ProductCard from "../components/ProductCard";
-import NavigationBarBottom from "../components/NavigationBarBottom";
+import Theme from "../style/Theme";
 
 export default function Home() {
   const { navigate } = useNavigation()
+  const { plantDataAdded, changePlantDataAdded } = useContext(RegisterPlantContext)
+  const [categories, setCategories] = useState([])
+
+  async function getCategories() {
+    try {
+      const { data } = await api.get('/categories');
+      setCategories(data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  function handleSelectingCategory(category) {
+    changePlantDataAdded({
+      httpMethod: 'post',
+      userId: plantDataAdded.userId,
+      categoryId: category.id,
+      category: { ...category }
+    })
+
+    navigate("DefinePlantName")
+  }
+
+  useEffect(() => {
+    getCategories()
+  }, [])
 
   return (
     <>
@@ -70,28 +100,18 @@ export default function Home() {
               Plantas para você
             </Text>
             <View style={[styles.cardGroup, { marginTop: 30 }]}>
-              <View style={[styles.card, { marginRight: 10 }]}>
-                <ProductCard image="https://i.imgur.com/pJcQkXG.png" text="Nova Planta" />
-              </View>
-              <View style={styles.card}>
-                <ProductCard image="https://i.imgur.com/pJcQkXG.png" text="Nova Planta" />
-              </View>
-            </View>
-            <View style={[styles.cardGroup, { marginTop: 10 }]}>
-              <View style={[styles.card, { marginRight: 10 }]}>
-                <ProductCard image="https://i.imgur.com/pJcQkXG.png" text="Nova Planta" />
-              </View>
-              <View style={styles.card}>
-                <ProductCard image="https://i.imgur.com/pJcQkXG.png" text="Nova Planta" />
-              </View>
-            </View>
-            <View style={[styles.cardGroup, { marginTop: 10 }]}>
-              <View style={[styles.card, { marginRight: 10 }]}>
-                <ProductCard image="https://i.imgur.com/pJcQkXG.png" text="Nova Planta" />
-              </View>
-              <View style={styles.card}>
-                <ProductCard image="https://i.imgur.com/pJcQkXG.png" text="Nova Planta" />
-              </View>
+              {categories.map((category) => (
+                <TouchableOpacity
+                  key={category.id}
+                  style={styles.card}
+                  activeOpacity={0.6}
+                  onPress={() => handleSelectingCategory(category)}
+                >
+                  <View style={{ padding: 6 }}>
+                    <ProductCard image={category.image} text={category.name} />
+                  </View>
+                </TouchableOpacity>
+              ))}
             </View>
           </View>
         </View>
@@ -150,11 +170,12 @@ const styles = StyleSheet.create({
   },
 
   card: {
-    flex: 1,
+    width: '50%'
   },
 
   cardGroup: {
     flexDirection: "row",
     justifyContent: "space-between",
+    flexWrap: 'wrap'
   },
 });
