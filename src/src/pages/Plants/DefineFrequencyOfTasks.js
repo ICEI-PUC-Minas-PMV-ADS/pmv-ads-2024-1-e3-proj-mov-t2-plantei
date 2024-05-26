@@ -240,14 +240,14 @@ export default function DefineFrequencyOfTasks() {
 
               <TaskDetailsCard
                 taskName="fertilização"
-                daysForTheTask={fertilizationFrequencyInput}
+                daysForTheTask={fertilizationFrequencyContext % 7 + fertilizationFrequencyInput * 7}
                 icon={<LeafIcon />}
                 color="#795900"
               />
 
               <TaskDetailsCard
                 taskName="troca de vaso"
-                daysForTheTask={vaseChangeFrequencyInput}
+                daysForTheTask={vaseChangeFrequencyContext % 365 + vaseChangeFrequencyInput * 365}
                 icon={<PlantVaseIcon />}
                 color="#1C5129"
               />
