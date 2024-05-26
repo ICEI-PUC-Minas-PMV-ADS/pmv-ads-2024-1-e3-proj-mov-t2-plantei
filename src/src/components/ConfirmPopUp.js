@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Modal, View, StyleSheet, TouchableOpacity } from "react-native";
 import { Text, Button } from "react-native-paper";
 
-const ConfirmPopUp = () => {
+const ConfirmPopUp = ({onConfirm}) => {
   const [modalVisible, setModalVisible] = useState(true);
 
   return (
@@ -21,34 +21,18 @@ const ConfirmPopUp = () => {
               style={[{ fontWeight: "bold" }, { marginBottom: 10 }]}
               variant="titleLarge"
             >
-              Confirmar conclusão{"\n"}da tarefa
+              Tarefa concluída!
             </Text>
             <Text style={{ marginBottom: 10 }} variant="bodyMedium">
-              Ao confirmar, uma nova tarefa será gerada com uma próxima data.
-            </Text>
-            <Text
-              style={[{ fontWeight: "bold" }, { marginBottom: 10 }]}
-              variant="bodyMedium"
-            >
-              Essa ação é irreversível.
-            </Text>
-            <Text style={{ fontWeight: "bold" }} variant="bodyMedium">
-              Deseja realmente concluir a tarefa?
+              Uma nova tarefa foi gerada com uma próxima data.
             </Text>
             <View style={styles.buttonContainer}>
               <Button
-                onPress={() => setModalVisible(!modalVisible)}
-                style={styles.button}
-                mode="contained-tonal"
-              >
-                Cancelar
-              </Button>
-              <Button
-                onPress={() => setModalVisible(!modalVisible)}
+                onPress={() => onConfirm()}
                 style={styles.button}
                 mode="contained"
               >
-                Confirmar
+                Tudo certo, entendi!
               </Button>
             </View>
           </View>
@@ -82,7 +66,7 @@ const styles = StyleSheet.create({
   },
 
   buttonContainer: {
-    marginTop: 20,
+    marginTop: 10,
     flexDirection: "row",
     columnGap: 9,
     width: "100%",
