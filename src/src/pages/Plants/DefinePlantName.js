@@ -48,8 +48,9 @@ export default function DefinePlantName() {
 
           <View style={styles.containerImage}>
             <Image
-              style={{ width: 50, height: 50 }}
-              source={{ uri: plantDataAdded.image }}
+              style={{ width: 140, height: 140 }}
+              source={{ uri: plantDataAdded.category.image }}
+              resizeMode="contain"
             />
           </View>
         </View>
