@@ -111,6 +111,13 @@
       "categoryId": "1",
       "name": "Plantinha",
       "description": "Meia sombra"
+    },
+    {
+      "id": "5a0e",
+      "userId": "",
+      "categoryId": "2",
+      "name": "Suzana",
+      "description": "Adora sombra"
     }
   ],
   "plants_frequency": [
@@ -135,28 +142,124 @@
       "userId": "1",
       "plantId": "fbc9",
       "tipo": "Rega",
-      "status": 1,
+      "status": 2,
       "notificationDate": "2024-05-23T18:15:21.085Z"
+    },
+    {
+      "id": "5fee",
+      "userId": "1",
+      "plantId": "fbc9",
+      "tipo": "Rega",
+      "status": 2,
+      "notificationDate": "2024-05-30T13:39:53.440Z"
+    },
+    {
+      "id": "3e7c",
+      "userId": "1",
+      "plantId": "fbc9",
+      "tipo": "Rega",
+      "status": 2,
+      "notificationDate": "2024-05-30T13:48:56.580Z"
+    },
+    {
+      "id": "4912",
+      "userId": "1",
+      "plantId": "fbc9",
+      "tipo": "Rega",
+      "status": 2,
+      "notificationDate": "2024-05-30T13:49:55.501Z"
+    },
+    {
+      "id": "8416",
+      "userId": "1",
+      "plantId": "fbc9",
+      "tipo": "Rega",
+      "status": 1,
+      "notificationDate": "2024-05-30T13:53:46.082Z"
+    },
+    {
+      "id": "6581",
+      "userId": "1",
+      "plantId": "5a0e",
+      "tipo": "Rega",
+      "status": 2,
+      "notificationDate": "2024-06-02T13:55:24.263Z"
+    },
+    {
+      "id": "47fe",
+      "userId": "1",
+      "plantId": "5a0e",
+      "tipo": "Fertilizar",
+      "status": 2,
+      "notificationDate": "2025-05-26T13:55:24.263Z"
+    },
+    {
+      "id": "1773",
+      "userId": "1",
+      "plantId": "5a0e",
+      "tipo": "Vaso",
+      "status": 2,
+      "notificationDate": "2026-05-26T13:55:24.263Z"
+    },
+    {
+      "id": "8d01",
+      "userId": "1",
+      "plantId": "5a0e",
+      "tipo": "Rega",
+      "status": 1,
+      "notificationDate": "2024-06-02T13:57:49.136Z"
+    },
+    {
+      "id": "8a2b",
+      "userId": "1",
+      "plantId": "5a0e",
+      "tipo": "Fertilizar",
+      "status": 2,
+      "notificationDate": "2025-05-26T13:57:59.288Z"
+    },
+    {
+      "id": "99e2",
+      "userId": "1",
+      "plantId": "5a0e",
+      "tipo": "Vaso",
+      "status": 2,
+      "notificationDate": "2026-05-26T13:58:04.784Z"
+    },
+    {
+      "id": "b51c",
+      "userId": "1",
+      "plantId": "5a0e",
+      "tipo": "Fertilizar",
+      "status": 1,
+      "notificationDate": "2025-05-20T13:59:11.962Z"
+    },
+    {
+      "id": "aa97",
+      "userId": "1",
+      "plantId": "5a0e",
+      "tipo": "Vaso",
+      "status": 1,
+      "notificationDate": "2026-05-20T13:59:17.608Z"
     }
   ],
- "articles": [
+  "articles": [
     {
       "id": "199",
       "titulo": "Descubra 2 Plantas Brasileiras Irresistíveis para sua Casa",
       "imagem": "https://i.imgur.com/fGCu6YU.png",
-      "conteudo":"A rica biodiversidade do Brasil se estende para o mundo das plantas, oferecendo uma variedade incrível de espécies para decorar e dar vida à sua casa. Descubra 2 plantas brasileiras irresistíveis que combinam beleza natural com características únicas, elevando o estilo da sua decoração e criando um ambiente mais verde e relaxante.\n\n1. Costela-de-Adão (Monstera deliciosa):\n\nFolhas grandes e fenestradas, criando um visual único e elegante.\nFácil de cuidar, ideal para iniciantes na jardinagem.\nPrefere ambientes internos com luz indireta e solo úmido.\n\n2. Jiboia (Epipremnum aureum):\n\nFolhas verde-escuras com bordas douradas, perfeitas para cestos suspensos ou como trepadeira.\nAdaptável a diferentes condições de luminosidade e solo.\nPurifica o ar, tornando o ambiente mais saudável."
+      "conteudo": "A rica biodiversidade do Brasil se estende para o mundo das plantas, oferecendo uma variedade incrível de espécies para decorar e dar vida à sua casa. Descubra 2 plantas brasileiras irresistíveis que combinam beleza natural com características únicas, elevando o estilo da sua decoração e criando um ambiente mais verde e relaxante.\n\n1. Costela-de-Adão (Monstera deliciosa):\n\nFolhas grandes e fenestradas, criando um visual único e elegante.\nFácil de cuidar, ideal para iniciantes na jardinagem.\nPrefere ambientes internos com luz indireta e solo úmido.\n\n2. Jiboia (Epipremnum aureum):\n\nFolhas verde-escuras com bordas douradas, perfeitas para cestos suspensos ou como trepadeira.\nAdaptável a diferentes condições de luminosidade e solo.\nPurifica o ar, tornando o ambiente mais saudável."
     },
     {
       "id": "299",
       "titulo": "Dicas e Truques para Rega, Adubação e Troca de Vaso",
       "imagem": "https://i.imgur.com/xyiK7wu.png",
-      "conteudo":"Manter suas plantas saudáveis requer cuidados específicos. Aqui estão algumas dicas essenciais:\n\nRega\n\nConheça sua planta: Cada planta tem necessidades de água diferentes. Pesquise sobre a espécie.\nVerifique a umidade do solo: Antes de regar, coloque o dedo no solo. Se estiver seco, regue.\nRegue pela manhã: A rega matinal reduz a evaporação e previne doenças.\nUse água em temperatura ambiente: Evite água muito fria ou quente para não chocar as raízes.\nDrene o excesso de água: Certifique-se de que os vasos tenham orifícios de drenagem.\n\nAdubação\n\nEscolha o adubo certo: Use adubos específicos para o tipo de planta.\nSiga as instruções: Evite sobredosagem para não queimar as raízes.\nAdube na época certa: Adube principalmente na primavera e verão.\nAdubos orgânicos: Compostagem e húmus de minhoca são ótimos para o solo.\n\nTroca de Vaso\n\nEscolha um vaso maior: O novo vaso deve ser 2-4 cm maior em diâmetro.\nUse substrato de qualidade: Utilize um substrato adequado ao tipo de planta.\n\nCom esses cuidados, suas plantas crescerão saudáveis e vigorosas!"
+      "conteudo": "Manter suas plantas saudáveis requer cuidados específicos. Aqui estão algumas dicas essenciais:\n\nRega\n\nConheça sua planta: Cada planta tem necessidades de água diferentes. Pesquise sobre a espécie.\nVerifique a umidade do solo: Antes de regar, coloque o dedo no solo. Se estiver seco, regue.\nRegue pela manhã: A rega matinal reduz a evaporação e previne doenças.\nUse água em temperatura ambiente: Evite água muito fria ou quente para não chocar as raízes.\nDrene o excesso de água: Certifique-se de que os vasos tenham orifícios de drenagem.\n\nAdubação\n\nEscolha o adubo certo: Use adubos específicos para o tipo de planta.\nSiga as instruções: Evite sobredosagem para não queimar as raízes.\nAdube na época certa: Adube principalmente na primavera e verão.\nAdubos orgânicos: Compostagem e húmus de minhoca são ótimos para o solo.\n\nTroca de Vaso\n\nEscolha um vaso maior: O novo vaso deve ser 2-4 cm maior em diâmetro.\nUse substrato de qualidade: Utilize um substrato adequado ao tipo de planta.\n\nCom esses cuidados, suas plantas crescerão saudáveis e vigorosas!"
     },
     {
       "id": "399",
       "titulo": "Cuidados Essenciais para Manter Suas Plantas Saudáveis",
       "imagem": "https://imgur.com/YmCFdvS.png",
-      "conteudo":"\n\nManter plantas saudáveis vai além de regar e adubar. É um processo que requer atenção e cuidado constante. Aqui estão algumas dicas essenciais:\n\nRega:\n\nConheça suas plantas: Cada uma tem necessidades hídricas específicas.\nVerifique a umidade do solo regularmente.\nPrefira regar pela manhã para evitar o excesso de umidade durante a noite.\nUtilize água em temperatura ambiente para não prejudicar as raízes.\nCertifique-se de que o vaso possui uma boa drenagem para evitar o acúmulo de água.\n\nLuz:\n\nPosicione suas plantas de acordo com as necessidades de luz de cada espécie.\nEvite deixá-las expostas diretamente ao sol forte por longos períodos.\nMonitore o ambiente e ajuste a posição das plantas conforme a incidência de luz.\n\nAdubação:\n\nUtilize adubos adequados ao tipo de planta e siga as instruções de dosagem.\nPrefira adubos orgânicos, como compostagem e húmus de minhoca, para nutrir o solo de forma natural.\nAdube principalmente durante o período de crescimento ativo das plantas.\n\nPodas:\n\nRealize podas regulares para estimular o crescimento saudável e controlar o tamanho das plantas.\nRemova folhas e galhos mortos para evitar a propagação de doenças e pragas.\n\nProteção:\n\nMonitore suas plantas regularmente em busca de sinais de doenças ou pragas.\nMantenha o ambiente limpo e livre de detritos que possam atrair insetos indesejados.\n\nSeguindo essas orientações, suas plantas irão prosperar e trazer ainda mais beleza ao seu ambiente, além de contribuir para um espaço mais saudável e agradável.\n"
+      "conteudo": "\n\nManter plantas saudáveis vai além de regar e adubar. É um processo que requer atenção e cuidado constante. Aqui estão algumas dicas essenciais:\n\nRega:\n\nConheça suas plantas: Cada uma tem necessidades hídricas específicas.\nVerifique a umidade do solo regularmente.\nPrefira regar pela manhã para evitar o excesso de umidade durante a noite.\nUtilize água em temperatura ambiente para não prejudicar as raízes.\nCertifique-se de que o vaso possui uma boa drenagem para evitar o acúmulo de água.\n\nLuz:\n\nPosicione suas plantas de acordo com as necessidades de luz de cada espécie.\nEvite deixá-las expostas diretamente ao sol forte por longos períodos.\nMonitore o ambiente e ajuste a posição das plantas conforme a incidência de luz.\n\nAdubação:\n\nUtilize adubos adequados ao tipo de planta e siga as instruções de dosagem.\nPrefira adubos orgânicos, como compostagem e húmus de minhoca, para nutrir o solo de forma natural.\nAdube principalmente durante o período de crescimento ativo das plantas.\n\nPodas:\n\nRealize podas regulares para estimular o crescimento saudável e controlar o tamanho das plantas.\nRemova folhas e galhos mortos para evitar a propagação de doenças e pragas.\n\nProteção:\n\nMonitore suas plantas regularmente em busca de sinais de doenças ou pragas.\nMantenha o ambiente limpo e livre de detritos que possam atrair insetos indesejados.\n\nSeguindo essas orientações, suas plantas irão prosperar e trazer ainda mais beleza ao seu ambiente, além de contribuir para um espaço mais saudável e agradável.\n"
     }
   ]
 }
