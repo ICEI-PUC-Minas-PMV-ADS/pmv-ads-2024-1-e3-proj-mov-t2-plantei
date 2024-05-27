@@ -9,8 +9,7 @@ import NavigationBarBottom from "../../components/NavigationBarBottom";
 import NavigationBar from "../../components/NavigationBar";
 import ProductCardCategory from "../../components/ProductCardCategory";
 
-export default function MyPlants({ route }) {
-  const parametersToReload = route.params;
+export default function MyPlants() {
   const [myPlants, setMyPlants] = useState([])
   const [isLoadingPlants, setIsLoadingPlants] = useState(true)
   const { navigate } = useNavigation()
@@ -32,7 +31,7 @@ export default function MyPlants({ route }) {
 
   useEffect(() => {
     getMyPlants()
-  }, [parametersToReload])
+  }, [])
 
   if (isLoadingPlants) {
     return <></>
