@@ -60,7 +60,7 @@ export default function DefineFrequencyOfTasks() {
   async function registerPlant() {
     try {
       const { data } = await api.post('/plants', {
-        userId: plantDataAdded.userId,
+        userId: "1",
         categoryId: plantDataAdded.category.id,
         name: plantDataAdded.name,
         description: plantDataAdded.description
@@ -79,21 +79,21 @@ export default function DefineFrequencyOfTasks() {
 
     const tasks = {
       wateringTask: {
-        userId: plantDataAdded.userId,
+        userId: "1",
         plantId: plantId,
         tipo: 'Rega',
         status: 1,
         notificationDate: calculateNotificationDate(wateringFrequencyInput)
       },
       fertilizationTask: {
-        userId: plantDataAdded.userId,
+        userId: "1",
         plantId: plantId,
         tipo: 'Fertilizar',
         status: 1,
         notificationDate: calculateNotificationDate(fertilizationFrequency)
       },
       potChangeTask: {
-        userId: plantDataAdded.userId,
+        userId: "1",
         plantId: plantId,
         tipo: 'Vaso',
         status: 1,

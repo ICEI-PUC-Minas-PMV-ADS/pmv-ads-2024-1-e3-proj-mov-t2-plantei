@@ -33,7 +33,7 @@ export default function SelectCategory() {
   function handleSelectingCategory(category) {
     changePlantDataAdded({
       httpMethod: 'post',
-      userId: plantDataAdded.userId,
+      userId: "1",
       categoryId: category.id,
       category: { ...category }
     })
