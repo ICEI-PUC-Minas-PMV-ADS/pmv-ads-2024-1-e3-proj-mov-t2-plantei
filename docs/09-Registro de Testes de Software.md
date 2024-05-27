@@ -25,3 +25,4 @@ Registro dos Testes
 ![Teste de Software](.img/testesoftware05.png)
 ![Teste de Software](.img/testesoftware06.png)
 ![Teste de Software](.img/testesoftware07.png)
+![Pesquisa de satisfação de uso do software](img/testesoftware01.png)
