@@ -17,3 +17,5 @@ Registro dos Testes
 |CT-08         |Edição de Senha |Permitir o usuário edite sua senha. |-|
 |CT-09         |Edição de Perfil              |Permitir que o usuário edite seu perfil. |-|
 |CT-10         |Configuração de Lembretes              |Permitir que o usuário atualize as configurações de lembrete. |-|
+
+![](.img/testesoftware01.png)
