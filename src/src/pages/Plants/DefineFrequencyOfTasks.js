@@ -39,9 +39,9 @@ export default function DefineFrequencyOfTasks() {
   const [wateringFrequencyInput, setWateringFrequencyInput]
     = useState(wateringFrequencyContext)
   const [fertilizationFrequencyInput, setFertilizationFrequencyInput]
-    = useState(Math.floor(fertilizationFrequencyContext / 7))
+    = useState(fertilizationFrequencyContext > 1 ? Math.floor(fertilizationFrequencyContext / 7) : 1)
   const [vaseChangeFrequencyInput, setVaseChangeFrequencyInput]
-    = useState(Math.floor(vaseChangeFrequencyContext / 365))
+    = useState(vaseChangeFrequencyContext > 1 ? Math.floor(vaseChangeFrequencyContext / 365) : 1)
 
   function handleFrequencySubmit() {
     fertilizationFrequency
