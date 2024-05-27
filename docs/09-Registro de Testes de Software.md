@@ -18,11 +18,10 @@ Registro dos Testes
 |CT-09         |Edição de Perfil              |Permitir que o usuário edite seu perfil. |-|
 |CT-10         |Configuração de Lembretes              |Permitir que o usuário atualize as configurações de lembrete. |-|
 
-![Teste de Software](.img/testesoftware01.png)
-![Teste de Software](.img/testesoftware02.png)
-![Teste de Software](.img/testesoftware03.png)
-![Teste de Software](.img/testesoftware04.png)
-![Teste de Software](.img/testesoftware05.png)
-![Teste de Software](.img/testesoftware06.png)
-![Teste de Software](.img/testesoftware07.png)
 ![Pesquisa de satisfação de uso do software](img/testesoftware01.png)
+![Pesquisa de satisfação de uso do software](img/testesoftware02.png)
+![Pesquisa de satisfação de uso do software](img/testesoftware03.png)
+![Pesquisa de satisfação de uso do software](img/testesoftware04.png)
+![Pesquisa de satisfação de uso do software](img/testesoftware05.png)
+![Pesquisa de satisfação de uso do software](img/testesoftware06.png)
+![Pesquisa de satisfação de uso do software](img/testesoftware07.png)
