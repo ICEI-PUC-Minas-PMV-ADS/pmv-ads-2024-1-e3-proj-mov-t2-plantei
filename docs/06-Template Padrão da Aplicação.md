@@ -21,7 +21,8 @@ O template das telas da aplicação criadas até o momento contém os seguintes 
 > 2 Boas vindas, 2.1 Cadastro, 2.2 Login e 2.3 Redefinição de senha
 >    
 > 2.4 Home
-> 4 Configurações, 3.1 Editar perfil, 3.2 Editar senha e 3.4 Excluir conta
+> 
+> 3 Configurações, 3.1 Editar perfil, 3.2 Editar senha e 3.4 Excluir conta
 > 
 > 4 Minhas plantas (com e sem plantas)
 > 
