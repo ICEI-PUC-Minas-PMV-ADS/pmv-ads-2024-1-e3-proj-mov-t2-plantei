@@ -97,5 +97,5 @@ Teste 10 - Teste de Navegação
 |03|0|- segundos|-|-|
 |04|0|- segundos|-|-|
 # Pesquisa da satisfação
-![Pesquisa de satisfação de uso do software](img/registrodeusabilidade/satisfacao01.png)
+![Pesquisa de satisfação de uso do software](img/satisfacao01.png)
 
