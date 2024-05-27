@@ -23,5 +23,4 @@ Registro dos Testes
 ![Pesquisa de satisfação de uso do software](img/testesoftware03.png)
 ![Pesquisa de satisfação de uso do software](img/testesoftware04.png)
 ![Pesquisa de satisfação de uso do software](img/testesoftware05.png)
-![Pesquisa de satisfação de uso do software](img/testesoftware06.png)
 ![Pesquisa de satisfação de uso do software](img/testesoftware07.png)
