@@ -98,4 +98,9 @@ Teste 10 - Teste de Navegação
 |04|0|- segundos|-|-|
 # Pesquisa da satisfação
 ![Pesquisa de satisfação de uso do software](img/satisfacao01.png)
-
+![Pesquisa de satisfação de uso do software](img/satisfacao02.png)
+![Pesquisa de satisfação de uso do software](img/satisfacao03.png)
+![Pesquisa de satisfação de uso do software](img/satisfacao04.png)
+![Pesquisa de satisfação de uso do software](img/satisfacao05.png)
+![Pesquisa de satisfação de uso do software](img/satisfacao06.png)
+![Pesquisa de satisfação de uso do software](img/satisfacao07.png)
