@@ -7,6 +7,7 @@ import {
 } from "react-native";
 import { Button } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
+import { CommonActions } from '@react-navigation/native';
 
 import Theme from "../style/Theme";
 
@@ -19,7 +20,7 @@ export default function ConfirmRegistrationPopUp({
   additionalText,
   onConfirmDeletion
 }) {
-  const { navigate } = useNavigation()
+  const { dispatch } = useNavigation()
 
   return (
     <Modal
@@ -51,7 +52,15 @@ export default function ConfirmRegistrationPopUp({
                   mode="contained"
                   onPress={() => {
                     onChangeModalVisible(!modalVisible)
-                    navigate("MyPlants")
+
+                    dispatch(
+                      CommonActions.reset({
+                        index: 0,
+                        routes: [
+                          { name: 'MyPlants' }
+                        ],
+                      })
+                    );
                   }}
                 >
                   Tudo certo!
@@ -70,7 +79,15 @@ export default function ConfirmRegistrationPopUp({
                   mode="contained"
                   onPress={() => {
                     onChangeModalVisible(!modalVisible)
-                    navigate('MyPlants', { refresh: true });
+
+                    dispatch(
+                      CommonActions.reset({
+                        index: 0,
+                        routes: [
+                          { name: 'MyPlants' }
+                        ],
+                      })
+                    );
                   }}
                 >
                   Tudo certo!

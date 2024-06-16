@@ -6,7 +6,7 @@ export function RegisterPlantProvider({ children }) {
   const [plantDataAdded, setPlantDataAdded] = useState({
     httpMethod: '',
     id: '',
-    userId: '',
+    userId: '1',
     categoryId: '',
     name: '',
     description: '',

@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
+import { CommonActions } from '@react-navigation/native';
 import { View, StyleSheet, Image } from "react-native";
 import { Text, Button, Appbar } from "react-native-paper";
 
@@ -20,7 +21,7 @@ export default function PlantDetails({ route }) {
   const [myPlant, setMyPlant] = useState({})
   const [isLoadingPlant, setIsLoadingPlant] = useState(true)
   const [modalVisible, setModalVisible] = useState(false);
-  const { navigate, goBack, canGoBack } = useNavigation()
+  const { navigate, goBack, canGoBack, dispatch } = useNavigation()
 
   async function getPlant() {
     setIsLoadingPlant(true)
@@ -94,8 +95,15 @@ export default function PlantDetails({ route }) {
     async function deletePlant() {
       try {
         await api.delete(`/plants/${plantId}`);
-        
-        navigate('MyPlants', { refresh: true });
+
+        dispatch(
+          CommonActions.reset({
+            index: 0,
+            routes: [
+              { name: 'MyPlants' }
+            ],
+          })
+        );
       } catch (error) {
         console.error(error);
       }
@@ -167,7 +175,7 @@ export default function PlantDetails({ route }) {
             icon=""
             mode="contained"
             onPress={() => navigate('ListFutureTasksDetails', { plant: myPlant })
-          }>
+            }>
             Visualizar tarefas dessa planta
           </Button>
         </View>

@@ -39,9 +39,9 @@ export default function DefineFrequencyOfTasks() {
   const [wateringFrequencyInput, setWateringFrequencyInput]
     = useState(wateringFrequencyContext)
   const [fertilizationFrequencyInput, setFertilizationFrequencyInput]
-    = useState(Math.floor(fertilizationFrequencyContext / 7))
+    = useState(fertilizationFrequencyContext > 1 ? Math.floor(fertilizationFrequencyContext / 7) : 1)
   const [vaseChangeFrequencyInput, setVaseChangeFrequencyInput]
-    = useState(Math.floor(vaseChangeFrequencyContext / 365))
+    = useState(vaseChangeFrequencyContext > 1 ? Math.floor(vaseChangeFrequencyContext / 365) : 1)
 
   function handleFrequencySubmit() {
     fertilizationFrequency
@@ -60,7 +60,7 @@ export default function DefineFrequencyOfTasks() {
   async function registerPlant() {
     try {
       const { data } = await api.post('/plants', {
-        userId: plantDataAdded.userId,
+        userId: "1",
         categoryId: plantDataAdded.category.id,
         name: plantDataAdded.name,
         description: plantDataAdded.description
@@ -79,21 +79,21 @@ export default function DefineFrequencyOfTasks() {
 
     const tasks = {
       wateringTask: {
-        userId: plantDataAdded.userId,
+        userId: "1",
         plantId: plantId,
         tipo: 'Rega',
         status: 1,
         notificationDate: calculateNotificationDate(wateringFrequencyInput)
       },
       fertilizationTask: {
-        userId: plantDataAdded.userId,
+        userId: "1",
         plantId: plantId,
         tipo: 'Fertilizar',
         status: 1,
         notificationDate: calculateNotificationDate(fertilizationFrequency)
       },
       potChangeTask: {
-        userId: plantDataAdded.userId,
+        userId: "1",
         plantId: plantId,
         tipo: 'Vaso',
         status: 1,
@@ -240,14 +240,14 @@ export default function DefineFrequencyOfTasks() {
 
               <TaskDetailsCard
                 taskName="fertilização"
-                daysForTheTask={fertilizationFrequencyInput}
+                daysForTheTask={fertilizationFrequencyContext % 7 + fertilizationFrequencyInput * 7}
                 icon={<LeafIcon />}
                 color="#795900"
               />
 
               <TaskDetailsCard
                 taskName="troca de vaso"
-                daysForTheTask={vaseChangeFrequencyInput}
+                daysForTheTask={vaseChangeFrequencyContext % 365 + vaseChangeFrequencyInput * 365}
                 icon={<PlantVaseIcon />}
                 color="#1C5129"
               />

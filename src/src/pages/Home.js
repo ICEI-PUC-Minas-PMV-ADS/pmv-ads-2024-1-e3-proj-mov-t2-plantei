@@ -37,7 +37,7 @@ export default function Home() {
   function handleSelectingCategory(category) {
     changePlantDataAdded({
       httpMethod: 'post',
-      userId: plantDataAdded.userId,
+      userId: "1",
       categoryId: category.id,
       category: { ...category }
     })
@@ -85,7 +85,7 @@ export default function Home() {
                   </TouchableOpacity>
                 </View>
                 <View style={styles.navItem}>
-                  <TouchableOpacity onPress={() => console.log("Pressed")}>
+                  <TouchableOpacity onPress={() => navigate("ArticlesHome")}>
                     <Article width={24} height={24} marginBottom={10} />
                     <Text style={styles.textColor} variant="bodySmall">
                       Guia{"\n"}verde

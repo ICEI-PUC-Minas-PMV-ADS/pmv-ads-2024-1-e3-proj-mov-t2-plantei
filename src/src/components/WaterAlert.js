@@ -3,75 +3,90 @@ import { View, StyleSheet, Switch } from "react-native";
 import { Text, Divider } from "react-native-paper";
 import Water from "../../assets/water-icon.svg";
 import TaskService from "../../src/services/TaskService";
-import { useNavigation } from '@react-navigation/native';
+import ConfirmPopUp from "../components/ConfirmPopUp";
+import { useNavigation } from "@react-navigation/native";
 import api from "../../src/services/api";
-
 
 export default function WaterAlert({ id, plantId, date, text, redirect }) {
   const [isEnabled, setIsEnabled] = useState(false);
   const navigation = useNavigation();
+  const [modalVisible, setModalVisible] = useState(false);
 
   const toggleSwitch = async () => {
     setIsEnabled((previousState) => !previousState);
+    setModalVisible(true);
     await TaskService.updateStatus(id, 2, plantId, "Rega");
-    if(redirect == "plant"){
-      const { data } = await api.get(`/plants/${plantId}?_embed=category`);
-      const plant = data
-      navigation.push('ListFutureTasksDetails', { plant: plant })
-    } else {
-      navigation.push("ListFutureTasksByPeriod")
-    }
   };
 
   return (
-    <View style={styles.card}>
-      <View>
-        <Text style={{ marginRight: 12 }} variant="titleSmall">
-          {date}
-        </Text>
-        <View style={styles.cardContent}>
-          <View
-            style={{
-              gap: 22,
-              flexDirection: "row",
-              alignItems: "center",
-              marginTop: 15,
-              marginBottom: 15,
-            }}
-          >
-            <Water width={40} />
-            <View>
-              <Text style={{ marginRight: 12 }} variant="titleMedium">
-                Regar {"\n"}
-                {text}
+    <>
+      <View style={styles.card}>
+        <View>
+          <Text style={{ marginRight: 12 }} variant="titleSmall">
+            {date}
+          </Text>
+          <View style={styles.cardContent}>
+            <View
+              style={{
+                gap: 22,
+                flexDirection: "row",
+                alignItems: "center",
+                marginTop: 15,
+                marginBottom: 15,
+              }}
+            >
+              <Water width={40} />
+              <View>
+                <Text style={{ marginRight: 12 }} variant="titleMedium">
+                  Regar {"\n"}
+                  {text}
+                </Text>
+              </View>
+            </View>
+          </View>
+          <Divider />
+          <View style={styles.cardContent}>
+            <View
+              style={{
+                marginTop: 15,
+                flexDirection: "row",
+                alignItems: "center",
+                gap: 12,
+              }}
+            >
+              <Switch
+                trackColor={{ false: "#ebf1eb", true: "#ebf1eb" }}
+                thumbColor={isEnabled ? "#42a259" : "#f4f3f4"}
+                ios_backgroundColor="#ebf1eb"
+                onValueChange={toggleSwitch}
+                value={isEnabled}
+              />
+              <Text style={{ marginRight: 12 }} variant="bodySmall">
+                Marque como concluído quando{"\n"}finalizar a tarefa!
               </Text>
             </View>
           </View>
         </View>
-        <Divider />
-        <View style={styles.cardContent}>
-          <View
-            style={{
-              marginTop: 15,
-              flexDirection: "row",
-              alignItems: "center",
-              gap: 12,
-            }}
-          >
-            <Switch
-              trackColor={{ false: "#ebf1eb", true: "#ebf1eb" }}
-              thumbColor={isEnabled ? "#42a259" : "#f4f3f4"}
-              ios_backgroundColor="#ebf1eb"
-              onValueChange={toggleSwitch}
-              value={isEnabled}
-            />
-            <Text style={{ marginRight: 12 }} variant="bodySmall">
-              Marque como concluído quando{"\n"}finalizar a tarefa!
-            </Text>
-          </View>
-        </View>
       </View>
-    </View>
+
+      {modalVisible && (
+        <ConfirmPopUp
+          modalVisible={modalVisible}
+          onChangeModalVisible={setModalVisible}
+          onConfirm={async () => {
+            if (redirect == "plant") {
+              const { data } = await api.get(
+                `/plants/${plantId}?_embed=category`
+              );
+              const plant = data;
+              navigation.push("ListFutureTasksDetails", { plant: plant });
+            } else {
+              navigation.push("ListFutureTasksByPeriod");
+            }
+          }}
+        />
+      )}
+    </>
   );
 }
 
