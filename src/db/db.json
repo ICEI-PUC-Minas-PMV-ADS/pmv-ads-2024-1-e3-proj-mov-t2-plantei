@@ -1,5 +1,12 @@
 {
-  "users": [],
+  "users": [
+    {
+      "id": "b523",
+      "nome": "maria",
+      "email": "mb@gmail.com",
+      "senha": "bb1234"
+    }
+  ],
   "categories": [
     {
       "id": "1",
