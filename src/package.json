@@ -5,7 +5,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "server": "json-server --watch ./db/db.json --host 0.0.0.0 --port 3000"
+    "server": "json-server --watch ./db/db.json ./node_modules/json-server-auth --host 0.0.0.0 --port 3000"
   },
   "dependencies": {
     "@expo/metro-runtime": "~3.2.1",
@@ -15,7 +15,11 @@
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/native-stack": "^6.9.26",
     "axios": "^1.6.8",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "crypto-js": "^4.2.0",
     "date-fns": "^3.6.0",
+    "dotenv": "^16.4.5",
     "expo": "^51.0.8",
     "expo-image-picker": "~15.0.5",
     "expo-status-bar": "~1.12.1",
