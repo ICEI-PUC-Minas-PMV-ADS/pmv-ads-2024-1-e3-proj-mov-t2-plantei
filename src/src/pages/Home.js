@@ -64,7 +64,7 @@ export default function Home() {
                 </Text>
                 <Image
                   style={styles.image}
-                  source={require("../../assets/photo-home.png")}
+                  source={require("../../assets/user.png")}
                 />
               </View>
               <View style={styles.homeHeaderNav}>
