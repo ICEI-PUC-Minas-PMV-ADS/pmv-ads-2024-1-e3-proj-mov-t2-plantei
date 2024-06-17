@@ -10,6 +10,8 @@ import {
 } from "react-native";
 import { Text, Button } from "react-native-paper";
 import Theme from "../../style/Theme";
+import api from "../../services/api";
+import { generateHash } from "../../services/AuthService";
 
 export default function Register({ navigation }) {
   const [nome, setNome] = useState("");
@@ -17,18 +19,30 @@ export default function Register({ navigation }) {
   const [senha, setSenha] = useState("");
   const [confirmeSenha, setConfirmeSenha] = useState("");
 
-  const handlePasswordValidation = () => {
-    if (senha.length < 8) {
-      Alert.alert("Erro", "A senha deve ter pelo menos 8 caracteres.");
-    } else if (senha !== confirmeSenha) {
-      Alert.alert(
-        "Erro",
-        "As senhas não coincidem. Por favor, digite novamente."
-      );
-    } else {
-      Alert.alert("Sucesso", "Sua conta foi criada com sucesso.");
-      console.log("Registro feito com sucesso!");
-      // Aqui você pode adicionar a lógica para registrar o usuário.
+  const handleRegister = async () => {
+    if (senha !== confirmeSenha) {
+      Alert.alert("Erro", "As senhas não coincidem!");
+      return;
+    }
+
+    let password = generateHash(senha);
+
+    try {
+      const response = await api.post('/users', {
+        nome,
+        email,
+        password
+      });
+
+      if (response.status === 201 || response.status === 200) {
+        Alert.alert("Sucesso", "Usuário registrado com sucesso!");
+        navigation.navigate("Login");
+      } else {
+        Alert.alert("Erro", "Falha ao registrar usuário.");
+      }
+    } catch (error) {
+      console.error(error);
+      Alert.alert("Erro", "Ocorreu um erro ao registrar o usuário.");
     }
   };
 
@@ -76,7 +90,7 @@ export default function Register({ navigation }) {
           <Button
             style={styles.buttonPrimary}
             mode="contained"
-            onPress={handlePasswordValidation}
+            onPress={handleRegister}
           >
             Criar conta
           </Button>
