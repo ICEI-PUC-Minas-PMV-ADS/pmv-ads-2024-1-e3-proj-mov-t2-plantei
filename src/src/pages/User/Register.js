@@ -11,6 +11,7 @@ import {
 import { Text, Button } from "react-native-paper";
 import Theme from "../../style/Theme";
 import api from "../../services/api";
+import { generateHash } from "../../services/AuthService";
 
 export default function Register({ navigation }) {
   const [nome, setNome] = useState("");
@@ -24,11 +25,13 @@ export default function Register({ navigation }) {
       return;
     }
 
+    let password = generateHash(senha);
+
     try {
       const response = await api.post('/users', {
         nome,
         email,
-        senha,
+        password
       });
 
       if (response.status === 201 || response.status === 200) {

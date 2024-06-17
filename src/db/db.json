@@ -1,10 +1,16 @@
 {
   "users": [
     {
-      "id": "b523",
-      "nome": "maria",
-      "email": "mb@gmail.com",
-      "senha": "bb1234"
+      "id": "56e3",
+      "nome": "nina",
+      "email": "nina@mail.com",
+      "password": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"
+    },
+    {
+      "id": "4154",
+      "nome": "isabella",
+      "email": "isa@mail.com",
+      "password": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"
     }
   ],
   "categories": [
