@@ -26,7 +26,7 @@ export default function PlantDetails({ route }) {
   async function getPlant() {
     setIsLoadingPlant(true)
     try {
-      const { data } = await api.get(`/plants/${plantId}?_embed=category`);
+      const { data } = await api.get(`/plants/${plantId}?_expand=category`);
       const plantDataRequest = data
       setMyPlant({ ...plantDataRequest })
 

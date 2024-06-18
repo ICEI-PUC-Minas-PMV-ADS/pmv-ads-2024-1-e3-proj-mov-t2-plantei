@@ -21,7 +21,7 @@ export default function ListFutureTasksDetails({ route }) {
     setLoading(true);
     try {
       const response = await api.get(
-        `/tasks?userId=1&plantId=${plant.id}&status=1&_embed=plant&_sort=notificationDate`
+        `/tasks?userId=1&plantId=${plant.id}&status=1&_expand=plant&_sort=notificationDate`
       );
       setTasks(response.data);
     } catch (error) {

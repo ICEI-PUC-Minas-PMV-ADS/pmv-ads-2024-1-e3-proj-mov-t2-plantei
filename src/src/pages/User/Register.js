@@ -33,7 +33,6 @@ export default function Register({ navigation }) {
         email,
         password
       });
-
       if (response.status === 201 || response.status === 200) {
         Alert.alert("Sucesso", "Usuário registrado com sucesso!");
         navigation.navigate("Login");

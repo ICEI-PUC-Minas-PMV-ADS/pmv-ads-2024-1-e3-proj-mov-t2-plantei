@@ -19,7 +19,7 @@ export default function ListFutureTasksByPeriod() {
   async function getOnGoingTasks() {
     setLoading(true);
     try {
-      const response = await api.get("/tasks?userId=1&status=1&_embed=plant&_sort=notificationDate");
+      const response = await api.get("/tasks?userId=1&status=1&_expand=plant&_sort=notificationDate");
       setTasks(response.data);
     } catch (error) {
       console.error(error);

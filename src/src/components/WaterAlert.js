@@ -76,7 +76,7 @@ export default function WaterAlert({ id, plantId, date, text, redirect }) {
           onConfirm={async () => {
             if (redirect == "plant") {
               const { data } = await api.get(
-                `/plants/${plantId}?_embed=category`
+                `/plants/${plantId}?_expand=category`
               );
               const plant = data;
               navigation.push("ListFutureTasksDetails", { plant: plant });

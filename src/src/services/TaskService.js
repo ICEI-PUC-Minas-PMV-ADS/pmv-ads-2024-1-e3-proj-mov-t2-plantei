@@ -7,7 +7,7 @@ const updateStatus = async (id, status, plantId, tipo) => {
   });
 
   if (response) {
-    const { data } = await api.get(`/plants/${plantId}?&_embed=category`);
+    const { data } = await api.get(`/plants/${plantId}?&_expand=category`);
     plant = data;
     let newDate = 0;
     let frequency;
@@ -56,14 +56,21 @@ const isDateOlderThanNow = (date) => {
   return new Date(date) < now;
 };
 
-const createDataString = (date) => {
-  return format(
-    parseISO(date),
-    "dd/MM/yyyy"
-  ) + (isDateOlderThanNow(date) ? ' - Atrasado' : '')
+function formatDate(dateString) {
+  const date = new Date(dateString);
+
+  const day = date.getDate().toString().padStart(2, "0");
+  const month = (date.getMonth() + 1).toString().padStart(2, "0");
+  const year = date.getFullYear();
+
+  return `${day}/${month}/${year}`;
 }
+
+const createDataString = (date) => {
+  return formatDate(date) + (isDateOlderThanNow(date) ? " - Atrasado" : "");
+};
 
 export default {
   updateStatus,
-  createDataString
+  createDataString,
 };

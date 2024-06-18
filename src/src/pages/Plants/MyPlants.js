@@ -17,7 +17,7 @@ export default function MyPlants() {
   async function getMyPlants() {
     setIsLoadingPlants(true)
     try {
-      const { data } = await api.get('/plants?_embed=category');
+      const { data } = await api.get('/plants?_expand=category');
       setMyPlants(data);
     } catch (error) {
       console.error(error);
