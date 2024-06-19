@@ -1,6 +1,5 @@
 {
-  "users": [
-  ],
+  "users": [],
   "categories": [
     {
       "id": 1,
@@ -91,29 +90,7 @@
       "vase_change_frequency_days": 365
     }
   ],
-  "plants": [
-    {
-      "userId": "1",
-      "categoryId": 1,
-      "name": "liz",
-      "description": "gosta de luz",
-      "id": 1
-    },
-    {
-      "userId": "1",
-      "categoryId": 10,
-      "name": "nina",
-      "description": "adora luz",
-      "id": 2
-    },
-    {
-      "userId": "1",
-      "categoryId": 1,
-      "name": "emma",
-      "description": "adora luz",
-      "id": 3
-    }
-  ],
+  "plants": [],
   "plants_frequency": [
     {
       "plantId": 1,
@@ -130,104 +107,7 @@
       "id": 2
     }
   ],
-  "tasks": [
-    {
-      "userId": "1",
-      "plantId": 1,
-      "tipo": "Rega",
-      "status": 1,
-      "notificationDate": "2024-06-23T23:07:48.685Z",
-      "id": 1
-    },
-    {
-      "userId": "1",
-      "plantId": 1,
-      "tipo": "Fertilizar",
-      "status": 2,
-      "notificationDate": "2024-07-03T23:07:48.685Z",
-      "id": 2
-    },
-    {
-      "userId": "1",
-      "plantId": 1,
-      "tipo": "Vaso",
-      "status": 1,
-      "notificationDate": "2025-06-19T23:07:48.685Z",
-      "id": 3
-    },
-    {
-      "userId": "1",
-      "plantId": 2,
-      "tipo": "Rega",
-      "status": 2,
-      "notificationDate": "2024-07-03T23:14:22.562Z",
-      "id": 4
-    },
-    {
-      "userId": "1",
-      "plantId": 2,
-      "tipo": "Fertilizar",
-      "status": 1,
-      "notificationDate": "2024-09-16T23:14:22.562Z",
-      "id": 5
-    },
-    {
-      "userId": "1",
-      "plantId": 2,
-      "tipo": "Vaso",
-      "status": 1,
-      "notificationDate": "2026-06-18T23:14:22.562Z",
-      "id": 6
-    },
-    {
-      "userId": "1",
-      "plantId": 3,
-      "tipo": "Rega",
-      "status": 1,
-      "notificationDate": "2024-06-21T23:15:02.259Z",
-      "id": 7
-    },
-    {
-      "userId": "1",
-      "plantId": 3,
-      "tipo": "Fertilizar",
-      "status": 1,
-      "notificationDate": "2024-07-03T23:15:02.259Z",
-      "id": 8
-    },
-    {
-      "userId": "1",
-      "plantId": 3,
-      "tipo": "Vaso",
-      "status": 1,
-      "notificationDate": "2025-06-19T23:15:02.259Z",
-      "id": 9
-    },
-    {
-      "userId": "1",
-      "plantId": 2,
-      "tipo": "Rega",
-      "status": 2,
-      "notificationDate": "2024-06-02T23:30:59.735Z",
-      "id": 10
-    },
-    {
-      "userId": "1",
-      "plantId": 1,
-      "tipo": "Fertilizar",
-      "status": 1,
-      "notificationDate": "2024-07-03T23:31:26.988Z",
-      "id": 11
-    },
-    {
-      "userId": "1",
-      "plantId": 2,
-      "tipo": "Rega",
-      "status": 1,
-      "notificationDate": "2024-07-03T23:32:37.721Z",
-      "id": 12
-    }
-  ],
+  "tasks": [],
   "articles": [
     {
       "id": "1",
