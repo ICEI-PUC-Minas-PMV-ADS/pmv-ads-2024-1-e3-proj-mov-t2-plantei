@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import {
   View,
   StyleSheet,
+  Alert,
   Image,
   TouchableOpacity,
   ScrollView,
@@ -15,11 +16,40 @@ import Arrow from "../../../assets/arrow.svg";
 
 export default function Settings() {
   const { navigate } = useNavigation();
-  const { user, logout } = useContext(UserContext);
+  const { user, logout, deleteUser } = useContext(UserContext);
 
   const handleLogout = () => {
     logout();
     navigate("Login");
+  };
+
+  const handleDeleteAccount = async () => {
+    Alert.alert(
+      "Confirmar exclusão",
+      "Tem certeza de que deseja deletar sua conta? Esta ação não pode ser desfeita.",
+      [
+        {
+          text: "Cancelar",
+          style: "cancel",
+        },
+        {
+          text: "Deletar",
+          onPress: async () => {
+            try {
+              await deleteUser();
+              Alert.alert(
+                "Conta deletada",
+                "Sua conta foi deletada com sucesso."
+              );
+              navigate("Login");
+            } catch (error) {
+              Alert.alert("Erro", "Houve um erro ao deletar a conta.");
+            }
+          },
+          style: "destructive",
+        },
+      ]
+    );
   };
 
   return (
@@ -37,7 +67,7 @@ export default function Settings() {
                   style={[styles.title, styles.textColor]}
                   variant="titleLarge"
                 >
-                  {user ? user.nome : 'Usuário'}
+                  {user ? user.nome : "Usuário"}
                 </Text>
               </View>
               <View style={styles.homeHeaderNav}></View>
@@ -71,7 +101,7 @@ export default function Settings() {
                 </TouchableOpacity>
               </View>
               <View style={styles.navLink}>
-                <TouchableOpacity onPress={() => navigate("")}>
+                <TouchableOpacity onPress={handleDeleteAccount}>
                   <Text variant="bodyLarge" style={{ fontWeight: "bold" }}>
                     Deletar conta
                   </Text>
