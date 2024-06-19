@@ -17,7 +17,7 @@ export default function Routes() {
   return (
     <NavigationContainer theme={Theme}>
       <Navigator
-        initialRouteName="Home"
+        initialRouteName="Register"
         screenOptions={{
           headerShown: false,
         }}

@@ -1,5 +1,4 @@
-// LoginScreen.js
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useCallback } from "react";
 import {
   View,
   TextInput,
@@ -9,6 +8,7 @@ import {
   TouchableOpacity,
   ScrollView,
 } from "react-native";
+import { useFocusEffect } from "@react-navigation/native";
 import { Text, Button } from "react-native-paper";
 import { UserContext } from "../../contexts/UserContext";
 import { login } from "../../services/AuthService";
@@ -29,6 +29,13 @@ const Login = ({ navigation }) => {
       Alert.alert("Erro de Login", error.message);
     }
   };
+
+  useFocusEffect(
+    useCallback(() => {
+      setEmail("");
+      setSenha("");
+    }, [])
+  );
 
   return (
     <ScrollView contentContainerStyle={styles.container}>

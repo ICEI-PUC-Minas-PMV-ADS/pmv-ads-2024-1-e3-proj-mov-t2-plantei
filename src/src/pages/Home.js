@@ -7,7 +7,7 @@ import {
   ScrollView,
 } from "react-native";
 import { Text } from "react-native-paper";
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from "@react-navigation/native";
 
 import api from "../services/api";
 import { RegisterPlantContext } from "../contexts/RegisterPlantContext";
@@ -17,17 +17,20 @@ import NavigationBarBottom from "../components/NavigationBarBottom";
 import Plant from "../../assets/plant-icon.svg";
 import Task from "../../assets/splitscreen_add-icon";
 import Article from "../../assets/article-icon.svg";
+import { UserContext } from "../contexts/UserContext";
 
 import Theme from "../style/Theme";
 
 export default function Home() {
-  const { navigate } = useNavigation()
-  const { plantDataAdded, changePlantDataAdded } = useContext(RegisterPlantContext)
-  const [categories, setCategories] = useState([])
+  const { navigate } = useNavigation();
+  const { plantDataAdded, changePlantDataAdded } =
+    useContext(RegisterPlantContext);
+  const [categories, setCategories] = useState([]);
+  const { user } = useContext(UserContext);
 
   async function getCategories() {
     try {
-      const { data } = await api.get('/categories');
+      const { data } = await api.get("/categories");
       setCategories(data);
     } catch (error) {
       console.error(error);
@@ -36,18 +39,18 @@ export default function Home() {
 
   function handleSelectingCategory(category) {
     changePlantDataAdded({
-      httpMethod: 'post',
+      httpMethod: "post",
       userId: "1",
       categoryId: category.id,
-      category: { ...category }
-    })
+      category: { ...category },
+    });
 
-    navigate("DefinePlantName")
+    navigate("DefinePlantName");
   }
 
   useEffect(() => {
-    getCategories()
-  }, [])
+    getCategories();
+  }, []);
 
   return (
     <>
@@ -60,7 +63,7 @@ export default function Home() {
                   style={[styles.title, styles.textColor]}
                   variant="titleLarge"
                 >
-                  Olá, Isabella
+                  Olá, {user ? user.nome : "Usuário"}
                 </Text>
                 <Image
                   style={styles.image}
@@ -125,7 +128,7 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     padding: 30,
-    paddingBottom: 110
+    paddingBottom: 110,
   },
 
   homeHeaderBackground: {
@@ -170,12 +173,12 @@ const styles = StyleSheet.create({
   },
 
   card: {
-    width: '50%'
+    width: "50%",
   },
 
   cardGroup: {
     flexDirection: "row",
     justifyContent: "space-between",
-    flexWrap: 'wrap'
+    flexWrap: "wrap",
   },
 });

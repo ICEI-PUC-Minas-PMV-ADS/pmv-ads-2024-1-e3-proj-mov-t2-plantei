@@ -1,6 +1,8 @@
+import React, { useContext } from "react";
 import {
   View,
   StyleSheet,
+  Alert,
   Image,
   TouchableOpacity,
   ScrollView,
@@ -8,12 +10,47 @@ import {
 import { Text } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 import Theme from "../../style/Theme";
-
+import { UserContext } from "../../contexts/UserContext";
 import NavigationBarBottom from "../../components/NavigationBarBottom";
 import Arrow from "../../../assets/arrow.svg";
 
 export default function Settings() {
   const { navigate } = useNavigation();
+  const { user, logout, deleteUser } = useContext(UserContext);
+
+  const handleLogout = () => {
+    logout();
+    navigate("Login");
+  };
+
+  const handleDeleteAccount = async () => {
+    Alert.alert(
+      "Confirmar exclusão",
+      "Tem certeza de que deseja deletar sua conta? Esta ação não pode ser desfeita.",
+      [
+        {
+          text: "Cancelar",
+          style: "cancel",
+        },
+        {
+          text: "Deletar",
+          onPress: async () => {
+            try {
+              await deleteUser();
+              Alert.alert(
+                "Conta deletada",
+                "Sua conta foi deletada com sucesso."
+              );
+              navigate("Login");
+            } catch (error) {
+              Alert.alert("Erro", "Houve um erro ao deletar a conta.");
+            }
+          },
+          style: "destructive",
+        },
+      ]
+    );
+  };
 
   return (
     <>
@@ -24,13 +61,13 @@ export default function Settings() {
               <View style={styles.homeHeaderUser}>
                 <Image
                   style={styles.image}
-                  source={require("../../../assets/photo-home.png")}
+                  source={require("../../../assets/user.png")}
                 />
                 <Text
                   style={[styles.title, styles.textColor]}
                   variant="titleLarge"
                 >
-                  Isabella Silva
+                  {user ? user.nome : "Usuário"}
                 </Text>
               </View>
               <View style={styles.homeHeaderNav}></View>
@@ -38,7 +75,7 @@ export default function Settings() {
           </View>
           <View style={styles.container}>
             <View style={styles.nav}>
-            <TouchableOpacity onPress={() => navigate("EditProfile")}>
+              <TouchableOpacity onPress={() => navigate("EditProfile")}>
                 <View style={styles.navItem} marginRight={10}>
                   <Text variant="bodyLarge">Editar perfil</Text>
                   <Arrow />
@@ -57,14 +94,14 @@ export default function Settings() {
                 </View>
               </TouchableOpacity>
               <View style={styles.navLink}>
-                <TouchableOpacity onPress={() => navigate("")}>
+                <TouchableOpacity onPress={handleLogout}>
                   <Text variant="bodyLarge" style={{ fontWeight: "bold" }}>
                     Sair
                   </Text>
                 </TouchableOpacity>
               </View>
               <View style={styles.navLink}>
-                <TouchableOpacity onPress={() => navigate("")}>
+                <TouchableOpacity onPress={handleDeleteAccount}>
                   <Text variant="bodyLarge" style={{ fontWeight: "bold" }}>
                     Deletar conta
                   </Text>
