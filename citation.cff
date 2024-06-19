@@ -1,0 +1,26 @@
+message: Please cite this software using these metadata.
+title: Plantei
+authors:
+  - family-names: da Silva Lobo
+    given-names: Bruno
+  - family-names: César Santos Rezende
+    given-names: Caio
+  - family-names: Lousada Batalha dos Santos
+    given-names: Lucas
+  - family-names: Beatriz da Silva
+    given-names: Maria
+  - family-names: Isidoro de Oliveira
+    given-names: Paulo
+  - family-names: Barbosa de Oliveira
+    given-names: Vanderson
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Fritzke Junior
+    given-names: Udo
+keywords:
+  - Plantas
+  - Cuidado com plantas
+  - Saúde das plantas
+repository-code: 
+version: 1.0.0
+date-released: 2024-06-18
