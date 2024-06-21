@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { View, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { Text } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 
+import { UserContext } from '../../contexts/UserContext';
 import api from "../../services/api";
 import EmptyPlants from "./EmptyPlants";
 import NavigationBarBottom from "../../components/NavigationBarBottom";
@@ -10,6 +11,7 @@ import NavigationBar from "../../components/NavigationBar";
 import ProductCardCategory from "../../components/ProductCardCategory";
 
 export default function MyPlants() {
+  const { user } = useContext(UserContext)
   const [myPlants, setMyPlants] = useState([])
   const [isLoadingPlants, setIsLoadingPlants] = useState(true)
   const { navigate } = useNavigation()
@@ -17,7 +19,7 @@ export default function MyPlants() {
   async function getMyPlants() {
     setIsLoadingPlants(true)
     try {
-      const { data } = await api.get('/plants?_expand=category');
+      const { data } = await api.get(`/plants?userId=${user.id}&_expand=category`);
       setMyPlants(data);
     } catch (error) {
       console.error(error);
