@@ -3,6 +3,7 @@ import { useContext, useState } from 'react';
 import { Text } from 'react-native-paper';
 
 import { RegisterPlantContext } from '../../contexts/RegisterPlantContext';
+import { UserContext } from '../../contexts/UserContext';
 import api from '../../services/api';
 import NavigationBar from '../../components/NavigationBar';
 import ThreeSteps from '../../components/ThreeSteps';
@@ -18,6 +19,7 @@ import PlantVaseIcon from "../../../assets/plant-vase-icon.svg";
 import Theme from "../../style/Theme"
 
 export default function DefineFrequencyOfTasks() {
+  const { user } = useContext(UserContext)
   const { plantDataAdded } = useContext(RegisterPlantContext)
 
   const {
@@ -60,7 +62,7 @@ export default function DefineFrequencyOfTasks() {
   async function registerPlant() {
     try {
       const { data } = await api.post('/plants', {
-        userId: "1",
+        userId: user.id,
         categoryId: plantDataAdded.category.id,
         name: plantDataAdded.name,
         description: plantDataAdded.description
@@ -79,21 +81,21 @@ export default function DefineFrequencyOfTasks() {
 
     const tasks = {
       wateringTask: {
-        userId: "1",
+        userId: user.id,
         plantId: plantId,
         tipo: 'Rega',
         status: 1,
         notificationDate: calculateNotificationDate(wateringFrequencyInput)
       },
       fertilizationTask: {
-        userId: "1",
+        userId: user.id,
         plantId: plantId,
         tipo: 'Fertilizar',
         status: 1,
         notificationDate: calculateNotificationDate(fertilizationFrequency)
       },
       potChangeTask: {
-        userId: "1",
+        userId: user.id,
         plantId: plantId,
         tipo: 'Vaso',
         status: 1,

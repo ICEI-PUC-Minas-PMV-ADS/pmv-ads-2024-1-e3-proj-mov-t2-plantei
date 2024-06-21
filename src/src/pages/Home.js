@@ -40,7 +40,6 @@ export default function Home() {
   function handleSelectingCategory(category) {
     changePlantDataAdded({
       httpMethod: "post",
-      userId: "1",
       categoryId: category.id,
       category: { ...category },
     });
