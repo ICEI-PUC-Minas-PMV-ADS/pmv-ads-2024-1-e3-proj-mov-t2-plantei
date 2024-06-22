@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { View, StyleSheet, Switch } from "react-native";
 import { Text, Divider } from "react-native-paper";
 import Water from "../../assets/water-icon.svg";
@@ -6,8 +6,10 @@ import TaskService from "../../src/services/TaskService";
 import ConfirmPopUp from "../components/ConfirmPopUp";
 import { useNavigation } from "@react-navigation/native";
 import api from "../../src/services/api";
+import { UserContext } from "../contexts/UserContext";
 
 export default function WaterAlert({ id, plantId, date, text, redirect }) {
+  const { user } = useContext(UserContext);
   const [isEnabled, setIsEnabled] = useState(false);
   const navigation = useNavigation();
   const [modalVisible, setModalVisible] = useState(false);
@@ -15,7 +17,7 @@ export default function WaterAlert({ id, plantId, date, text, redirect }) {
   const toggleSwitch = async () => {
     setIsEnabled((previousState) => !previousState);
     setModalVisible(true);
-    await TaskService.updateStatus(id, 2, plantId, "Rega");
+    await TaskService.updateStatus(id, 2, plantId, "Rega", user);
   };
 
   return (
