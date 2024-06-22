@@ -4,7 +4,7 @@
 
 `Projeto: Desenvolvimento de uma Aplicação Móvel em um Ambiente de Negócio`
 
-`EIXO 3`
+`Eixo 3 - 2024`
 
 ![Plantei](docs/img/plantei-banner-v2.png)
 Nosso aplicativo oferece um gerenciamento intuitivo de plantas domésticas, permitindo aos usuários adicionar e remover plantas, além de fornecer descrições detalhadas sobre cada espécie. Com lembretes personalizados, garantimos que as plantas sejam cuidadas de acordo com suas necessidades individuais, promovendo um ambiente saudável e vibrante em casa.
@@ -24,7 +24,23 @@ Nosso aplicativo oferece um gerenciamento intuitivo de plantas domésticas, perm
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+Você precisa instalar o [Git](https://git-scm.com/downloads) e o [Node.js](https://nodejs.org/en/download/) para executar este projeto.
+Você pode usar [Yarn](https://yarnpkg.com/) ou [Npm](https://nodejs.org/en/download/).
+Você pode emular o App através do [Android Studio](https://developer.android.com/studio?hl=pt-br) ou do seu próprio celular.
+
+```bash
+# Clone o projeto
+$ git clone https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-plantei.git
+# Acesse a pasta
+$ cd pmv-ads-2024-1-e3-proj-mov-t2-plantei/src
+# Instale as dependências
+$ npm i
+# Configure o json-server seguindo as instruções do arquivo .env.example
+# Inicie o App com
+$ npx expo
+# Inicie a fake api com
+$ npm run server
+```
 
 # Documentação
 
