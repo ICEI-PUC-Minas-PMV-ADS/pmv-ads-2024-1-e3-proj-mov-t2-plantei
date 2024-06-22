@@ -36,10 +36,10 @@ $ cd pmv-ads-2024-1-e3-proj-mov-t2-plantei/src
 # Instale as dependências
 $ npm i
 # Configure o json-server seguindo as instruções do arquivo .env.example
-# Inicie o App com
-$ npx expo
 # Inicie a fake api com
 $ npm run server
+# Inicie o App com
+$ npx expo
 ```
 
 # Documentação
