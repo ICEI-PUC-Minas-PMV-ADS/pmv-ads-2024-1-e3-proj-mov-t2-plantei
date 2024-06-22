@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import api from "../../src/services/api";
-import { format, parseISO } from "date-fns";
+import { UserContext } from "../contexts/UserContext";
 
 const updateStatus = async (id, status, plantId, tipo) => {
+  const { user } = useContext(UserContext)
+
   const response = await api.patch(`/tasks/${id}`, {
     status: status,
   });
@@ -32,7 +35,7 @@ const updateStatus = async (id, status, plantId, tipo) => {
     }
 
     const newTask = {
-      userId: "1",
+      userId: user.id,
       plantId: plantId,
       tipo: tipo,
       status: 1,

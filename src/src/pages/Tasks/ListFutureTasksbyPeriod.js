@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { View, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
+import React, { useContext, useEffect, useState } from "react";
+import { View, StyleSheet, ScrollView } from "react-native";
 import { Text } from "react-native-paper";
 
 import NavigationBar from "../../components/NavigationBar";
 import NavigationBarMiddle from "../../components/NavigationBarMiddle";
 import NavigationBarBottom from "../../components/NavigationBarBottom";
 
+import { UserContext } from "../../contexts/UserContext";
 import TaskService from "../../../src/services/TaskService";
 import FertilizeAlert from "../../components/FertilizeAlert";
 import VaseAlert from "../../components/VaseAlert";
@@ -13,13 +14,14 @@ import WaterAlert from "../../components/WaterAlert";
 import api from "../../services/api";
 
 export default function ListFutureTasksByPeriod() {
+  const { user } = useContext(UserContext)
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(true);
 
   async function getOnGoingTasks() {
     setLoading(true);
     try {
-      const response = await api.get("/tasks?userId=1&status=1&_expand=plant&_sort=notificationDate");
+      const response = await api.get(`/tasks?userId=${user.id}&status=1&_expand=plant&_sort=notificationDate`);
       setTasks(response.data);
     } catch (error) {
       console.error(error);
