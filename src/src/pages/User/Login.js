@@ -85,7 +85,6 @@ const Login = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    justifyContent: "center",
     paddingTop: 0,
     paddingLeft: 30,
     paddingRight: 30,

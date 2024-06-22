@@ -87,7 +87,7 @@ export default function Settings() {
                   <Arrow />
                 </View>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => navigate("")}>
+              <TouchableOpacity onPress={() => console.log("Rota para lembretes")}>
                 <View style={styles.navItem} marginRight={10}>
                   <Text variant="bodyLarge">Lembretes</Text>
                   <Arrow />
@@ -95,14 +95,14 @@ export default function Settings() {
               </TouchableOpacity>
               <View style={styles.navLink}>
                 <TouchableOpacity onPress={handleLogout}>
-                  <Text variant="bodyLarge" style={{ fontWeight: "bold" }}>
+                  <Text variant="bodyLarge" style={styles.navLinkText}>
                     Sair
                   </Text>
                 </TouchableOpacity>
               </View>
               <View style={styles.navLink}>
                 <TouchableOpacity onPress={handleDeleteAccount}>
-                  <Text variant="bodyLarge" style={{ fontWeight: "bold" }}>
+                  <Text variant="bodyLarge" style={styles.navLinkText}>
                     Deletar conta
                   </Text>
                 </TouchableOpacity>
@@ -158,6 +158,11 @@ const styles = StyleSheet.create({
   navLink: {
     flex: 1,
     alignItems: "center",
+  },
+
+  navLinkText: {
+    fontWeight: "bold",
+    textDecorationLine: "underline",
   },
 
   title: {
