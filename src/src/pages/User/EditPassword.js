@@ -1,66 +1,75 @@
-import { View, StyleSheet } from 'react-native';
-import { Button, Text } from "react-native-paper";
+import React, { useContext, useEffect } from 'react';
+import { View, StyleSheet, Alert } from 'react-native';
+import { Button, Text } from 'react-native-paper';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-
-import NavigationBar from "../../components/NavigationBar";
+import NavigationBar from '../../components/NavigationBar';
 import CustomTextInput from '../../components/CustomTextInput';
+import { UserContext } from '../../contexts/UserContext';
+import Theme from '../../style/Theme';
 
 const schema = yup.object({
-  // Adicione mais regras de validação.
-  current_password: yup.string().required("Informe a senha atual"),
-  new_password: yup.string().required("Informe a nova senha"),
-  confirm_new_password: yup.string().required("Informe novamente a nova senha"),
-})
+  oldPassword: yup.string().required('Senha antiga é obrigatória.'),
+  newPassword: yup.string().min(3, 'A nova senha deve ter no mínimo 3 caracteres.').required('Nova senha é obrigatória.'),
+  confirmPassword: yup.string()
+    .oneOf([yup.ref('newPassword')], 'As senhas não correspondem.')
+    .required('Confirmação de senha é obrigatória.')
+});
 
 export default function EditPassword() {
+  const { user, updatePassword } = useContext(UserContext);
   const { control, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
-  })
+  });
 
-  function handleFormSubmit(data) {
-    console.log(data)
+  async function handleFormSubmit(inputData) {
+    try {
+      await updatePassword(inputData);
+      Alert.alert('Sucesso', 'Senha atualizada com sucesso.');
+    } catch (error) {
+      Alert.alert('Erro', 'Não foi possível atualizar a senha.');
+    }
   }
 
   return (
     <>
-      <NavigationBar title="Configurações" />
-
+      <NavigationBar title="Alterar Senha" />
       <View style={styles.container}>
-        <Text style={styles.title}>Editar senha</Text>
+        <Text style={styles.title}>Alterar Senha</Text>
         <View style={styles.containerInputs}>
           <CustomTextInput
-            name="current_password"
-            placeholder="Senha atual"
+            name="oldPassword"
+            placeholder="Senha Antiga"
             control={control}
+            secureTextEntry={true}
             errors={errors}
-            secureTextEntry
           />
           <CustomTextInput
-            name="new_password"
-            placeholder="Nova senha"
+            name="newPassword"
+            placeholder="Nova Senha"
             control={control}
+            secureTextEntry={true}
             errors={errors}
-            secureTextEntry
           />
           <CustomTextInput
-            name="confirm_new_password"
-            placeholder="Confirme a nova senha"
+            name="confirmPassword"
+            placeholder="Confirmar Nova Senha"
             control={control}
+            secureTextEntry={true}
             errors={errors}
-            secureTextEntry
           />
         </View>
         <Button
           mode="contained"
           style={styles.buttonSubmit}
-          onPress={handleSubmit(handleFormSubmit)}>
-          Atualizar
+          onPress={handleSubmit(handleFormSubmit)}
+        >
+          Atualizar Senha
         </Button>
       </View>
     </>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -68,18 +77,15 @@ const styles = StyleSheet.create({
     padding: 37.5,
     paddingTop: 0,
   },
-
   title: {
     fontSize: 22,
     fontWeight: 'bold',
     paddingBottom: 26,
   },
-
   containerInputs: {
-    rowGap: 12
+    rowGap: 12,
   },
-
   buttonSubmit: {
     marginTop: 30,
-  }
-})
+  },
+});

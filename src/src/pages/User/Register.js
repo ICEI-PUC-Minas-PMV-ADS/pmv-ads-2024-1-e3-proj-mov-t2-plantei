@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import {
   View,
   TextInput,
@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   ScrollView,
 } from "react-native";
+import { useFocusEffect } from "@react-navigation/native";
 import { Text, Button } from "react-native-paper";
 import Theme from "../../style/Theme";
 import api from "../../services/api";
@@ -44,6 +45,15 @@ export default function Register({ navigation }) {
       Alert.alert("Erro", "Ocorreu um erro ao registrar o usuário.");
     }
   };
+
+  useFocusEffect(
+    useCallback(() => {
+      setNome("");
+      setEmail("");
+      setSenha("");
+      setConfirmeSenha("");
+    }, [])
+  );
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -118,7 +128,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   title: {
-    marginBottom: 40,
+    marginBottom: 30,
     fontWeight: "bold",
     textAlign: "center",
     fontSize: 22,
@@ -128,7 +138,7 @@ const styles = StyleSheet.create({
     width: "80%",
     height: 320,
     resizeMode: "contain",
-    marginBottom: 0,
+    marginBottom: -20,
   },
   input: {
     width: "100%",
@@ -151,6 +161,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: Theme.colors.secondary,
     textAlign: "center",
+    marginBottom:30,
   },
   loginLink: {
     color: Theme.colors.primary,
