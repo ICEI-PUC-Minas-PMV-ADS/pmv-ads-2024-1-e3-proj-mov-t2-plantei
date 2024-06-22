@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { View, StyleSheet, Switch } from "react-native";
 import { Text, Divider } from "react-native-paper";
 import Leaf from "../../assets/leaf-icon.svg";
@@ -6,8 +6,10 @@ import TaskService from "../../src/services/TaskService";
 import { useNavigation } from '@react-navigation/native';
 import api from "../../src/services/api";
 import ConfirmPopUp from "../components/ConfirmPopUp";
+import { UserContext } from "../contexts/UserContext";
 
 export default function FertilizeAlert({ id, plantId, date, text, redirect }) {
+  const { user } = useContext(UserContext);
   const [isEnabled, setIsEnabled] = useState(false);
   const navigation = useNavigation();
   const [modalVisible, setModalVisible] = useState(false);
@@ -15,7 +17,7 @@ export default function FertilizeAlert({ id, plantId, date, text, redirect }) {
   const toggleSwitch = async () => {
     setIsEnabled((previousState) => !previousState);
     setModalVisible(true);
-    await TaskService.updateStatus(id, 2, plantId, "Fertilizar");
+    await TaskService.updateStatus(id, 2, plantId, "Fertilizar", user);
   };
 
   return (

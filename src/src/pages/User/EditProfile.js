@@ -14,7 +14,7 @@ const schema = yup.object({
   email: yup.string().email('Informe um e-mail válido.'),
 });
 
-export default function EditProfile() {
+export default function EditProfile({ navigation }) {
   const { user, updateUserProfile } = useContext(UserContext);
   const { control, handleSubmit, formState: { errors }, setValue } = useForm({
     defaultValues: { nome: '', email: '' },
@@ -35,6 +35,7 @@ export default function EditProfile() {
       const data = { ...inputData};
       await updateUserProfile(data);
       Alert.alert('Sucesso', 'Perfil atualizado com sucesso.');
+      navigation.navigate("Settings");
     } catch (error) {
       Alert.alert('Erro', 'Não foi possível atualizar o perfil.');
     }

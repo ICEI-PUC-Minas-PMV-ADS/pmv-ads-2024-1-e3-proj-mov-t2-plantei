@@ -1,17 +1,13 @@
-import { useContext } from "react";
 import api from "../../src/services/api";
-import { UserContext } from "../contexts/UserContext";
 
-const updateStatus = async (id, status, plantId, tipo) => {
-  const { user } = useContext(UserContext)
-
+const updateStatus = async (id, status, plantId, tipo, user) => {
   const response = await api.patch(`/tasks/${id}`, {
     status: status,
   });
 
   if (response) {
     const { data } = await api.get(`/plants/${plantId}?&_expand=category`);
-    plant = data;
+    const plant = data;
     let newDate = 0;
     let frequency;
 

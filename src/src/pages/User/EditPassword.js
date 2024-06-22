@@ -17,7 +17,7 @@ const schema = yup.object({
     .required('Confirmação de senha é obrigatória.')
 });
 
-export default function EditPassword() {
+export default function EditPassword({ navigation }) {
   const { user, updatePassword } = useContext(UserContext);
   const { control, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
@@ -27,6 +27,7 @@ export default function EditPassword() {
     try {
       await updatePassword(inputData);
       Alert.alert('Sucesso', 'Senha atualizada com sucesso.');
+      navigation.navigate("Settings");
     } catch (error) {
       Alert.alert('Erro', 'Não foi possível atualizar a senha.');
     }
